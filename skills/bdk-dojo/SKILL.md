@@ -91,7 +91,57 @@ Load larger references only when needed for layout audits, coverage audits, or p
 
 ## Lesson Handoff Format
 
-Keep lesson starts compact so the agent does not drown the learner or itself:
+Keep lesson starts energetic and concrete. Do not reduce the lesson to a checklist.
+
+Use this shape for the first handoff:
+
+```text
+There you are. BDK Dojo starts.
+
+Lane:
+Pattern:
+Language:
+Difficulty:
+Goal:
+
+Problem:
+
+[plain-English problem statement]
+
+You will create/update:
+
+[small file tree]
+
+What each file means:
+
+[short explanation]
+
+Put this starter shape in:
+
+[small scaffold excerpt with todo! where learner must work]
+
+Run:
+
+[cargo command]
+
+Expected cursed behavior:
+
+[compile error or todo panic if applicable]
+
+Your job:
+
+[one focused implementation task]
+
+Hint:
+
+[one useful hint]
+
+Send me:
+
+[specific file or error]
+```
+
+For compact follow-ups or reviews, use:
 
 ```text
 Lesson:
@@ -104,6 +154,8 @@ Tests:
 Hint:
 Stop after:
 ```
+
+Beginner lessons should scaffold project shape before asking for implementation. Explain `Cargo.toml`, `src/lib.rs`, `src/main.rs`, module exports, and crate-name underscore traps when relevant. No tutorial coma, but enough orientation that a beginner knows the next keystroke.
 
 ## Review Format
 

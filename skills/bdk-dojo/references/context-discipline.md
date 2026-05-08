@@ -36,7 +36,9 @@ If the next course-spine lesson is planned but not ready, author its scaffold be
 
 ## Lesson handoff shape
 
-When responding, keep the lesson compact:
+For first lesson openings, use the fuller coach style from `teach-mode.md`: lane, pattern, language, difficulty, goal, concrete problem, file tree, starter shape, expected cursed behavior, one job, and exact send-back request.
+
+For follow-ups and reviews, keep it compact:
 
 ```text
 Lesson:
