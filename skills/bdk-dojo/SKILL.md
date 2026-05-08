@@ -143,6 +143,8 @@ For meetup or study-group use:
 
 ## Repository Convention
 
+BDK Dojo is normally one growing practice repo, not a fresh throwaway repo per lesson.
+
 For learner practice repos:
 
 ```text
@@ -155,6 +157,14 @@ bdk-dojo/
   lessons/
   notes/
 ```
+
+Default assumption:
+
+- keep using the existing `bdk-dojo` repo once it exists
+- add each kata as a clearly named function/module in `src/lib.rs`
+- add or extend tests for that kata instead of deleting prior verified lessons
+- only start a fresh repo when the user explicitly asks for a reset
+- keep toy lessons separated with clear names so the repo stays readable
 
 Use this as the training yard. A real BDK fork comes later for upstream contribution work.
 

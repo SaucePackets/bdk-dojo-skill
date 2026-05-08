@@ -8,10 +8,17 @@ Teach Rust project shape while introducing the balance buckets wallet libraries 
 
 ## Setup
 
+Default: continue in the existing `bdk-dojo` repo.
+
+Only create it if it does not exist yet:
+
 ```bash
 cargo new bdk-dojo
 cd bdk-dojo
 ```
+
+For later lessons, add the kata to the existing `src/lib.rs` unless the lesson explicitly says otherwise.
+Do not delete prior working katas; keep them named and tested.
 
 Explain:
 
