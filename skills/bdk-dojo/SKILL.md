@@ -50,18 +50,20 @@ Keep lessons small. One concept. One kata. One verification loop.
 
 ## Default Lesson Flow
 
-Before choosing a lesson, check `references/course-spine.md` and `references/bitcoin-dojo-format.md` so the next kata builds forward in the same scaffold/test style as Bitcoin Dojo instead of repeating logic.
+Before choosing a lesson, check `references/course-spine.md`, `references/bitcoin-dojo-format.md`, and `references/progress-journal.md` so the next kata builds forward in the same scaffold/test style as Bitcoin Dojo, avoids repeated logic, and records what the learner actually learned.
 
 1. Pick the next uncompleted concept from the course spine.
-2. Explain why it matters in wallet engineering.
-3. Show what repo state it builds on.
-4. Give a tiny Rust exercise.
-5. Make the learner implement the core logic first.
-6. Require at least one normal test and one edge-case test.
-7. Verify with `cargo test` and, when relevant, `cargo run`.
-8. Review compiler success, warnings, correctness, and code clarity separately.
-9. Ask for one improvement or refactor before showing polished code.
-10. Tie the lesson back to real BDK or open-source contribution habits.
+2. Check the learner repo's progress notes when available.
+3. Explain why it matters in wallet engineering.
+4. Show what repo state it builds on.
+5. Give a tiny Rust exercise.
+6. Make the learner implement the core logic first.
+7. Require at least one normal test and one edge-case test.
+8. Verify with `cargo test` and, when relevant, `cargo run`.
+9. Review compiler success, warnings, correctness, and code clarity separately.
+10. Ask for one improvement or refactor before showing polished code.
+11. Tie the lesson back to real BDK or open-source contribution habits.
+12. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, and next lesson.
 
 ## Lesson Prompt Format
 

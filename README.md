@@ -10,6 +10,7 @@ It turns Bitcoin wallet concepts into small, testable Rust katas. The goal is pr
 - `skills/bdk-dojo/references/lesson-template.md` — reusable lesson format.
 - `skills/bdk-dojo/references/bitcoin-dojo-format.md` — repo/scaffold format adapted from `SaucePackets/bitcoin-dojo`.
 - `skills/bdk-dojo/references/course-spine.md` — cumulative lesson plan that prevents repeated logic.
+- `skills/bdk-dojo/references/progress-journal.md` — private learner progress/pain-point journal format.
 - `skills/bdk-dojo/references/wallet-balance-utxo-model.md` — first beginner kata.
 - `scaffold/` — Bitcoin Dojo-style numbered exercise instructions and stubs.
 - `examples/wallet-balance-kata/` — runnable Rust starter kata.
@@ -82,6 +83,7 @@ bdk-dojo-skill/
             ├── bitcoin-dojo-format.md
             ├── course-spine.md
             ├── lesson-template.md
+            ├── progress-journal.md
             └── wallet-balance-utxo-model.md
 ```
 
