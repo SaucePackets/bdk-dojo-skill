@@ -1,5 +1,6 @@
 ## Setup
 
+- Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Update: `src/utxo.rs` so UTXOs carry confirmation and spendability state.
 - Update: `src/balance.rs`.
 - Copy the stubs from `scaffold/1.3-balance-buckets/stubs.rs` into your codebase.

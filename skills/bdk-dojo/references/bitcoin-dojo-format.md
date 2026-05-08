@@ -110,9 +110,13 @@ bdk-dojo-skill/
     bdk-dojo/
       SKILL.md
       references/
+        bdk-learning-coverage.md
         bitcoin-dojo-format.md
+        context-discipline.md
         course-spine.md
         lesson-template.md
+        progress-journal.md
+        teach-mode.md
 ```
 
 Learner practice repo shape:

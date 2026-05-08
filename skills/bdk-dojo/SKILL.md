@@ -48,6 +48,8 @@ The agent may scaffold project shape, explain Rust file layout, give hints, revi
 
 Keep lessons small. One concept. One kata. One verification loop.
 
+Teach Mode is the default. Follow `references/teach-mode.md`: learner writes first, agent gives hints before rescue, verifies tests, asks for a short learner explanation, and records learning.
+
 BDK Dojo is learning-first, not issue-claim-first. Explore BDK, read examples, build small local features, and understand contribution guidelines before attempting real upstream work.
 
 Every lesson should strengthen four tracks at once:
@@ -59,7 +61,16 @@ Every lesson should strengthen four tracks at once:
 
 ## Default Lesson Flow
 
-Before choosing a lesson, check `references/course-spine.md`, `references/bitcoin-dojo-format.md`, `references/bdk-learning-coverage.md`, and `references/progress-journal.md` so the next kata builds forward in the same scaffold/test style as Bitcoin Dojo, avoids repeated logic, covers Rust/Bitcoin/BDK/contribution readiness, and records what the learner actually learned.
+Before choosing a lesson, use the compact load order in `references/context-discipline.md`. Do not load every reference file by default.
+
+Default lesson references:
+
+- `references/context-discipline.md`
+- `references/teach-mode.md`
+- `references/course-spine.md`
+- current scaffold README/stubs
+
+Load larger references only when needed for layout audits, coverage audits, or progress-journal updates.
 
 1. Pick the next uncompleted concept from the course spine.
 2. Check the learner repo's progress notes when available.

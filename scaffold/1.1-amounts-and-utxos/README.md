@@ -1,5 +1,6 @@
 ## Setup
 
+- Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/amount.rs` and `src/utxo.rs`.
 - Update `src/lib.rs` to expose both modules.
 - Copy the stubs from `scaffold/1.1-amounts-and-utxos/stubs.rs` into your codebase.

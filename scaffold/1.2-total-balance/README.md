@@ -1,5 +1,6 @@
 ## Setup
 
+- Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/balance.rs`.
 - Update `src/lib.rs` to expose `amount`, `utxo`, and `balance`.
 - Copy the stubs from `scaffold/1.2-total-balance/stubs.rs` into your codebase.

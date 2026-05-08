@@ -8,13 +8,16 @@ It turns Bitcoin wallet concepts into small, testable Rust katas. The goal is pr
 
 - `skills/bdk-dojo/SKILL.md` — the teaching workflow and guardrails.
 - `skills/bdk-dojo/references/lesson-template.md` — reusable lesson format.
+- `skills/bdk-dojo/references/context-discipline.md` — compact load order so agents do not overload context.
+- `skills/bdk-dojo/references/teach-mode.md` — AI teacher behavior: hints, review, verification, progress notes.
 - `skills/bdk-dojo/references/bitcoin-dojo-format.md` — repo/scaffold format adapted from `SaucePackets/bitcoin-dojo`.
 - `skills/bdk-dojo/references/bdk-learning-coverage.md` — coverage checklist for Rust, wallet concepts, BDK bridge work, testing, and contribution readiness.
 - `skills/bdk-dojo/references/course-spine.md` — cumulative lesson plan that prevents repeated logic.
 - `skills/bdk-dojo/references/progress-journal.md` — private learner progress/pain-point journal format.
 - `skills/bdk-dojo/references/wallet-balance-utxo-model.md` — first beginner kata.
 - `scaffold/` — Bitcoin Dojo-style numbered exercise instructions and stubs.
-- `examples/wallet-balance-kata/` — runnable Rust starter kata.
+- `examples/bdk-dojo-wallet/` — cumulative working Rust wallet-training crate.
+- `examples/wallet-balance-kata/` — legacy runnable Rust starter kata.
 - `docs/install-hermes.md` and `docs/install-openclaw.md` — runtime install notes.
 
 ## Who it is for
@@ -32,9 +35,15 @@ The learner writes first. The agent coaches, hints, reviews, verifies, and refac
 
 ## First kata
 
-The curriculum now follows Bitcoin Dojo-style numbered scaffolds.
+The cumulative working crate starts here:
 
-Start here:
+```bash
+cd examples/bdk-dojo-wallet
+cargo test
+cargo run
+```
+
+Then work through:
 
 ```bash
 scaffold/1.1-amounts-and-utxos
@@ -72,6 +81,16 @@ bdk-dojo-skill/
 │       ├── README.md
 │       └── stubs.rs
 ├── examples/
+│   ├── bdk-dojo-wallet/
+│   │   ├── Cargo.toml
+│   │   ├── src/
+│   │   │   ├── amount.rs
+│   │   │   ├── balance.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── main.rs
+│   │   │   └── utxo.rs
+│   │   └── tests/
+│   │       └── wallet_primitives.rs
 │   └── wallet-balance-kata/
 │       ├── Cargo.toml
 │       └── src/
@@ -83,9 +102,11 @@ bdk-dojo-skill/
         └── references/
             ├── bdk-learning-coverage.md
             ├── bitcoin-dojo-format.md
+            ├── context-discipline.md
             ├── course-spine.md
             ├── lesson-template.md
             ├── progress-journal.md
+            ├── teach-mode.md
             └── wallet-balance-utxo-model.md
 ```
 
