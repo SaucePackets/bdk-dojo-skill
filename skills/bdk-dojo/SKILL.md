@@ -48,22 +48,33 @@ The agent may scaffold project shape, explain Rust file layout, give hints, revi
 
 Keep lessons small. One concept. One kata. One verification loop.
 
+BDK Dojo is learning-first, not issue-claim-first. Explore BDK, read examples, build small local features, and understand contribution guidelines before attempting real upstream work.
+
+Every lesson should strengthen four tracks at once:
+
+- Rust comfort
+- Bitcoin wallet mental model
+- BDK concept/API mapping
+- contribution-ready habits
+
 ## Default Lesson Flow
 
-Before choosing a lesson, check `references/course-spine.md`, `references/bitcoin-dojo-format.md`, and `references/progress-journal.md` so the next kata builds forward in the same scaffold/test style as Bitcoin Dojo, avoids repeated logic, and records what the learner actually learned.
+Before choosing a lesson, check `references/course-spine.md`, `references/bitcoin-dojo-format.md`, `references/bdk-learning-coverage.md`, and `references/progress-journal.md` so the next kata builds forward in the same scaffold/test style as Bitcoin Dojo, avoids repeated logic, covers Rust/Bitcoin/BDK/contribution readiness, and records what the learner actually learned.
 
 1. Pick the next uncompleted concept from the course spine.
 2. Check the learner repo's progress notes when available.
-3. Explain why it matters in wallet engineering.
-4. Show what repo state it builds on.
-5. Give a tiny Rust exercise.
-6. Make the learner implement the core logic first.
-7. Require at least one normal test and one edge-case test.
-8. Verify with `cargo test` and, when relevant, `cargo run`.
-9. Review compiler success, warnings, correctness, and code clarity separately.
-10. Ask for one improvement or refactor before showing polished code.
-11. Tie the lesson back to real BDK or open-source contribution habits.
-12. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, and next lesson.
+3. Inspect the current scaffold README/stubs and relevant learner files when available.
+4. Explain why it matters in wallet engineering.
+5. Show what repo state it builds on.
+6. Give a tiny Rust exercise.
+7. Make the learner implement the core logic first.
+8. Require at least one normal test and one edge-case test.
+9. Verify with `cargo test` and, when relevant, `cargo run`.
+10. Review compiler success, warnings, correctness, and code clarity separately.
+11. Ask for one improvement or refactor before showing polished code.
+12. Tie the lesson back to real BDK docs, examples, APIs, or contribution habits.
+13. Have the learner explain the concept in one or two sentences.
+14. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, and next lesson.
 
 ## Lesson Prompt Format
 
@@ -124,6 +135,27 @@ Move from primitives into BDK-shaped implementation:
 
 Use toy models first, then point to official BDK examples.
 
+## BDK Bridge Discipline
+
+Toy lessons are only useful if they eventually map to BDK.
+
+When a toy concept stabilizes, add a short bridge note:
+
+```text
+Toy concept:
+Closest BDK concept/API/example:
+What the toy hides:
+What to read next:
+```
+
+For real BDK exploration:
+
+- inspect current BDK docs/examples before teaching API details
+- prefer regtest or signet examples
+- read contribution guidelines before upstream work
+- build small local examples before claiming issues
+- start with docs/tests/examples, not core rewrites
+
 ## Contribution Track
 
 Only after the learner can write and test small Rust modules:
@@ -160,9 +192,30 @@ bdk-dojo/
   Cargo.toml
   src/
     lib.rs
-    main.rs
+    amount.rs
+    utxo.rs
+    balance.rs
+    wallet.rs
+    sync.rs
+    fees.rs
+    coin_selection.rs
+    tx_plan.rs
+    psbt_review.rs
+    descriptors.rs
+  tests/
+    tests.rs
+    wallet_flow.rs
+    balance/
+    sync/
+    spending/
+    bdk_bridge/
   lessons/
+    completed.md
   notes/
+    progress.md
+    pain-points.md
+    questions.md
+    bdk-bridge.md
 ```
 
 Default assumption:
@@ -190,9 +243,14 @@ Use this as the training yard. A real BDK fork comes later for upstream contribu
 
 - [ ] One concept only.
 - [ ] Learner writes the core logic first.
-- [ ] At least one test exists.
+- [ ] At least one normal test exists.
+- [ ] At least one edge-case test exists.
 - [ ] `cargo test` passes.
 - [ ] Warnings are reviewed, not ignored.
 - [ ] Bitcoin model is explained accurately.
+- [ ] Rust concept/pain point is named.
+- [ ] BDK bridge note exists once the toy concept is stable.
+- [ ] Learner can explain the concept in one or two sentences.
 - [ ] Real keys/funds are not involved.
+- [ ] Progress journal entry is drafted or updated.
 - [ ] Next kata is clear.

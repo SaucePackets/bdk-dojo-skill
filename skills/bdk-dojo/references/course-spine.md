@@ -6,6 +6,8 @@ Build a small, tested Rust wallet training repo that grows from toy wallet primi
 
 The course should avoid repeated logic. Each lesson either adds a new capability, refactors a prior capability into a clearer model, or connects the toy model to real BDK APIs.
 
+The course is learning-first, not issue-claim-first. BDK exploration should move from toy model -> docs/examples comparison -> small local BDK example -> contribution drill.
+
 Final target: a safe learning wallet engine that can model UTXOs, balances, sync state, fee planning, coin selection, transaction proposals, PSBT review, persistence, and then compare those pieces to BDK examples. No real funds. No production keys.
 
 ## Teaching loop
@@ -19,6 +21,8 @@ Each lesson follows the Prompt Dojo-style loop, adapted for code:
 - review correctness, Rust clarity, Bitcoin model, and tests
 - ask for one improvement or refactor
 - only then show polished code if needed
+- map the toy concept to BDK docs/examples when the concept is stable
+- record progress, pain points, and still-fuzzy questions
 
 ## Repo growth model
 
@@ -160,25 +164,33 @@ Goal: review what a wallet is about to sign.
 
 Goal: connect toy concepts to real BDK without pretending the toy is production.
 
-16. **Read BDK balance examples**
+16. **BDK project orientation**
+    - Task: inspect BDK docs/examples/contribution guidance before API work.
+    - Teaches: how to learn the real project without immediately claiming issues.
+
+17. **Read BDK balance examples**
     - Task: compare toy `BalanceSummary` to BDK balance concepts.
     - Teaches: reading docs/examples before coding.
 
-17. **Descriptor mental model**
+18. **Descriptor mental model**
     - Adds: toy descriptor parser/classifier, not real key parsing.
     - Teaches: descriptor as wallet policy.
 
-18. **BDK wallet skeleton on regtest/signet**
+19. **BDK wallet skeleton on regtest/signet**
     - Adds: optional example using BDK crates.
     - Teaches: real library setup, safe network only.
 
-19. **BDK sync example**
+20. **BDK sync example**
     - Connects: toy sync events to BDK sync/full-scan model.
     - Teaches: mapping mental models to APIs.
 
-20. **Contribution drill**
-    - Task: docs/test improvement in the dojo or a tiny BDK-adjacent example.
+21. **Contribution drill**
+    - Task: docs/test/example improvement in the dojo or a tiny BDK-adjacent example.
     - Teaches: small, reviewable OSS work.
+
+22. **Capstone: explain the wallet flow**
+    - Task: learner explains UTXO -> sync -> balance -> coin selection -> tx plan -> PSBT review -> BDK mapping.
+    - Teaches: readiness through explanation, not just passing tests.
 
 ## Naming rules
 
