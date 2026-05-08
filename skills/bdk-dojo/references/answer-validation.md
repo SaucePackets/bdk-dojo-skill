@@ -102,11 +102,14 @@ If a lesson lacks expected behavior or tests, do not teach it yet. Patch the les
 API shape matches scaffold: yes/no
 Normal test passes: yes/no
 Edge test passes: yes/no
+Test location/scope is appropriate: yes/no
 No duplicated prior logic: yes/no
 Bitcoin model correct: yes/no
 BDK bridge note accurate: yes/no
 Reference crate comparison done after attempt: yes/no
 ```
+
+If tests fail, teach the reason before showing a fix. For Rust beginners, name the concept: module scope, imports, ownership, borrowing, visibility, derives, or crate naming.
 
 ## Important distinction
 

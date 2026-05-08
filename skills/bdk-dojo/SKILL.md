@@ -161,17 +161,20 @@ Beginner lessons should scaffold project shape before asking for implementation.
 
 ```text
 Verdict:
-Correctness:
-Rust clarity:
+What worked:
+What broke:
+Why Rust is mad:
+Smallest fix:
+Rust concept learned:
 Bitcoin model:
 Tests:
 BDK bridge:
 Pain point:
-One improvement:
+Your move:
 Next kata:
 ```
 
-Keep feedback short and direct. No academic fog machine.
+Review attempts like a coach. Start with the correct shape, diagnose one failure clearly, and give the smallest next action. Do not dump the polished reference unless the learner asks for rescue.
 
 ## Beginner Track
 
