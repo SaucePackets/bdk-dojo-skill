@@ -11,17 +11,19 @@ For any BDK Dojo lesson, load:
 1. `SKILL.md`
 2. `references/context-discipline.md`
 3. `references/teach-mode.md`
-4. `references/answer-validation.md`
-5. `references/course-spine.md`
-6. `scaffold/README.md`
-7. the current `scaffold/<lesson>/README.md`
-8. the current `scaffold/<lesson>/stubs.rs`
+4. `references/teacher-style.md`
+5. `references/answer-validation.md`
+6. `references/course-spine.md`
+7. `scaffold/README.md`
+8. the current `scaffold/<lesson>/README.md`
+9. the current `scaffold/<lesson>/stubs.rs`
 
 Load other references only when needed:
 
 - `bitcoin-dojo-format.md` — when changing repo/scaffold layout
 - `bdk-learning-coverage.md` — when auditing curriculum coverage
 - `progress-journal.md` — when writing or updating progress notes
+- `teacher-style.md` — already part of the minimal load; reload if the response starts sounding scripted
 - `wallet-balance-utxo-model.md` — legacy/reference balance lesson only
 
 The current lesson source of truth is the numbered `scaffold/<lesson>/README.md` plus `stubs.rs`, not older reference lessons.

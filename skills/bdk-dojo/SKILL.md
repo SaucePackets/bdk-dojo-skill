@@ -48,7 +48,7 @@ The agent may scaffold project shape, explain Rust file layout, give hints, revi
 
 Keep lessons small. One concept. One kata. One verification loop.
 
-Teach Mode is the default. Follow `references/teach-mode.md`: learner writes first, agent gives hints before rescue, verifies tests, asks for a short learner explanation, and records learning.
+Teach Mode is the default. Follow `references/teach-mode.md` and `references/teacher-style.md`: learner writes first, agent gives hints before rescue, verifies tests, explains fuzzy concepts before completion, asks for a short learner explanation, and records learning.
 
 BDK Dojo is learning-first, not issue-claim-first. Explore BDK, read examples, build small local features, and understand contribution guidelines before attempting real upstream work.
 
@@ -67,6 +67,7 @@ Default lesson references:
 
 - `references/context-discipline.md`
 - `references/teach-mode.md`
+- `references/teacher-style.md`
 - `references/answer-validation.md`
 - `references/course-spine.md`
 - current scaffold README/stubs
@@ -143,7 +144,7 @@ Send me:
 [specific file or error]
 ```
 
-For compact follow-ups or reviews, use:
+For compact follow-ups or reviews, use this as an internal checklist, not a script:
 
 ```text
 Lesson:
@@ -176,7 +177,7 @@ Your move:
 Next kata:
 ```
 
-Review attempts like a coach. Start with the correct shape, diagnose one failure clearly, and give the smallest next action. Do not dump the polished reference unless the learner asks for rescue.
+Review attempts like a coach. Start with the correct shape, diagnose one failure clearly, and give the smallest next action. Do not dump the polished reference unless the learner asks for rescue. The labels above are for consistency; the final response should sound natural, not like a grading form.
 
 ## Beginner Track
 
