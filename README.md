@@ -8,8 +8,10 @@ It turns Bitcoin wallet concepts into small, testable Rust katas. The goal is pr
 
 - `skills/bdk-dojo/SKILL.md` — the teaching workflow and guardrails.
 - `skills/bdk-dojo/references/lesson-template.md` — reusable lesson format.
+- `skills/bdk-dojo/references/bitcoin-dojo-format.md` — repo/scaffold format adapted from `SaucePackets/bitcoin-dojo`.
 - `skills/bdk-dojo/references/course-spine.md` — cumulative lesson plan that prevents repeated logic.
 - `skills/bdk-dojo/references/wallet-balance-utxo-model.md` — first beginner kata.
+- `scaffold/` — Bitcoin Dojo-style numbered exercise instructions and stubs.
 - `examples/wallet-balance-kata/` — runnable Rust starter kata.
 - `docs/install-hermes.md` and `docs/install-openclaw.md` — runtime install notes.
 
@@ -28,7 +30,17 @@ The learner writes first. The agent coaches, hints, reviews, verifies, and refac
 
 ## First kata
 
-Wallet balance from UTXOs:
+The curriculum now follows Bitcoin Dojo-style numbered scaffolds.
+
+Start here:
+
+```bash
+scaffold/1.1-amounts-and-utxos
+scaffold/1.2-total-balance
+scaffold/1.3-balance-buckets
+```
+
+The older runnable starter remains available:
 
 ```bash
 cd examples/wallet-balance-kata
@@ -36,7 +48,7 @@ cargo test
 cargo run
 ```
 
-The kata models confirmed, trusted pending, untrusted pending, and total spendable balance buckets.
+That kata models confirmed, trusted pending, untrusted pending, and total spendable balance buckets.
 
 ## Repo layout
 
@@ -47,6 +59,16 @@ bdk-dojo-skill/
 ├── docs/
 │   ├── install-hermes.md
 │   └── install-openclaw.md
+├── scaffold/
+│   ├── 1.1-amounts-and-utxos/
+│   │   ├── README.md
+│   │   └── stubs.rs
+│   ├── 1.2-total-balance/
+│   │   ├── README.md
+│   │   └── stubs.rs
+│   └── 1.3-balance-buckets/
+│       ├── README.md
+│       └── stubs.rs
 ├── examples/
 │   └── wallet-balance-kata/
 │       ├── Cargo.toml
@@ -57,6 +79,7 @@ bdk-dojo-skill/
     └── bdk-dojo/
         ├── SKILL.md
         └── references/
+            ├── bitcoin-dojo-format.md
             ├── course-spine.md
             ├── lesson-template.md
             └── wallet-balance-utxo-model.md
@@ -64,7 +87,7 @@ bdk-dojo-skill/
 
 ## Roadmap
 
-The real roadmap lives in `skills/bdk-dojo/references/course-spine.md`.
+The real roadmap lives in `skills/bdk-dojo/references/course-spine.md` and follows the scaffold/test format described in `skills/bdk-dojo/references/bitcoin-dojo-format.md`.
 
 Short shape:
 

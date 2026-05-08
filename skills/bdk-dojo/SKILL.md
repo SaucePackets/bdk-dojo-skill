@@ -50,7 +50,7 @@ Keep lessons small. One concept. One kata. One verification loop.
 
 ## Default Lesson Flow
 
-Before choosing a lesson, check `references/course-spine.md` so the next kata builds forward instead of repeating logic.
+Before choosing a lesson, check `references/course-spine.md` and `references/bitcoin-dojo-format.md` so the next kata builds forward in the same scaffold/test style as Bitcoin Dojo instead of repeating logic.
 
 1. Pick the next uncompleted concept from the course spine.
 2. Explain why it matters in wallet engineering.

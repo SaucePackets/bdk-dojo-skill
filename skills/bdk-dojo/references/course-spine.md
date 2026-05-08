@@ -22,6 +22,14 @@ Each lesson follows the Prompt Dojo-style loop, adapted for code:
 
 ## Repo growth model
 
+Follow the Bitcoin Dojo-style structure described in `bitcoin-dojo-format.md`:
+
+- one cumulative Rust crate
+- numbered `scaffold/<exercise>/README.md`
+- numbered `scaffold/<exercise>/stubs.rs`
+- tests live in the crate and prove each exercise
+- modules grow by wallet domain
+
 Default learner repo:
 
 ```text
@@ -29,7 +37,6 @@ bdk-dojo/
   Cargo.toml
   src/
     lib.rs
-    main.rs
     amount.rs
     utxo.rs
     balance.rs
@@ -39,16 +46,17 @@ bdk-dojo/
     coin_selection.rs
     tx_plan.rs
     psbt_review.rs
-    persistence.rs
+    descriptors.rs
   tests/
+    tests.rs
     wallet_flow.rs
-  lessons/
-    01-amounts-and-utxos.md
-    ...
-  notes/
+    balance/
+    sync/
+    spending/
+    bdk_bridge/
 ```
 
-Start simple in `src/lib.rs` if Jerry is still warming up. Split into modules when the file starts hiding concepts instead of teaching them.
+Start simple in `src/lib.rs` only for the first warm-up. Then split into modules once lessons start building on each other.
 
 ## Lesson map
 
