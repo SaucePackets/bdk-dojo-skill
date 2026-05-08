@@ -100,4 +100,6 @@ A lesson is complete only when:
 - required tests pass
 - at least one edge case exists
 - the learner can explain the Bitcoin/BDK concept in one or two sentences
+- any stated uncertainty has been explained and reinforced before completion
+- active pain points are recorded as review targets, not treated as failure
 - the progress journal has a short entry

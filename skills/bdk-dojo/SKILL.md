@@ -87,7 +87,9 @@ Load larger references only when needed for layout audits, coverage audits, or p
 12. Ask for one improvement or refactor before showing polished code.
 13. Tie the lesson back to real BDK docs, examples, APIs, or contribution habits.
 14. Have the learner explain the concept in one or two sentences.
-15. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, and next lesson.
+15. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, active review targets, and next lesson.
+
+Do not mark a lesson complete just because tests pass. If the learner says a concept is fuzzy, explain it, connect it to their code, ask them to restate it, then journal the pain point and progress after understanding improves.
 
 ## Lesson Handoff Format
 
