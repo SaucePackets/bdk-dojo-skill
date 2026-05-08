@@ -1,4 +1,4 @@
-use bdk_dojo_wallet::{classify_balance, Amount, OutPoint, Utxo};
+use bdk_dojo_wallet::{Amount, OutPoint, Utxo, classify_balance};
 
 fn main() {
     let utxos = vec![
@@ -19,6 +19,15 @@ fn main() {
             value: Amount::from_sats(20_000),
             confirmed: false,
             spendable: true,
+        },
+        Utxo {
+            outpoint: OutPoint {
+                txid: "22".repeat(32),
+                vout: 2,
+            },
+            value: Amount::from_sats(10_000),
+            confirmed: false,
+            spendable: false,
         },
     ];
 

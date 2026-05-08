@@ -1,4 +1,6 @@
-use bdk_dojo_wallet::{calculate_balance, classify_balance, Amount, BalanceSummary, OutPoint, Utxo};
+use bdk_dojo_wallet::{
+    Amount, BalanceSummary, OutPoint, Utxo, calculate_balance, classify_balance,
+};
 
 fn utxo(value: u64, confirmed: bool, spendable: bool) -> Utxo {
     Utxo {
@@ -17,6 +19,23 @@ fn amount_preserves_sats_exactly() {
     let amount = Amount::from_sats(50_000);
 
     assert_eq!(amount.to_sats(), 50_000);
+}
+
+#[test]
+fn utxo_stores_outpoint_and_value() {
+    let utxo = Utxo {
+        outpoint: OutPoint {
+            txid: "ab".repeat(32),
+            vout: 7,
+        },
+        value: Amount::from_sats(12_345),
+        confirmed: true,
+        spendable: true,
+    };
+
+    assert_eq!(utxo.outpoint.txid, "ab".repeat(32));
+    assert_eq!(utxo.outpoint.vout, 7);
+    assert_eq!(utxo.value.to_sats(), 12_345);
 }
 
 #[test]

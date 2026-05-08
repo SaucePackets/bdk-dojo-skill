@@ -60,7 +60,7 @@ bdk-dojo/
     bdk_bridge/
 ```
 
-Start simple in `src/lib.rs` only for the first warm-up. Then split into modules once lessons start building on each other.
+Start simple in `src/lib.rs` only for the first warm-up. Split into modules as soon as lesson 1.1 introduces `amount.rs` and `utxo.rs`.
 
 ## Lesson map
 
@@ -68,129 +68,182 @@ Start simple in `src/lib.rs` only for the first warm-up. Then split into modules
 
 Goal: understand wallet state before touching BDK APIs.
 
-1. **Amounts and UTXOs**
-   - Adds: `Amount`, `Utxo`, `OutPoint` toy structs.
-   - Function: `calculate_balance(utxos) -> u64`.
-   - Teaches: sats as integers, no floats.
-   - Avoids repeating: this is the only plain total-balance kata.
+#### 1.1 — Amounts and UTXOs
 
-2. **Balance buckets**
-   - Builds on: lesson 1 UTXOs.
-   - Adds: `BalanceSummary`.
-   - Function: `classify_balance(utxos) -> BalanceSummary`.
-   - Teaches: confirmed, trusted pending, untrusted pending, spendable.
-   - Avoids repeating: do not rename `calculate_balance`; classify trust state instead.
+- Adds: `Amount`, `Utxo`, `OutPoint` toy structs.
+- Teaches: sats as integers, no floats; UTXOs as wallet coins.
+- Reference path: `examples/bdk-dojo-wallet/src/amount.rs`, `examples/bdk-dojo-wallet/src/utxo.rs`.
+- Scaffold: `scaffold/1.1-amounts-and-utxos/`.
 
-3. **Wallet state**
-   - Builds on: balance buckets.
-   - Adds: `WalletState { utxos, tip_height }`.
-   - Method: `wallet.balance()` delegates to `classify_balance`.
-   - Teaches: domain objects and method boundaries.
+#### 1.2 — Total balance
 
-4. **Confirmation depth**
-   - Builds on: `tip_height`.
-   - Adds: `seen_at_height: Option<u32>` to UTXOs.
-   - Function: `confirmations(utxo, tip_height) -> u32`.
-   - Teaches: block height, mempool vs confirmed.
+- Builds on: lesson 1.1 UTXOs.
+- Function: `calculate_balance(utxos) -> u64`.
+- Teaches: summing sats across all wallet UTXOs.
+- Avoids repeating: this is the only plain total-balance kata.
+- Reference path: `examples/bdk-dojo-wallet/src/balance.rs`.
+- Scaffold: `scaffold/1.2-total-balance/`.
 
-5. **Spendability rules**
-   - Builds on: confirmation depth.
-   - Adds: immature coinbase / locked / foreign toy states.
-   - Function: `is_spendable(utxo, tip_height) -> bool`.
-   - Teaches: spendable is policy, not just ownership.
+#### 1.3 — Balance buckets
+
+- Builds on: lesson 1.2 total balance.
+- Adds: `BalanceSummary`.
+- Function: `classify_balance(utxos) -> BalanceSummary`.
+- Teaches: confirmed, trusted pending, untrusted pending, spendable.
+- Avoids repeating: do not rename `calculate_balance`; classify trust state instead.
+- Reference path: `examples/bdk-dojo-wallet/src/balance.rs`.
+- Scaffold: `scaffold/1.3-balance-buckets/`.
+
+#### 1.4 — Wallet state
+
+- Builds on: balance buckets.
+- Adds: `WalletState { utxos, tip_height }`.
+- Method: `wallet.balance()` delegates to `classify_balance`.
+- Teaches: domain objects and method boundaries.
+- Status: planned, not scaffolded yet.
+
+#### 2.1 — Confirmation depth
+
+- Builds on: `tip_height`.
+- Adds: `seen_at_height: Option<u32>` to UTXOs.
+- Function: `confirmations(utxo, tip_height) -> u32`.
+- Teaches: block height, mempool vs confirmed.
+- Status: planned, not scaffolded yet.
+
+#### 2.2 — Spendability rules
+
+- Builds on: confirmation depth.
+- Adds: immature coinbase / locked / foreign toy states.
+- Function: `is_spendable(utxo, tip_height) -> bool`.
+- Teaches: spendable is policy, not just ownership.
+- Status: planned, not scaffolded yet.
 
 ### Phase 2 — Sync mental model
 
 Goal: model how wallet state changes.
 
-6. **Sync update events**
-   - Adds: `SyncEvent` enum: found, confirmed, spent, reorged.
-   - Method: `wallet.apply(event)`.
-   - Teaches: wallet data changes over time.
+#### 2.3 — Sync update events
 
-7. **Checkpoints and reorgs**
-   - Adds: toy checkpoint list.
-   - Function: `rollback_to_height(height)`.
-   - Teaches: why sync cannot be “just fetch once.”
+- Adds: `SyncEvent` enum: found, confirmed, spent, reorged.
+- Method: `wallet.apply(event)`.
+- Teaches: wallet data changes over time.
+- Status: planned, not scaffolded yet.
 
-8. **Address index and gap limit**
-   - Adds: toy derived address records, no real keys.
-   - Function: `next_unused_address()`.
-   - Teaches: address tracking without deriving real secrets.
+#### 2.4 — Checkpoints and reorgs
+
+- Adds: toy checkpoint list.
+- Function: `rollback_to_height(height)`.
+- Teaches: why sync cannot be “just fetch once.”
+- Status: planned, not scaffolded yet.
+
+#### 2.5 — Address index and gap limit
+
+- Adds: toy derived address records, no real keys.
+- Function: `next_unused_address()`.
+- Teaches: address tracking without deriving real secrets.
+- Status: planned, not scaffolded yet.
 
 ### Phase 3 — Spending decisions
 
 Goal: plan spends before building transactions.
 
-9. **Fee rates and vbytes**
-   - Adds: `FeeRate`, `TxSizeEstimate`.
-   - Function: `fee(vbytes, sat_per_vb)`.
-   - Teaches: fees are size-priced, not amount-priced.
+#### 3.1 — Fee rates and vbytes
 
-10. **Coin selection: exact-ish target**
-    - Builds on: spendable UTXOs and fees.
-    - Function: `select_coins(target, fee_rate, utxos)`.
-    - Teaches: inputs, change, insufficient funds.
+- Adds: `FeeRate`, `TxSizeEstimate`.
+- Function: `fee(vbytes, sat_per_vb)`.
+- Teaches: fees are size-priced, not amount-priced.
+- Status: planned, not scaffolded yet.
 
-11. **Dust and change policy**
-    - Builds on: coin selection.
-    - Adds: `DUST_LIMIT` and `ChangeDecision`.
-    - Teaches: not every leftover should become change.
+#### 3.2 — Coin selection: exact-ish target
 
-12. **Transaction proposal**
-    - Adds: `TxPlan { selected, recipient, fee, change }`.
-    - Function: `propose_transaction(...) -> Result<TxPlan, WalletError>`.
-    - Teaches: planning before signing.
+- Builds on: spendable UTXOs and fees.
+- Function: `select_coins(target, fee_rate, utxos)`.
+- Teaches: inputs, change, insufficient funds.
+- Status: planned, not scaffolded yet.
+
+#### 3.3 — Dust and change policy
+
+- Builds on: coin selection.
+- Adds: `DUST_LIMIT` and `ChangeDecision`.
+- Teaches: not every leftover should become change.
+- Status: planned, not scaffolded yet.
+
+#### 3.4 — Transaction proposal
+
+- Adds: `TxPlan { selected, recipient, fee, change }`.
+- Function: `propose_transaction(...) -> Result<TxPlan, WalletError>`.
+- Teaches: planning before signing.
+- Status: planned, not scaffolded yet.
 
 ### Phase 4 — PSBT and review discipline
 
 Goal: review what a wallet is about to sign.
 
-13. **PSBT review checklist, toy model**
-    - Adds: `PsbtReview` struct.
-    - Function: `review_plan(tx_plan, wallet_policy)`.
-    - Teaches: outputs, fees, change, unknown recipients.
+#### 4.1 — PSBT review checklist, toy model
 
-14. **Error handling pass**
-    - Refactors prior `Option`/bool returns into `WalletError`.
-    - Teaches: maintainer-friendly API surfaces.
+- Adds: `PsbtReview` struct.
+- Function: `review_plan(tx_plan, wallet_policy)`.
+- Teaches: outputs, fees, change, unknown recipients.
+- Status: planned, not scaffolded yet.
 
-15. **Integration test: full toy send flow**
-    - Adds: `tests/wallet_flow.rs`.
-    - Flow: sync events -> balance -> select coins -> tx proposal -> review.
-    - Teaches: features prove themselves together.
+#### 4.2 — Error handling pass
+
+- Refactors prior `Option`/bool returns into `WalletError`.
+- Teaches: maintainer-friendly API surfaces.
+- Status: planned, not scaffolded yet.
+
+#### 4.3 — Integration test: full toy send flow
+
+- Adds: `tests/wallet_flow.rs`.
+- Flow: sync events -> balance -> select coins -> tx proposal -> review.
+- Teaches: features prove themselves together.
+- Status: planned, not scaffolded yet.
 
 ### Phase 5 — BDK bridge
 
 Goal: connect toy concepts to real BDK without pretending the toy is production.
 
-16. **BDK project orientation**
-    - Task: inspect BDK docs/examples/contribution guidance before API work.
-    - Teaches: how to learn the real project without immediately claiming issues.
+#### 5.1 — BDK project orientation
 
-17. **Read BDK balance examples**
-    - Task: compare toy `BalanceSummary` to BDK balance concepts.
-    - Teaches: reading docs/examples before coding.
+- Task: inspect BDK docs/examples/contribution guidance before API work.
+- Teaches: how to learn the real project without immediately claiming issues.
+- Status: planned, not scaffolded yet.
 
-18. **Descriptor mental model**
-    - Adds: toy descriptor parser/classifier, not real key parsing.
-    - Teaches: descriptor as wallet policy.
+#### 5.2 — Read BDK balance examples
 
-19. **BDK wallet skeleton on regtest/signet**
-    - Adds: optional example using BDK crates.
-    - Teaches: real library setup, safe network only.
+- Task: compare toy `BalanceSummary` to BDK balance concepts.
+- Teaches: reading docs/examples before coding.
+- Status: planned, not scaffolded yet.
 
-20. **BDK sync example**
-    - Connects: toy sync events to BDK sync/full-scan model.
-    - Teaches: mapping mental models to APIs.
+#### 5.3 — Descriptor mental model
 
-21. **Contribution drill**
-    - Task: docs/test/example improvement in the dojo or a tiny BDK-adjacent example.
-    - Teaches: small, reviewable OSS work.
+- Adds: toy descriptor parser/classifier, not real key parsing.
+- Teaches: descriptor as wallet policy.
+- Status: planned, not scaffolded yet.
 
-22. **Capstone: explain the wallet flow**
-    - Task: learner explains UTXO -> sync -> balance -> coin selection -> tx plan -> PSBT review -> BDK mapping.
-    - Teaches: readiness through explanation, not just passing tests.
+#### 5.4 — BDK wallet skeleton on regtest/signet
+
+- Adds: optional example using BDK crates.
+- Teaches: real library setup, safe network only.
+- Status: planned, not scaffolded yet.
+
+#### 5.5 — BDK sync example
+
+- Connects: toy sync events to BDK sync/full-scan model.
+- Teaches: mapping mental models to APIs.
+- Status: planned, not scaffolded yet.
+
+#### 5.6 — Contribution drill
+
+- Task: docs/test/example improvement in the dojo or a tiny BDK-adjacent example.
+- Teaches: small, reviewable OSS work.
+- Status: planned, not scaffolded yet.
+
+#### 5.7 — Capstone: explain the wallet flow
+
+- Task: learner explains UTXO -> sync -> balance -> coin selection -> tx plan -> PSBT review -> BDK mapping.
+- Teaches: readiness through explanation, not just passing tests.
+- Status: planned, not scaffolded yet.
 
 ## Naming rules
 
@@ -222,4 +275,4 @@ The earlier `summarize_balance` idea overlaps too much with a prior `calculate_b
 - `calculate_balance`: total only
 - `classify_balance`: trust/spendability buckets
 
-If Jerry's existing `calculate_balance` already returns buckets, treat that as lesson 2 already done and move to `WalletState` next.
+If Jerry's existing `calculate_balance` already returns buckets, treat that as lesson 1.3 already done and move to `WalletState` next.

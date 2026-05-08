@@ -22,7 +22,7 @@ This lesson answers one question only: “how many sats total?”
 
 - `calculate_balance(&[])` returns `0`.
 - `calculate_balance(&utxos)` returns the sum of every UTXO value in sats.
-- Confirmed, pending, spendable, and unspendable flags do not affect this total-only function.
+- Later confirmation/spendability fields do not affect this total-only function.
 
 ## Required tests
 

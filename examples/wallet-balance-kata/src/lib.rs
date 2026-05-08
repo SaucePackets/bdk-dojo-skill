@@ -45,10 +45,26 @@ mod tests {
     #[test]
     fn summarizes_balance_buckets() {
         let utxos = vec![
-            Utxo { value: 50_000, confirmed: true, spendable: true },
-            Utxo { value: 20_000, confirmed: false, spendable: true },
-            Utxo { value: 10_000, confirmed: false, spendable: false },
-            Utxo { value: 5_000, confirmed: true, spendable: false },
+            Utxo {
+                value: 50_000,
+                confirmed: true,
+                spendable: true,
+            },
+            Utxo {
+                value: 20_000,
+                confirmed: false,
+                spendable: true,
+            },
+            Utxo {
+                value: 10_000,
+                confirmed: false,
+                spendable: false,
+            },
+            Utxo {
+                value: 5_000,
+                confirmed: true,
+                spendable: false,
+            },
         ];
 
         assert_eq!(

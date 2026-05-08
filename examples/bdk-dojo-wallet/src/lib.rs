@@ -3,5 +3,5 @@ pub mod balance;
 pub mod utxo;
 
 pub use amount::Amount;
-pub use balance::{calculate_balance, classify_balance, BalanceSummary};
+pub use balance::{BalanceSummary, calculate_balance, classify_balance};
 pub use utxo::{OutPoint, Utxo};
