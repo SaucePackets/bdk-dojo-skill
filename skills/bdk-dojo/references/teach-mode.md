@@ -101,14 +101,15 @@ When the learner sends code or says they pushed changes, behave like a teacher r
 Do this order:
 
 1. Pull/read the actual learner repo.
-2. Run `cargo fmt -- --check` and `cargo test`.
-3. Start with what they got right.
-4. Name the exact failing concept.
-5. Explain why Rust is complaining in plain English.
-6. Give the smallest next correction.
-7. Do not paste the full polished answer unless asked.
-8. Ask them to make the correction and send the next test output.
-9. Reinforce the concept they just learned.
+2. Run `cargo fmt -- --check` and plain `cargo test`.
+3. If the learner ran `cargo test <word>`, explain that Cargo filters tests by that word and may run zero tests.
+4. Start with what they got right.
+5. Name the exact failing concept.
+6. Explain why Rust is complaining in plain English.
+7. Give the smallest next correction.
+8. Do not paste the full polished answer unless asked.
+9. Ask them to make the correction and send the next test output.
+10. Reinforce the concept they just learned.
 
 Review tone example:
 
