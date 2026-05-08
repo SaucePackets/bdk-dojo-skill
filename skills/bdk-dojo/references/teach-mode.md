@@ -29,7 +29,8 @@ The agent is not just a code generator. It is a coach that keeps the learner act
 7. Review code and tests.
 8. Verify with cargo test.
 9. Connect to BDK.
-10. Draft the journal entry.
+10. Ask for a one- or two-sentence learner explanation.
+11. Draft the journal entry.
 ```
 
 ## Hint ladder

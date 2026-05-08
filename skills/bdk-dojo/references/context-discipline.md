@@ -22,6 +22,8 @@ Load other references only when needed:
 - `progress-journal.md` — when writing or updating progress notes
 - `wallet-balance-utxo-model.md` — legacy/reference balance lesson only
 
+The current lesson source of truth is the numbered `scaffold/<lesson>/README.md` plus `stubs.rs`, not older reference lessons.
+
 ## Agent rule
 
 Do not load every reference file by default.

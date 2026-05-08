@@ -87,19 +87,20 @@ Load larger references only when needed for layout audits, coverage audits, or p
 13. Have the learner explain the concept in one or two sentences.
 14. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, and next lesson.
 
-## Lesson Prompt Format
+## Lesson Handoff Format
+
+Keep lesson starts compact so the agent does not drown the learner or itself:
 
 ```text
-Lane:
+Lesson:
+Builds on:
+Files:
 Concept:
 Rust focus:
-Difficulty:
-Problem:
-Rules:
-Examples:
-Your first move:
-Verification:
-OSS connection:
+Task:
+Tests:
+Hint:
+Stop after:
 ```
 
 ## Review Format
@@ -110,6 +111,8 @@ Correctness:
 Rust clarity:
 Bitcoin model:
 Tests:
+BDK bridge:
+Pain point:
 One improvement:
 Next kata:
 ```
@@ -118,18 +121,14 @@ Keep feedback short and direct. No academic fog machine.
 
 ## Beginner Track
 
-Start with Rust comfort and wallet primitives. Follow the detailed course spine in `references/course-spine.md`:
+Start with Rust comfort and wallet primitives. Work from the Bitcoin Dojo-style scaffolds into the cumulative working crate at `examples/bdk-dojo-wallet/`:
 
-- Amounts and UTXOs.
-- Plain total balance via `calculate_balance`.
-- Balance buckets via `classify_balance`.
-- Wallet state and method boundaries.
-- Confirmation depth.
-- Spendability policy.
-- Sync events and checkpoints.
-- Fee estimation, coin selection, transaction proposals, PSBT review, persistence, and BDK bridge lessons.
+- `scaffold/1.1-amounts-and-utxos` -> `src/amount.rs`, `src/utxo.rs`.
+- `scaffold/1.2-total-balance` -> `src/balance.rs`, `calculate_balance`.
+- `scaffold/1.3-balance-buckets` -> `BalanceSummary`, `classify_balance`.
+- Then continue through `references/course-spine.md`: wallet state, confirmations, spendability, sync, fees, coin selection, transaction proposals, PSBT review, and BDK bridge lessons.
 
-First recommended lesson: `references/wallet-balance-utxo-model.md`, unless the learner already built equivalent balance logic. If so, continue from `references/course-spine.md` instead of repeating it.
+Default starting point is the next incomplete scaffold, not the legacy `wallet-balance-utxo-model.md` reference.
 
 ## Intermediate Track
 
@@ -193,7 +192,28 @@ For meetup or study-group use:
 
 ## Repository Convention
 
-BDK Dojo is normally one growing practice repo, not a fresh throwaway repo per lesson.
+BDK Dojo is one growing practice repo plus one public curriculum/example repo.
+
+Public curriculum repo:
+
+```text
+bdk-dojo-skill/
+  scaffold/
+    1.1-amounts-and-utxos/
+      README.md
+      stubs.rs
+  examples/
+    bdk-dojo-wallet/
+      Cargo.toml
+      src/
+        amount.rs
+        utxo.rs
+        balance.rs
+        lib.rs
+        main.rs
+      tests/
+        wallet_primitives.rs
+```
 
 For learner practice repos:
 
@@ -231,8 +251,9 @@ bdk-dojo/
 
 Default assumption:
 
-- keep using the existing `bdk-dojo` repo once it exists
-- add each kata as a clearly named function/module in `src/lib.rs`
+- keep using the existing `bdk-dojo` learner repo once it exists
+- use `examples/bdk-dojo-wallet/` as the public working reference crate
+- add each kata as a clearly named module/function in the relevant domain file, not as a pile in `src/lib.rs`
 - add or extend tests for that kata instead of deleting prior verified lessons
 - only start a fresh repo when the user explicitly asks for a reset
 - keep toy lessons separated with clear names so the repo stays readable
