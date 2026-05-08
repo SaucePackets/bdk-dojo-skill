@@ -275,4 +275,4 @@ The earlier `summarize_balance` idea overlaps too much with a prior `calculate_b
 - `calculate_balance`: total only
 - `classify_balance`: trust/spendability buckets
 
-If Jerry's existing `calculate_balance` already returns buckets, treat that as lesson 1.3 already done and move to `WalletState` next.
+If the learner's existing `calculate_balance` already returns buckets, treat that as lesson 1.3 already done and move to `WalletState` next.
