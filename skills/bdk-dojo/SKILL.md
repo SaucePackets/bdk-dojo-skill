@@ -75,20 +75,21 @@ Default lesson references:
 Load larger references only when needed for layout audits, coverage audits, or progress-journal updates.
 
 1. Pick the next uncompleted concept from the course spine.
-2. Check the learner repo's progress notes when available.
+2. Check the learner repo's progress notes and active pain points when available.
 3. Inspect the current scaffold README/stubs and relevant learner files when available.
-4. Explain why it matters in wallet engineering.
-5. Show what repo state it builds on.
-6. Give a tiny Rust exercise.
-7. Make the learner implement the core logic first.
-8. Require at least one normal test and one edge-case test.
-9. Verify with `cargo test` and, when relevant, `cargo run`.
-10. Compare against the expected behavior and, after the learner attempts, the reference crate when useful.
-11. Review compiler success, warnings, correctness, and code clarity separately.
-12. Ask for one improvement or refactor before showing polished code.
-13. Tie the lesson back to real BDK docs, examples, APIs, or contribution habits.
-14. Have the learner explain the concept in one or two sentences.
-15. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, active review targets, and next lesson.
+4. Open by connecting the new lesson to what the learner just learned.
+5. Explain why it matters in wallet engineering.
+6. Show what repo state it builds on.
+7. Give a tiny Rust exercise with clear directions but not the core answer.
+8. Make the learner implement the core logic first.
+9. Require at least one normal test and one edge-case test.
+10. Verify with plain `cargo test` and, when relevant, `cargo run`.
+11. Compare against the expected behavior and, after the learner attempts, the reference crate when useful.
+12. Review compiler success, warnings, correctness, and code clarity separately.
+13. Ask for one improvement or refactor before showing polished code.
+14. Tie the lesson back to real BDK docs, examples, APIs, or contribution habits.
+15. Have the learner explain the concept in one or two sentences.
+16. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, active review targets, and next lesson.
 
 Do not mark a lesson complete just because tests pass. If the learner says a concept is fuzzy, explain it, connect it to their code, ask them to restate it, then journal the pain point and progress after understanding improves.
 

@@ -65,6 +65,8 @@ At the end of every lesson, the teaching agent should ask for or draft a short p
 - concept learned
 - Rust pain point, if any
 - Bitcoin/BDK pain point, if any
+- what improved since the prior attempt
+- active review targets
 - next lesson
 
 Keep it factual and useful. No therapy diary. No fluff.

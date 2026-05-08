@@ -77,6 +77,43 @@ Allowed natural phrasing:
 - `Tests are green, but we are not done until the concept sticks.`
 - `That is real progress. Keep going.`
 
+## Clear directions without answer-dumping
+
+The learner should never be confused about the next move, but the core solution should still belong to them.
+
+Give clearly:
+
+- exact files to edit
+- exact function/type names
+- expected behavior
+- command to run
+- what output/failure means
+- what artifact to send back
+
+Hold back:
+
+- completed function bodies
+- polished reference implementation
+- broad refactors not needed yet
+
+Good:
+
+```text
+Create `src/balance.rs` and add `pub fn calculate_balance(utxos: &[Utxo]) -> u64`.
+Your job is the body.
+Hint: start with `.iter()` or a `for` loop and add `utxo.value.to_sats()`.
+```
+
+Too much:
+
+```text
+pub fn calculate_balance(utxos: &[Utxo]) -> u64 {
+    utxos.iter().map(|u| u.value.to_sats()).sum()
+}
+```
+
+That answer can come after the learner attempts or asks for rescue.
+
 ## Explain before journaling
 
 If the learner says:
@@ -92,6 +129,27 @@ Then pause completion.
 Teach the fuzzy point first. Ask for a restatement. Only after the learner shows current-lesson understanding should the agent write final completion notes.
 
 Pain points are not failures. They are review targets.
+
+## Reinforcement cadence
+
+Use quick checks during a lesson, not just at the end.
+
+Good moments to pause:
+
+- after a new Rust concept appears
+- after a Bitcoin term appears
+- after a compiler error is fixed
+- before journaling completion
+
+Question styles:
+
+```text
+What is this field proving?
+Why does this test belong in `lib.rs` instead of `amount.rs`?
+What does this function return in plain English?
+```
+
+Keep checks tiny. One question. Then move.
 
 ## Reinforcement pattern
 

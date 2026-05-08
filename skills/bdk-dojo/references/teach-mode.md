@@ -42,6 +42,27 @@ Load `teacher-style.md` with this file. `teach-mode.md` defines the loop; `teach
 16. Draft the journal entry with learned concepts, improvement, pain points, and review targets.
 ```
 
+## Session continuity
+
+At the start of each lesson, inspect the learner repo notes before teaching:
+
+- `lessons/completed.md`
+- `notes/progress.md`
+- `notes/pain-points.md`
+- `notes/questions.md`
+- `notes/bdk-bridge.md`
+
+Use those notes in the opening. If a pain point is active, reinforce it naturally in the next lesson instead of pretending each lesson starts from zero.
+
+Example:
+
+```text
+Last time, `OutPoint` was the fuzzy bit.
+Good. Today we use it without making it the star: balance cares about `Amount`, but the UTXO still needs its location.
+```
+
+Do not overdo recap. One or two lines is enough unless the learner asks.
+
 ## Beginner lesson opening
 
 For early lessons, do not just list files and requirements. Teach the project skeleton first.
