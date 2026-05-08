@@ -1,6 +1,10 @@
 # Wallet Balance UTXO Model
 
-Use this as the first BDK Dojo lesson when the learner is starting from Rust project basics.
+Use this as the balance-buckets lesson when the learner is starting from Rust project basics.
+
+If the learner already wrote a `calculate_balance` that returns only total sats, this is the next lesson: classify the same UTXOs by trust and spendability.
+
+If their existing `calculate_balance` already returns buckets, skip this lesson and continue with Wallet State in `course-spine.md`.
 
 ## Lesson intent
 

@@ -8,6 +8,7 @@ It turns Bitcoin wallet concepts into small, testable Rust katas. The goal is pr
 
 - `skills/bdk-dojo/SKILL.md` — the teaching workflow and guardrails.
 - `skills/bdk-dojo/references/lesson-template.md` — reusable lesson format.
+- `skills/bdk-dojo/references/course-spine.md` — cumulative lesson plan that prevents repeated logic.
 - `skills/bdk-dojo/references/wallet-balance-utxo-model.md` — first beginner kata.
 - `examples/wallet-balance-kata/` — runnable Rust starter kata.
 - `docs/install-hermes.md` and `docs/install-openclaw.md` — runtime install notes.
@@ -56,18 +57,22 @@ bdk-dojo-skill/
     └── bdk-dojo/
         ├── SKILL.md
         └── references/
+            ├── course-spine.md
             ├── lesson-template.md
             └── wallet-balance-utxo-model.md
 ```
 
 ## Roadmap
 
-- Add descriptor parsing katas.
-- Add PSBT review/building katas.
-- Add wallet sync mental-model lessons.
-- Add fee-rate and coin-selection exercises.
-- Add BDK API integration lessons.
-- Add maintainer-ready contribution drills.
+The real roadmap lives in `skills/bdk-dojo/references/course-spine.md`.
+
+Short shape:
+
+- Phase 1: wallet primitives — amounts, UTXOs, balances, wallet state, confirmations, spendability.
+- Phase 2: sync mental model — sync events, checkpoints, reorgs, address index.
+- Phase 3: spending decisions — fee rates, coin selection, dust, transaction proposals.
+- Phase 4: PSBT and review discipline — review checklist, errors, full toy send flow.
+- Phase 5: BDK bridge — compare to BDK examples, descriptors, safe regtest/signet skeleton, contribution drill.
 
 ## Note
 

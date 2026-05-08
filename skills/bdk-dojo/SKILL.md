@@ -50,14 +50,18 @@ Keep lessons small. One concept. One kata. One verification loop.
 
 ## Default Lesson Flow
 
-1. Pick one Bitcoin primitive or BDK-shaped concept.
+Before choosing a lesson, check `references/course-spine.md` so the next kata builds forward instead of repeating logic.
+
+1. Pick the next uncompleted concept from the course spine.
 2. Explain why it matters in wallet engineering.
-3. Give a tiny Rust exercise.
-4. Make the learner implement the core logic first.
-5. Require at least one test.
-6. Verify with `cargo test` and, when relevant, `cargo run`.
-7. Review compiler success, warnings, correctness, and code clarity separately.
-8. Tie the lesson back to real BDK or open-source contribution habits.
+3. Show what repo state it builds on.
+4. Give a tiny Rust exercise.
+5. Make the learner implement the core logic first.
+6. Require at least one normal test and one edge-case test.
+7. Verify with `cargo test` and, when relevant, `cargo run`.
+8. Review compiler success, warnings, correctness, and code clarity separately.
+9. Ask for one improvement or refactor before showing polished code.
+10. Tie the lesson back to real BDK or open-source contribution habits.
 
 ## Lesson Prompt Format
 
@@ -90,17 +94,18 @@ Keep feedback short and direct. No academic fog machine.
 
 ## Beginner Track
 
-Start with Rust comfort and wallet primitives:
+Start with Rust comfort and wallet primitives. Follow the detailed course spine in `references/course-spine.md`:
 
-- Cargo project layout: `Cargo.toml`, `src/lib.rs`, `src/main.rs`, tests.
-- Crate naming: package `bdk-dojo` imports as `bdk_dojo`.
-- UTXO balance buckets.
-- Confirmed vs pending funds.
-- Spendable vs unspendable outputs.
-- Basic error handling with `Result`.
-- Simple structs and enums for wallet state.
+- Amounts and UTXOs.
+- Plain total balance via `calculate_balance`.
+- Balance buckets via `classify_balance`.
+- Wallet state and method boundaries.
+- Confirmation depth.
+- Spendability policy.
+- Sync events and checkpoints.
+- Fee estimation, coin selection, transaction proposals, PSBT review, persistence, and BDK bridge lessons.
 
-First recommended lesson: `references/wallet-balance-utxo-model.md`.
+First recommended lesson: `references/wallet-balance-utxo-model.md`, unless the learner already built equivalent balance logic. If so, continue from `references/course-spine.md` instead of repeating it.
 
 ## Intermediate Track
 
