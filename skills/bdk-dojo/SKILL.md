@@ -123,14 +123,23 @@ Keep feedback short and direct. No academic fog machine.
 
 ## Beginner Track
 
-Start with Rust comfort and wallet primitives. Work from the Bitcoin Dojo-style scaffolds into the cumulative working crate at `examples/bdk-dojo-wallet/`:
+Start with Rust comfort and wallet primitives. Work from the Bitcoin Dojo-style scaffolds into the cumulative working crate at `examples/bdk-dojo-wallet/`.
+
+Important distinction:
+
+- `references/course-spine.md` is the full planned curriculum.
+- `scaffold/README.md` lists which lessons are actually authored and ready.
+- Only teach lessons that have a scaffold README, stubs, expected behavior, required tests, and reference path.
+
+Ready now:
 
 - `scaffold/1.1-amounts-and-utxos` -> `src/amount.rs`, `src/utxo.rs`.
 - `scaffold/1.2-total-balance` -> `src/balance.rs`, `calculate_balance`.
 - `scaffold/1.3-balance-buckets` -> `BalanceSummary`, `classify_balance`.
-- Then continue through `references/course-spine.md`: wallet state, confirmations, spendability, sync, fees, coin selection, transaction proposals, PSBT review, and BDK bridge lessons.
 
-Default starting point is the next incomplete scaffold, not the legacy `wallet-balance-utxo-model.md` reference.
+Then continue authoring from `references/course-spine.md`: wallet state, confirmations, spendability, sync, fees, coin selection, transaction proposals, PSBT review, and BDK bridge lessons.
+
+Default starting point is the next incomplete *ready scaffold*, not a planned-but-unauthored course-spine item.
 
 ## Intermediate Track
 

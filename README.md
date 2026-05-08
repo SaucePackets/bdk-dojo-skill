@@ -17,6 +17,7 @@ It turns Bitcoin wallet concepts into small, testable Rust katas. The goal is pr
 - `skills/bdk-dojo/references/progress-journal.md` — private learner progress/pain-point journal format.
 - `skills/bdk-dojo/references/wallet-balance-utxo-model.md` — first beginner kata.
 - `scaffold/` — Bitcoin Dojo-style numbered exercise instructions and stubs.
+- `scaffold/README.md` — ready-vs-planned scaffold index.
 - `examples/bdk-dojo-wallet/` — cumulative working Rust wallet-training crate.
 - `examples/wallet-balance-kata/` — legacy runnable Rust starter kata.
 - `docs/install-hermes.md` and `docs/install-openclaw.md` — runtime install notes.
@@ -72,6 +73,7 @@ bdk-dojo-skill/
 │   ├── install-hermes.md
 │   └── install-openclaw.md
 ├── scaffold/
+│   ├── README.md
 │   ├── 1.1-amounts-and-utxos/
 │   │   ├── README.md
 │   │   └── stubs.rs

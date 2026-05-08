@@ -13,8 +13,9 @@ For any BDK Dojo lesson, load:
 3. `references/teach-mode.md`
 4. `references/answer-validation.md`
 5. `references/course-spine.md`
-6. the current `scaffold/<lesson>/README.md`
-7. the current `scaffold/<lesson>/stubs.rs`
+6. `scaffold/README.md`
+7. the current `scaffold/<lesson>/README.md`
+8. the current `scaffold/<lesson>/stubs.rs`
 
 Load other references only when needed:
 
@@ -29,7 +30,9 @@ The current lesson source of truth is the numbered `scaffold/<lesson>/README.md`
 
 Do not load every reference file by default.
 
-Use the course spine to pick the lesson. Then read the specific scaffold files for that lesson.
+Use the course spine to pick the lesson. Then confirm the lesson is listed as ready in `scaffold/README.md`. Then read the specific scaffold files for that lesson.
+
+If the next course-spine lesson is planned but not ready, author its scaffold before teaching it.
 
 ## Lesson handoff shape
 
