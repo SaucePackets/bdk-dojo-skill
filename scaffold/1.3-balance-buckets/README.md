@@ -22,6 +22,39 @@ This is different from `calculate_balance`:
 - `Utxo`
 - `calculate_balance`
 
+## Expected behavior
+
+Given:
+
+```text
+confirmed + spendable = 50_000
+unconfirmed + spendable = 20_000
+unconfirmed + unspendable = 10_000
+confirmed + unspendable = 5_000
+```
+
+Expected summary:
+
+```text
+confirmed = 50_000
+trusted_pending = 20_000
+untrusted_pending = 10_000
+total_spendable = 70_000
+```
+
+Confirmed but unspendable is ignored in this beginner model.
+
+## Required tests
+
+- `classify_balance_separates_trust_and_spendability`
+- `classify_balance_empty_wallet_is_zeroed`
+
+## Reference implementation
+
+- `examples/bdk-dojo-wallet/src/balance.rs`
+
+Only compare to the reference after the learner attempts the lesson.
+
 ## Done when
 
 - Confirmed spendable sats go into `confirmed`.

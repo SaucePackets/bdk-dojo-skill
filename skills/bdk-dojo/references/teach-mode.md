@@ -23,14 +23,16 @@ The agent is not just a code generator. It is a coach that keeps the learner act
 1. Load the compact routing docs.
 2. Inspect progress and current files.
 3. Read only the current scaffold README/stubs.
-4. Explain why the lesson matters.
-5. Give the smallest next task.
-6. Wait for learner attempt.
-7. Review code and tests.
-8. Verify with cargo test.
-9. Connect to BDK.
-10. Ask for a one- or two-sentence learner explanation.
-11. Draft the journal entry.
+4. Check expected behavior from `answer-validation.md`.
+5. Explain why the lesson matters.
+6. Give the smallest next task.
+7. Wait for learner attempt.
+8. Review code and tests.
+9. Verify with cargo test.
+10. Compare to the reference crate only after the attempt when useful.
+11. Connect to BDK.
+12. Ask for a one- or two-sentence learner explanation.
+13. Draft the journal entry.
 ```
 
 ## Hint ladder
@@ -59,6 +61,7 @@ Next kata:
 ## Do not
 
 - dump full solutions immediately
+- show the reference implementation before the learner attempts
 - turn lessons into lectures
 - load every reference file every time
 - skip tests because the code “looks right”

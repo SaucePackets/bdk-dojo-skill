@@ -18,6 +18,23 @@ This lesson answers one question only: “how many sats total?”
 - `Amount`
 - `Utxo`
 
+## Expected behavior
+
+- `calculate_balance(&[])` returns `0`.
+- `calculate_balance(&utxos)` returns the sum of every UTXO value in sats.
+- Confirmed, pending, spendable, and unspendable flags do not affect this total-only function.
+
+## Required tests
+
+- `calculate_balance_empty_wallet_is_zero`
+- `calculate_balance_sums_all_utxos`
+
+## Reference implementation
+
+- `examples/bdk-dojo-wallet/src/balance.rs`
+
+Only compare to the reference after the learner attempts the lesson.
+
 ## Done when
 
 - `calculate_balance(&utxos)` returns total sats.

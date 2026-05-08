@@ -11,9 +11,10 @@ For any BDK Dojo lesson, load:
 1. `SKILL.md`
 2. `references/context-discipline.md`
 3. `references/teach-mode.md`
-4. `references/course-spine.md`
-5. the current `scaffold/<lesson>/README.md`
-6. the current `scaffold/<lesson>/stubs.rs`
+4. `references/answer-validation.md`
+5. `references/course-spine.md`
+6. the current `scaffold/<lesson>/README.md`
+7. the current `scaffold/<lesson>/stubs.rs`
 
 Load other references only when needed:
 

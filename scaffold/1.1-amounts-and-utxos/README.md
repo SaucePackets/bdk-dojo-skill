@@ -17,6 +17,24 @@ No floats. No real keys. Just the data shape wallet code needs before BDK enters
 
 - Fresh Rust crate.
 
+## Expected behavior
+
+- `Amount::from_sats(n).to_sats()` returns exactly `n`.
+- `OutPoint` stores a transaction id and output index.
+- `Utxo` stores an outpoint and exact sat value.
+
+## Required tests
+
+- `amount_preserves_sats_exactly`
+- one UTXO construction test
+
+## Reference implementation
+
+- `examples/bdk-dojo-wallet/src/amount.rs`
+- `examples/bdk-dojo-wallet/src/utxo.rs`
+
+Only compare to the reference after the learner attempts the lesson.
+
 ## Done when
 
 - You have an `Amount` wrapper around sats.

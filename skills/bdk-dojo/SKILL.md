@@ -67,6 +67,7 @@ Default lesson references:
 
 - `references/context-discipline.md`
 - `references/teach-mode.md`
+- `references/answer-validation.md`
 - `references/course-spine.md`
 - current scaffold README/stubs
 
@@ -81,11 +82,12 @@ Load larger references only when needed for layout audits, coverage audits, or p
 7. Make the learner implement the core logic first.
 8. Require at least one normal test and one edge-case test.
 9. Verify with `cargo test` and, when relevant, `cargo run`.
-10. Review compiler success, warnings, correctness, and code clarity separately.
-11. Ask for one improvement or refactor before showing polished code.
-12. Tie the lesson back to real BDK docs, examples, APIs, or contribution habits.
-13. Have the learner explain the concept in one or two sentences.
-14. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, and next lesson.
+10. Compare against the expected behavior and, after the learner attempts, the reference crate when useful.
+11. Review compiler success, warnings, correctness, and code clarity separately.
+12. Ask for one improvement or refactor before showing polished code.
+13. Tie the lesson back to real BDK docs, examples, APIs, or contribution habits.
+14. Have the learner explain the concept in one or two sentences.
+15. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, and next lesson.
 
 ## Lesson Handoff Format
 
@@ -144,6 +146,20 @@ Move from primitives into BDK-shaped implementation:
 - persistence and checkpointing concepts
 
 Use toy models first, then point to official BDK examples.
+
+## Answer Validation
+
+Correctness should come from explicit artifacts, not agent intuition.
+
+Use `references/answer-validation.md`:
+
+- scaffold README defines expected behavior
+- scaffold stubs define API shape
+- tests prove normal and edge behavior
+- `examples/bdk-dojo-wallet/` is the public reference implementation after the learner attempts
+- BDK bridge notes verify the concept maps to real BDK accurately
+
+The agent should not dump the reference implementation before the learner tries.
 
 ## BDK Bridge Discipline
 
@@ -278,6 +294,8 @@ Use this as the training yard. A real BDK fork comes later for upstream contribu
 - [ ] At least one normal test exists.
 - [ ] At least one edge-case test exists.
 - [ ] `cargo test` passes.
+- [ ] Expected behavior from the scaffold is verified.
+- [ ] Reference crate comparison happens after the learner attempt when useful.
 - [ ] Warnings are reviewed, not ignored.
 - [ ] Bitcoin model is explained accurately.
 - [ ] Rust concept/pain point is named.

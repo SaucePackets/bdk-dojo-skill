@@ -8,6 +8,7 @@ It turns Bitcoin wallet concepts into small, testable Rust katas. The goal is pr
 
 - `skills/bdk-dojo/SKILL.md` — the teaching workflow and guardrails.
 - `skills/bdk-dojo/references/lesson-template.md` — reusable lesson format.
+- `skills/bdk-dojo/references/answer-validation.md` — correctness checks: expected behavior, tests, reference crate comparison.
 - `skills/bdk-dojo/references/context-discipline.md` — compact load order so agents do not overload context.
 - `skills/bdk-dojo/references/teach-mode.md` — AI teacher behavior: hints, review, verification, progress notes.
 - `skills/bdk-dojo/references/bitcoin-dojo-format.md` — repo/scaffold format adapted from `SaucePackets/bitcoin-dojo`.
@@ -100,6 +101,7 @@ bdk-dojo-skill/
     └── bdk-dojo/
         ├── SKILL.md
         └── references/
+            ├── answer-validation.md
             ├── bdk-learning-coverage.md
             ├── bitcoin-dojo-format.md
             ├── context-discipline.md
