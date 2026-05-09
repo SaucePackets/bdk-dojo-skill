@@ -4,6 +4,10 @@ BDK Dojo is a Bitcoin/Rust learning skill bundle for Hermes and OpenClaw.
 
 It turns Bitcoin wallet concepts into small, testable Rust katas. The goal is practical skill: understand wallet primitives, write clear Rust, build test discipline, and grow toward credible open-source Bitcoin contribution.
 
+BDK Dojo does **not** build a production wallet. It builds simplified, toy versions of components that BDK supports so learners understand the machinery before using the real library: UTXO tracking, balance categories, sync state, reorg handling, address index tracking, fee math, coin selection, transaction proposals, PSBT-style review, wallet errors, and descriptor mental models.
+
+The cumulative reference crate at `examples/bdk-dojo-wallet/` is a functional training engine. It does not connect to testnet/signet/regtest, validate a real chain, manage keys, sign transactions, broadcast transactions, or protect funds. Real networked wallet work comes later through `bdk_wallet`, Esplora/Electrum/bitcoind backends, and safe regtest or signet examples.
+
 ## What this includes
 
 - `skills/bdk-dojo/SKILL.md` — the teaching workflow and guardrails.
