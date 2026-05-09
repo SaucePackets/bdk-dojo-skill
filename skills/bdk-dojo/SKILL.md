@@ -195,8 +195,9 @@ Ready now:
 - `scaffold/1.1-amounts-and-utxos` -> `src/amount.rs`, `src/utxo.rs`.
 - `scaffold/1.2-total-balance` -> `src/balance.rs`, `calculate_balance`.
 - `scaffold/1.3-balance-buckets` -> `BalanceSummary`, `classify_balance`.
+- `scaffold/1.4-wallet-state` -> `src/wallet.rs`, `WalletState`, `WalletState::balance`.
 
-Then continue authoring from `references/course-spine.md`: wallet state, confirmations, spendability, sync, fees, coin selection, transaction proposals, PSBT review, and BDK bridge lessons.
+Then continue authoring from `references/course-spine.md`: confirmations, spendability, sync, fees, coin selection, transaction proposals, PSBT review, and BDK bridge lessons.
 
 Default starting point is the next incomplete *ready scaffold*, not a planned-but-unauthored course-spine item.
 
