@@ -1,5 +1,13 @@
 ## Setup
 
+- Merge this field into `src/wallet.rs` on `WalletState`:
+
+```rust
+pub addresses: Vec<AddressRecord>,
+```
+
+- Update `WalletState::new` so `addresses` starts empty.
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/wallet.rs`.
 - Copy the stubs from `scaffold/2.5-address-index-gap-limit/stubs.rs` into your codebase when you reach this lesson.

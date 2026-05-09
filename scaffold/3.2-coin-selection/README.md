@@ -1,5 +1,22 @@
 ## Setup
 
+- Create `src/errors.rs` before implementing coin selection:
+
+```rust
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum WalletError {
+    InsufficientFunds { needed: u64, available: u64 },
+}
+```
+
+Later lessons extend this enum.
+
+- Update `src/lib.rs` with the needed module exports:
+  - `pub mod errors;`
+  - `pub mod coin_selection;`
+  - `pub use errors::WalletError;`
+  - `pub use coin_selection::{CoinSelection, select_coins};`
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/coin_selection.rs`.
 - Copy the stubs from `scaffold/3.2-coin-selection/stubs.rs` into your codebase when you reach this lesson.
@@ -22,6 +39,7 @@ Select enough spendable UTXOs to cover a target amount plus estimated fee.
 
 ## Required tests
 
+- `coin_selection_respects_chain_spendability_policy`
 - `coin_selection_picks_enough_spendable_utxos`
 - `coin_selection_reports_insufficient_funds`
 

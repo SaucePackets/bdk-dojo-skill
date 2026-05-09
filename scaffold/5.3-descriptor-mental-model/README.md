@@ -1,5 +1,9 @@
 ## Setup
 
+- Update `src/lib.rs` with the needed module exports:
+  - `pub mod descriptors;`
+  - `pub use descriptors::{DescriptorKind, classify_descriptor, validate_toy_descriptor};`
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/descriptors.rs`.
 - Copy the stubs from `scaffold/5.3-descriptor-mental-model/stubs.rs` into your codebase when you reach this lesson.

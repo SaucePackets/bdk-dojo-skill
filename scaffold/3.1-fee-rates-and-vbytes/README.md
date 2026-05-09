@@ -1,5 +1,9 @@
 ## Setup
 
+- Update `src/lib.rs` with the needed module exports:
+  - `pub mod fees;`
+  - `pub use fees::{FeeRate, TxSizeEstimate, fee};`
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/fees.rs`.
 - Copy the stubs from `scaffold/3.1-fee-rates-and-vbytes/stubs.rs` into your codebase when you reach this lesson.

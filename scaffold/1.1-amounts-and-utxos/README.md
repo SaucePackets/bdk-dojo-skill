@@ -26,7 +26,7 @@ No floats. No real keys. Just the data shape wallet code needs before BDK enters
 ## Required tests
 
 - `amount_preserves_sats_exactly`
-- one UTXO construction test
+- `utxo_stores_outpoint_and_value`
 
 ## Reference implementation
 

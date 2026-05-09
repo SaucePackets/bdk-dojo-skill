@@ -35,6 +35,12 @@ Only compare to the reference after the learner attempts the lesson.
 - This toy exercise models one wallet-engineering concept. Real BDK includes descriptors, chain sources, persistence, transaction graph state, and stricter policy boundaries.
 - Use BDK docs/examples before claiming exact API details.
 
+## Real BDK sync map
+
+- BDK examples distinguish initial `full_scan` from later `sync` updates.
+- Chain sources include Esplora, Electrum, and bitcoind RPC.
+- Real sync updates local chain/checkpoint state and indexed transaction graph data; the toy `SyncEvent` model only teaches the lifecycle shape.
+
 ## Done when
 
 - toy sync is event mutation

@@ -2,9 +2,10 @@
 
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `notes/capstone-wallet-flow.md`.
-- Copy the stubs from `scaffold/5.7-capstone-wallet-flow/stubs.rs` into your codebase when you reach this lesson.
-- Write your solution.
-- Run: `cargo test`.
+- Use the stubs from `scaffold/5.7-capstone-wallet-flow/stubs.rs` into your codebase when you reach this lesson.
+- Write the Markdown artifact in `notes/capstone-wallet-flow.md`.
+- The Rust stub is a checklist/reference helper, not required production wallet code.
+- Run: `cargo test` to ensure the existing reference crate still passes.
 
 ## Goal
 
@@ -38,5 +39,5 @@ Only compare to the reference after the learner attempts the lesson.
 
 - explain UTXO -> sync -> balance -> selection -> plan -> review -> BDK mapping
 - name toy limitations honestly
-- Required tests pass with `cargo test`.
+- Existing reference tests pass with `cargo test`, and the Markdown artifact satisfies the review prompt.
 - The learner can explain the concept in one or two sentences.

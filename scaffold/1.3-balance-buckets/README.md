@@ -1,5 +1,12 @@
 ## Setup
 
+- Merge these fields into `src/utxo.rs` on `Utxo`:
+
+```rust
+pub confirmed: bool,
+pub spendable: bool,
+```
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Update: `src/utxo.rs` so UTXOs carry confirmation and spendability state.
 - Update: `src/balance.rs`.

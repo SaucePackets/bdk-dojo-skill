@@ -1,5 +1,16 @@
 ## Setup
 
+- Extend `WalletError` in `src/errors.rs` with:
+
+```rust
+UnsafePsbt(String),
+UnknownRecipient(String),
+```
+
+- Update `src/lib.rs` with the needed module exports:
+  - `pub mod psbt_review;`
+  - `pub use psbt_review::{PsbtReview, WalletPolicy, review_plan};`
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/psbt_review.rs`.
 - Copy the stubs from `scaffold/4.1-psbt-review/stubs.rs` into your codebase when you reach this lesson.

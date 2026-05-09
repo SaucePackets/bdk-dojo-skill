@@ -1,5 +1,9 @@
 ## Setup
 
+- Update `src/lib.rs` with the needed module exports:
+  - `pub mod tx_plan;`
+  - `pub use tx_plan::{TxPlan, propose_transaction};`
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/tx_plan.rs`.
 - Copy the stubs from `scaffold/3.4-transaction-proposal/stubs.rs` into your codebase when you reach this lesson.

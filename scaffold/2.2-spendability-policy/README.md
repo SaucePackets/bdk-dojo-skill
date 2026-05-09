@@ -1,5 +1,18 @@
 ## Setup
 
+- Update `src/lib.rs` with the needed module exports:
+  - `pub use chain::{COINBASE_MATURITY, is_spendable};`
+
+- Merge these fields into `src/utxo.rs` on `Utxo`:
+
+```rust
+pub coinbase: bool,
+pub locked_until: Option<u32>,
+pub owned: bool,
+```
+
+- Existing normal wallet UTXOs should use `coinbase: false`, `locked_until: None`, and `owned: true`.
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/chain.rs`.
 - Copy the stubs from `scaffold/2.2-spendability-policy/stubs.rs` into your codebase when you reach this lesson.

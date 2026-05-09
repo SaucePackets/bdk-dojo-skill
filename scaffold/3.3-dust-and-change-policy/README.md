@@ -1,5 +1,9 @@
 ## Setup
 
+- Update `src/lib.rs` with the needed module exports:
+  - `pub mod change;`
+  - `pub use change::{ChangeDecision, DUST_LIMIT, decide_change};`
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/change.rs`.
 - Copy the stubs from `scaffold/3.3-dust-and-change-policy/stubs.rs` into your codebase when you reach this lesson.

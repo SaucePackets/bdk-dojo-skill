@@ -34,6 +34,13 @@ Only compare to the reference after the learner attempts the lesson.
 - This toy exercise models one wallet-engineering concept. Real BDK includes descriptors, chain sources, persistence, transaction graph state, and stricter policy boundaries.
 - Use BDK docs/examples before claiming exact API details.
 
+## Real BDK balance map
+
+- `bdk_chain::Balance` has `immature`, `trusted_pending`, `untrusted_pending`, and `confirmed` fields.
+- It exposes `trusted_spendable()` and `total()` helpers.
+- The toy `BalanceSummary` deliberately omits `immature` until spendability policy is introduced.
+- Read `crates/chain/src/balance.rs` in `bitcoindevkit/bdk` when comparing models.
+
 ## Done when
 
 - name what toy balance hides

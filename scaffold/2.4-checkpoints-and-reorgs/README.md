@@ -1,5 +1,13 @@
 ## Setup
 
+- Merge this field into `src/wallet.rs` on `WalletState`:
+
+```rust
+pub checkpoints: Vec<u32>,
+```
+
+- Update `WalletState::new` so it initializes `checkpoints` with the starting `tip_height`.
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/wallet.rs`.
 - Copy the stubs from `scaffold/2.4-checkpoints-and-reorgs/stubs.rs` into your codebase when you reach this lesson.

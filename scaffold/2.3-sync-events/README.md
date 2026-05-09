@@ -1,5 +1,8 @@
 ## Setup
 
+- Update `src/lib.rs` with the needed module exports:
+  - `pub use wallet::SyncEvent;`
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/wallet.rs`.
 - Copy the stubs from `scaffold/2.3-sync-events/stubs.rs` into your codebase when you reach this lesson.

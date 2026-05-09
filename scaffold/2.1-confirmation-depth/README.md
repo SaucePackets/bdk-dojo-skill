@@ -1,5 +1,17 @@
 ## Setup
 
+- Update `src/lib.rs` with the needed module exports:
+  - `pub mod chain;`
+  - `pub use chain::confirmations;`
+
+- Merge this field into `src/utxo.rs` on `Utxo`:
+
+```rust
+pub seen_at_height: Option<u32>,
+```
+
+- Update existing UTXO test fixtures to set `seen_at_height`. Confirmed UTXOs should usually use `Some(height)`; mempool UTXOs should use `None`.
+
 - Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
 - Create or update: `src/chain.rs`.
 - Copy the stubs from `scaffold/2.1-confirmation-depth/stubs.rs` into your codebase when you reach this lesson.
