@@ -100,7 +100,8 @@ Goal: understand wallet state before touching BDK APIs.
 - Adds: `WalletState { utxos, tip_height }`.
 - Method: `wallet.balance()` delegates to `classify_balance`.
 - Teaches: domain objects and method boundaries.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/wallet.rs`.
+- Scaffold: `scaffold/1.4-wallet-state/`.
 
 #### 2.1 — Confirmation depth
 

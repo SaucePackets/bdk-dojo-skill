@@ -41,7 +41,8 @@ Important pattern:
 - modules grow by domain, not by random lesson files
 - exercises are numbered so the path is visible
 - authored scaffolds remain in the repo after completion
-- future scaffolds are not created as placeholders; add the next lesson when it becomes current
+- future scaffolds may be authored ahead of use, but only as complete real exercises: README, stubs, tests, reference implementation, and expected behavior
+- never create placeholder scaffold directories
 
 ## BDK Dojo target shape
 
@@ -85,8 +86,63 @@ bdk-dojo-skill/
     1.4-wallet-state/
       README.md
       stubs.rs
-    # Future lessons are added one at a time when they become current.
-    # Do not create placeholder scaffold directories.
+    2.1-confirmation-depth/
+      README.md
+      stubs.rs
+    2.2-spendability-policy/
+      README.md
+      stubs.rs
+    2.3-sync-events/
+      README.md
+      stubs.rs
+    2.4-checkpoints-and-reorgs/
+      README.md
+      stubs.rs
+    2.5-address-index-gap-limit/
+      README.md
+      stubs.rs
+    3.1-fee-rates-and-vbytes/
+      README.md
+      stubs.rs
+    3.2-coin-selection/
+      README.md
+      stubs.rs
+    3.3-dust-and-change-policy/
+      README.md
+      stubs.rs
+    3.4-transaction-proposal/
+      README.md
+      stubs.rs
+    4.1-psbt-review/
+      README.md
+      stubs.rs
+    4.2-error-handling-pass/
+      README.md
+      stubs.rs
+    4.3-full-toy-send-flow/
+      README.md
+      stubs.rs
+    5.1-bdk-project-orientation/
+      README.md
+      stubs.rs
+    5.2-bdk-balance-examples/
+      README.md
+      stubs.rs
+    5.3-descriptor-mental-model/
+      README.md
+      stubs.rs
+    5.4-bdk-wallet-skeleton/
+      README.md
+      stubs.rs
+    5.5-bdk-sync-example/
+      README.md
+      stubs.rs
+    5.6-contribution-drill/
+      README.md
+      stubs.rs
+    5.7-capstone-wallet-flow/
+      README.md
+      stubs.rs
   skills/
     bdk-dojo/
       SKILL.md

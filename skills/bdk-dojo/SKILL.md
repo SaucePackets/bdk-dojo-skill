@@ -191,7 +191,7 @@ Important distinction:
 - There is no central `scaffold/README.md`; the scaffold directories themselves are the index, matching `SaucePackets/bitcoin-dojo`.
 - Only teach lessons that have a scaffold README, stubs, expected behavior, required tests, and reference path.
 
-Authored scaffolds accumulate as lessons are taught. Do not delete prior authored scaffolds just to make the repo look like only lesson 1 exists; they are part of the reusable curriculum history, like Bitcoin Dojo's completed scaffold directories.
+Authored scaffolds accumulate and should eventually cover the full planned curriculum, matching the Bitcoin Dojo model: numbered scaffold directories are the course surface.
 
 Authored so far:
 
@@ -200,11 +200,11 @@ Authored so far:
 - `scaffold/1.3-balance-buckets` -> `BalanceSummary`, `classify_balance`.
 - `scaffold/1.4-wallet-state` -> `src/wallet.rs`, `WalletState`, `WalletState::balance`.
 
-Then continue authoring from `references/course-spine.md`: confirmations, spendability, sync, fees, coin selection, transaction proposals, PSBT review, and BDK bridge lessons.
+Next curriculum work: scaffold the remaining course spine as real exercises, not placeholders. A future scaffold is acceptable only when it includes concrete README instructions, starter stubs, expected behavior, required tests, reference implementation path, and BDK bridge notes where relevant.
 
-Default starting point is the next incomplete *authored scaffold*, not a planned-but-unauthored course-spine item.
+Default teaching path is the next incomplete authored scaffold. If a planned lesson is not scaffolded, either build its real scaffold first or pause teaching. Do not ask the agent to improvise a lesson from the spine alone.
 
-Scaffold authoring should follow the Bitcoin Dojo pattern: author the next lesson one at a time as it becomes current, with `README.md` explicitly describing any file, type, function, or test changes required by the evolving cumulative crate. Do not pre-scaffold distant lessons just for consistency, because future lessons may depend on design changes discovered during earlier practice. Do not remove already-authored scaffolds after completion. Do not leave the learner without a next step either: when the next course-spine lesson is not scaffolded yet, author that single next scaffold before teaching it.
+Scaffold authoring should use BDK docs/examples and real wallet patterns as source material while keeping exercises safe, toy-model-first, and free of real keys or funds. The long-term goal is a cumulative toy wallet engine plus enough BDK familiarity to read issues, improve tests/docs/examples, and eventually contribute maintainable code upstream.
 
 ## Intermediate Track
 

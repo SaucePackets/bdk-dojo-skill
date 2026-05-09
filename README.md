@@ -53,7 +53,7 @@ scaffold/1.3-balance-buckets
 scaffold/1.4-wallet-state
 ```
 
-Like `SaucePackets/bitcoin-dojo`, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`. Authored scaffolds remain in the repo after completion; future lessons are added one at a time when they become current.
+Like `SaucePackets/bitcoin-dojo`, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`. The target is a complete scaffolded curriculum; future lessons should be added as real exercises with tests and reference implementations, not placeholders.
 
 The older runnable starter remains available:
 
