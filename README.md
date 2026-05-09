@@ -44,7 +44,7 @@ cargo test
 cargo run
 ```
 
-Then work through the numbered scaffold directories:
+Work through the numbered scaffold directories that have been authored so far:
 
 ```bash
 scaffold/1.1-amounts-and-utxos
@@ -53,7 +53,7 @@ scaffold/1.3-balance-buckets
 scaffold/1.4-wallet-state
 ```
 
-Like `SaucePackets/bitcoin-dojo`, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`.
+Like `SaucePackets/bitcoin-dojo`, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`. Authored scaffolds remain in the repo after completion; future lessons are added one at a time when they become current.
 
 The older runnable starter remains available:
 

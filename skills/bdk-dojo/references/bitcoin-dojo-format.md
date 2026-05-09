@@ -40,6 +40,8 @@ Important pattern:
 - tests live in the crate and prove the implementation
 - modules grow by domain, not by random lesson files
 - exercises are numbered so the path is visible
+- authored scaffolds remain in the repo after completion
+- future scaffolds are not created as placeholders; add the next lesson when it becomes current
 
 ## BDK Dojo target shape
 

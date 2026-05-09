@@ -191,7 +191,9 @@ Important distinction:
 - There is no central `scaffold/README.md`; the scaffold directories themselves are the index, matching `SaucePackets/bitcoin-dojo`.
 - Only teach lessons that have a scaffold README, stubs, expected behavior, required tests, and reference path.
 
-Currently authored scaffolds:
+Authored scaffolds accumulate as lessons are taught. Do not delete prior authored scaffolds just to make the repo look like only lesson 1 exists; they are part of the reusable curriculum history, like Bitcoin Dojo's completed scaffold directories.
+
+Authored so far:
 
 - `scaffold/1.1-amounts-and-utxos` -> `src/amount.rs`, `src/utxo.rs`.
 - `scaffold/1.2-total-balance` -> `src/balance.rs`, `calculate_balance`.
@@ -202,7 +204,7 @@ Then continue authoring from `references/course-spine.md`: confirmations, spenda
 
 Default starting point is the next incomplete *authored scaffold*, not a planned-but-unauthored course-spine item.
 
-Scaffold authoring should follow the Bitcoin Dojo pattern: author the next lesson one at a time as it becomes current, with `README.md` explicitly describing any file, type, function, or test changes required by the evolving cumulative crate. Do not pre-scaffold distant lessons just for consistency, because future lessons may depend on design changes discovered during earlier practice. Do not leave the learner without a next step either: when the next course-spine lesson is not scaffolded yet, author that single next scaffold before teaching it.
+Scaffold authoring should follow the Bitcoin Dojo pattern: author the next lesson one at a time as it becomes current, with `README.md` explicitly describing any file, type, function, or test changes required by the evolving cumulative crate. Do not pre-scaffold distant lessons just for consistency, because future lessons may depend on design changes discovered during earlier practice. Do not remove already-authored scaffolds after completion. Do not leave the learner without a next step either: when the next course-spine lesson is not scaffolded yet, author that single next scaffold before teaching it.
 
 ## Intermediate Track
 
