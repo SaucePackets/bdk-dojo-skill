@@ -44,7 +44,7 @@ Do not use this for:
 
 The learner writes first.
 
-The agent may scaffold project shape, explain Rust file layout, give hints, review code, write tests after the attempt, and point toward official documentation. Do not write the full first solution unless the learner explicitly asks for rescue.
+The agent explains scaffold/project shape, Rust file layout, gives hints, reviews code, writes tests after the attempt when asked, and points toward official documentation. During lesson handoff, do not modify the learner repo directly unless the user explicitly asks you to; the learner may be working on another machine. Mirror `SaucePackets/bitcoin-dojo`: teach from `scaffold/<lesson>/README.md` and `stubs.rs`, and tell the learner what to create or paste locally. Do not write the full first solution unless the learner explicitly asks for rescue.
 
 Keep lessons small. One concept. One kata. One verification loop.
 
@@ -159,7 +159,7 @@ Hint:
 Stop after:
 ```
 
-Beginner lessons should scaffold project shape before asking for implementation. Explain `Cargo.toml`, `src/lib.rs`, `src/main.rs`, module exports, and crate-name underscore traps when relevant. No tutorial coma, but enough orientation that a beginner knows the next keystroke.
+Beginner lessons should explain scaffold project shape before asking for implementation. Do not create files in the learner repo during handoff unless explicitly asked; provide the file tree, copy/paste stubs, exact commands, and expected failure/output so the learner creates the files locally. Explain `Cargo.toml`, `src/lib.rs`, `src/main.rs`, module exports, and crate-name underscore traps when relevant. No tutorial coma, but enough orientation that a beginner knows the next keystroke.
 
 ## Review Format
 
