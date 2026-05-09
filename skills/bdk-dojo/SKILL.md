@@ -201,6 +201,8 @@ Then continue authoring from `references/course-spine.md`: confirmations, spenda
 
 Default starting point is the next incomplete *ready scaffold*, not a planned-but-unauthored course-spine item.
 
+Scaffold authoring should follow the Bitcoin Dojo pattern: author the next lesson one at a time as it becomes current, with `README.md` explicitly describing any file, type, function, or test changes required by the evolving cumulative crate. Do not pre-scaffold distant lessons just for consistency, because future lessons may depend on design changes discovered during earlier practice. Do not leave the learner without a next step either: when the next course-spine lesson is not scaffolded yet, author that single next scaffold before teaching it.
+
 ## Intermediate Track
 
 Move from primitives into BDK-shaped implementation:
