@@ -31,7 +31,7 @@ The current lesson source of truth is the numbered `scaffold/<lesson>/README.md`
 
 Do not load every reference file by default.
 
-Use the course spine to pick the lesson. Then confirm `scaffold/<lesson>/README.md` and `scaffold/<lesson>/stubs.rs` exist. Those files are the readiness signal, matching `SaucePackets/bitcoin-dojo`.
+Use the course spine to pick the lesson. Then confirm `scaffold/<lesson>/README.md` and `scaffold/<lesson>/stubs.rs` exist. Those files are the readiness signal, matching the Bitcoin Dojo scaffold pattern.
 
 If the next course-spine lesson is planned but its scaffold directory is missing, author that single next scaffold before teaching it.
 

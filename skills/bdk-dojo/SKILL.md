@@ -44,7 +44,7 @@ Do not use this for:
 
 The learner writes first.
 
-The agent explains scaffold/project shape, Rust file layout, gives hints, reviews code, writes tests after the attempt when asked, and points toward official documentation. During lesson handoff, do not modify the learner repo directly unless the user explicitly asks you to; the learner may be working on another machine. Mirror `SaucePackets/bitcoin-dojo`: teach from `scaffold/<lesson>/README.md` and `stubs.rs`, and tell the learner what to create or paste locally. Do not write the full first solution unless the learner explicitly asks for rescue.
+The agent explains scaffold/project shape, Rust file layout, gives hints, reviews code, writes tests after the attempt when asked, and points toward official documentation. During lesson handoff, do not modify the learner repo directly unless the user explicitly asks you to; the learner may be working on another machine. Mirror the Bitcoin Dojo scaffold pattern: teach from `scaffold/<lesson>/README.md` and `stubs.rs`, and tell the learner what to create or paste locally. Do not write the full first solution unless the learner explicitly asks for rescue.
 
 Keep lessons small. One concept. One kata. One verification loop.
 
@@ -188,7 +188,7 @@ Important distinction:
 
 - `references/course-spine.md` is the full planned curriculum.
 - `scaffold/<lesson>/README.md` plus `scaffold/<lesson>/stubs.rs` means that lesson is authored and teachable.
-- There is no central `scaffold/README.md`; the scaffold directories themselves are the index, matching `SaucePackets/bitcoin-dojo`.
+- There is no central `scaffold/README.md`; the scaffold directories themselves are the index, matching the Bitcoin Dojo scaffold pattern.
 - Only teach lessons that have a scaffold README, stubs, expected behavior, required tests, and reference path.
 
 Authored scaffolds accumulate and should eventually cover the full planned curriculum, matching the Bitcoin Dojo model: numbered scaffold directories are the course surface.

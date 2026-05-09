@@ -2,7 +2,7 @@
 
 ## Source model
 
-BDK Dojo should follow the shape of the public `SaucePackets/bitcoin-dojo` repo:
+BDK Dojo should follow a Bitcoin Dojo-style scaffold shape:
 
 ```text
 bitcoin-dojo/

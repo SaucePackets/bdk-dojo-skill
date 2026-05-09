@@ -15,7 +15,7 @@ The cumulative reference crate at `examples/bdk-dojo-wallet/` is a functional tr
 - `skills/bdk-dojo/references/answer-validation.md` — correctness checks: expected behavior, tests, reference crate comparison.
 - `skills/bdk-dojo/references/context-discipline.md` — compact load order so agents do not overload context.
 - `skills/bdk-dojo/references/teach-mode.md` — AI teacher behavior: hints, review, verification, progress notes.
-- `skills/bdk-dojo/references/bitcoin-dojo-format.md` — repo/scaffold format adapted from `SaucePackets/bitcoin-dojo`.
+- `skills/bdk-dojo/references/bitcoin-dojo-format.md` — repo/scaffold format adapted from the Bitcoin Dojo scaffold pattern.
 - `skills/bdk-dojo/references/bdk-learning-coverage.md` — coverage checklist for Rust, wallet concepts, BDK bridge work, testing, and contribution readiness.
 - `skills/bdk-dojo/references/course-spine.md` — cumulative lesson plan that prevents repeated logic.
 - `skills/bdk-dojo/references/progress-journal.md` — private learner progress/pain-point journal format.
@@ -54,7 +54,7 @@ Work through the numbered scaffold directories:
 find scaffold -maxdepth 1 -mindepth 1 -type d | sort
 ```
 
-Like `SaucePackets/bitcoin-dojo`, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`. The scaffold set now covers the planned course spine as real exercises with tests and reference implementations, not placeholders.
+Like the Bitcoin Dojo scaffold pattern, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`. The scaffold set now covers the planned course spine as real exercises with tests and reference implementations, not placeholders.
 
 The older runnable starter remains available:
 

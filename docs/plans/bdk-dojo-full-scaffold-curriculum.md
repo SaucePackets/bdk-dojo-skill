@@ -12,7 +12,7 @@
 
 ## Source material to inspect first
 
-- `SaucePackets/bitcoin-dojo` scaffold layout and README style.
+- Bitcoin Dojo-style scaffold layout and README style.
 - BDK docs and examples for wallet balance, sync/full scan, descriptors, PSBTs, transactions, and persistence.
 - Real wallet patterns only as conceptual references: state boundaries, sync lifecycle, coin selection tradeoffs, review-before-signing discipline.
 
