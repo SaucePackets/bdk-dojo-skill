@@ -156,10 +156,10 @@ bdk-dojo-skill/
         teach-mode.md
 ```
 
-Learner practice repo shape:
+Learner practice repo shape. The directory name is only an example; use the learner's own GitHub repo/fork or local project name:
 
 ```text
-bdk-dojo/
+bdk-dojo-learner/
   Cargo.toml
   src/
     lib.rs

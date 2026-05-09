@@ -7,7 +7,7 @@ pub confirmed: bool,
 pub spendable: bool,
 ```
 
-- Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Update: `src/utxo.rs` so UTXOs carry confirmation and spendability state.
 - Update: `src/balance.rs`.
 - Copy the stubs from `scaffold/1.3-balance-buckets/stubs.rs` into your codebase.

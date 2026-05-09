@@ -34,10 +34,10 @@ Follow the Bitcoin Dojo-style structure described in `bitcoin-dojo-format.md`:
 - tests live in the crate and prove each exercise
 - modules grow by wallet domain
 
-Default learner repo:
+Example learner repo shape. Use the learner's own GitHub repo/fork or local project name; do not assume the repo is named `bdk-dojo`:
 
 ```text
-bdk-dojo/
+bdk-dojo-learner/
   Cargo.toml
   src/
     lib.rs

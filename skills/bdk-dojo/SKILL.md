@@ -75,8 +75,8 @@ Default lesson references:
 Load larger references only when needed for layout audits, coverage audits, or progress-journal updates.
 
 1. Pick the next uncompleted concept from the course spine.
-2. Check the learner repo's progress notes and active pain points when available.
-3. Inspect the current scaffold README/stubs and relevant learner files when available.
+2. If the user provides a learner repo URL/path, inspect that repo's progress notes and active pain points when available. Otherwise, teach from the public scaffold only.
+3. Inspect the current scaffold README/stubs. Inspect learner files only when the learner shares a repo/path or code snippet.
 4. Open by connecting the new lesson to what the learner just learned.
 5. Explain why it matters in wallet engineering.
 6. Show what repo state it builds on.
@@ -298,10 +298,10 @@ bdk-dojo-skill/
         wallet_primitives.rs
 ```
 
-For learner practice repos:
+For learner practice repos, use the learner's own GitHub repo/fork or local project name. `bdk-dojo-learner/` below is only an example shape:
 
 ```text
-bdk-dojo/
+bdk-dojo-learner/
   README.md
   Cargo.toml
   src/
@@ -334,7 +334,7 @@ bdk-dojo/
 
 Default assumption:
 
-- keep using the existing `bdk-dojo` learner repo once it exists
+- keep using the learner's existing repo once it exists; do not assume its GitHub URL, owner, or directory name
 - use `examples/bdk-dojo-wallet/` as the public working reference crate
 - add each kata as a clearly named module/function in the relevant domain file, not as a pile in `src/lib.rs`
 - add or extend tests for that kata instead of deleting prior verified lessons

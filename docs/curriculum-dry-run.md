@@ -56,8 +56,6 @@ It intentionally avoids real private keys, real signing, mainnet funds, producti
 - Real sync distinguishes initial full scan from later sync updates.
 - Contribution workflow expects small atomic commits, tests, docs for public items, safe Rust, and reviewable PRs.
 
-## Learner repo recommendation
+## Learner repo guidance
 
-Do not reset the learner repo. It correctly completed 1.1–1.3 under the scaffold at the time.
-
-Continue with lesson 1.4 and add compatibility fields only when each later lesson introduces them.
+Do not assume a learner repo name, owner, GitHub URL, or local path. If a learner already has a repo/fork with completed lessons, continue there instead of forcing a reset. Add compatibility fields only when each later lesson introduces them.

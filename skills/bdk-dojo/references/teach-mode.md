@@ -44,7 +44,9 @@ Load `teacher-style.md` with this file. `teach-mode.md` defines the loop; `teach
 
 ## Session continuity
 
-At the start of each lesson, inspect the learner repo notes before teaching:
+At the start of each lesson, use the learner's repo notes only when the learner provides a repo URL/path, working tree, or pasted notes. Do not assume a specific learner repo name or local path. If no learner repo is available, teach from the public scaffold README/stubs and ask the learner to paste the relevant files or test output.
+
+When available, inspect:
 
 - `lessons/completed.md`
 - `notes/progress.md`
@@ -153,7 +155,7 @@ When the learner sends code or says they pushed changes, behave like a teacher r
 
 Do this order:
 
-1. Pull/read the actual learner repo.
+1. Pull/read the actual learner repo only if the learner provided a repo URL/path or asked you to work in it.
 2. Run `cargo fmt -- --check` and plain `cargo test`.
 3. If the learner ran `cargo test <word>`, explain that Cargo filters tests by that word and may run zero tests.
 4. Start with what they got right.

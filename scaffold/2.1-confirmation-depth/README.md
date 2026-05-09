@@ -12,7 +12,7 @@ pub seen_at_height: Option<u32>,
 
 - Update existing UTXO test fixtures to set `seen_at_height`. Confirmed UTXOs should usually use `Some(height)`; mempool UTXOs should use `None`.
 
-- Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/chain.rs`.
 - Copy the stubs from `scaffold/2.1-confirmation-depth/stubs.rs` into your codebase when you reach this lesson.
 - Write your solution.

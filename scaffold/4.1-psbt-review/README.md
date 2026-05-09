@@ -11,7 +11,7 @@ UnknownRecipient(String),
   - `pub mod psbt_review;`
   - `pub use psbt_review::{PsbtReview, WalletPolicy, review_plan};`
 
-- Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/psbt_review.rs`.
 - Copy the stubs from `scaffold/4.1-psbt-review/stubs.rs` into your codebase when you reach this lesson.
 - Write your solution.

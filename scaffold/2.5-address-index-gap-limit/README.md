@@ -8,7 +8,7 @@ pub addresses: Vec<AddressRecord>,
 
 - Update `WalletState::new` so `addresses` starts empty.
 
-- Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/wallet.rs`.
 - Copy the stubs from `scaffold/2.5-address-index-gap-limit/stubs.rs` into your codebase when you reach this lesson.
 - Write your solution.

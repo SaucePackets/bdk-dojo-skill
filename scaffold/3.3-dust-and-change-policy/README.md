@@ -4,7 +4,7 @@
   - `pub mod change;`
   - `pub use change::{ChangeDecision, DUST_LIMIT, decide_change};`
 
-- Work in the cumulative crate: `examples/bdk-dojo-wallet/` or your learner `bdk-dojo/` repo.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/change.rs`.
 - Copy the stubs from `scaffold/3.3-dust-and-change-policy/stubs.rs` into your codebase when you reach this lesson.
 - Write your solution.
