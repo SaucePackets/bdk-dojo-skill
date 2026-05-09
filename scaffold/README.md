@@ -18,6 +18,7 @@ These lessons are authored and ready to teach now:
 1.1-amounts-and-utxos
 1.2-total-balance
 1.3-balance-buckets
+1.4-wallet-state
 ```
 
 ## Planned lessons
@@ -25,7 +26,6 @@ These lessons are authored and ready to teach now:
 These are in the course spine but still need scaffold README/stubs, expected behavior, required tests, and reference implementation before teaching:
 
 ```text
-1.4-wallet-state
 2.1-confirmation-depth
 2.2-spendability-policy
 2.3-sync-events
