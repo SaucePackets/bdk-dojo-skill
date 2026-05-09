@@ -57,6 +57,10 @@ wallet.balance() returns all zero buckets
 
 Only compare to the reference after the learner attempts the lesson.
 
+## BDK bridge
+
+- Toy `WalletState` introduces domain boundaries. Real BDK wallet state includes descriptors, local chain checkpoints, indexed transactions, persistence, and sync state.
+
 ## Done when
 
 - `WalletState` owns `utxos`.

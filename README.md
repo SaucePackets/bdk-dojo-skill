@@ -44,16 +44,13 @@ cargo test
 cargo run
 ```
 
-Work through the numbered scaffold directories that have been authored so far:
+Work through the numbered scaffold directories:
 
 ```bash
-scaffold/1.1-amounts-and-utxos
-scaffold/1.2-total-balance
-scaffold/1.3-balance-buckets
-scaffold/1.4-wallet-state
+find scaffold -maxdepth 1 -mindepth 1 -type d | sort
 ```
 
-Like `SaucePackets/bitcoin-dojo`, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`. The target is a complete scaffolded curriculum; future lessons should be added as real exercises with tests and reference implementations, not placeholders.
+Like `SaucePackets/bitcoin-dojo`, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`. The scaffold set now covers the planned course spine as real exercises with tests and reference implementations, not placeholders.
 
 The older runnable starter remains available:
 
@@ -70,21 +67,14 @@ That kata models confirmed, trusted pending, untrusted pending, and total spenda
 ```text
 bdk-dojo-skill/
 ├── README.md
-├── LICENSE
 ├── docs/
 │   ├── install-hermes.md
-│   └── install-openclaw.md
+│   ├── install-openclaw.md
+│   └── plans/
 ├── scaffold/
 │   ├── 1.1-amounts-and-utxos/
-│   │   ├── README.md
-│   │   └── stubs.rs
-│   ├── 1.2-total-balance/
-│   │   ├── README.md
-│   │   └── stubs.rs
-│   ├── 1.3-balance-buckets/
-│   │   ├── README.md
-│   │   └── stubs.rs
-│   └── 1.4-wallet-state/
+│   ├── ...
+│   └── 5.7-capstone-wallet-flow/
 │       ├── README.md
 │       └── stubs.rs
 ├── examples/
@@ -93,30 +83,28 @@ bdk-dojo-skill/
 │   │   ├── src/
 │   │   │   ├── amount.rs
 │   │   │   ├── balance.rs
-│   │   │   ├── lib.rs
-│   │   │   ├── main.rs
+│   │   │   ├── bdk_bridge.rs
+│   │   │   ├── chain.rs
+│   │   │   ├── change.rs
+│   │   │   ├── coin_selection.rs
+│   │   │   ├── descriptors.rs
+│   │   │   ├── errors.rs
+│   │   │   ├── fees.rs
+│   │   │   ├── psbt_review.rs
+│   │   │   ├── tx_plan.rs
 │   │   │   ├── utxo.rs
 │   │   │   └── wallet.rs
 │   │   └── tests/
+│   │       ├── bdk_bridge.rs
+│   │       ├── chain_sync.rs
+│   │       ├── spending_flow.rs
+│   │       ├── wallet_flow.rs
 │   │       └── wallet_primitives.rs
 │   └── wallet-balance-kata/
-│       ├── Cargo.toml
-│       └── src/
-│           ├── lib.rs
-│           └── main.rs
 └── skills/
     └── bdk-dojo/
         ├── SKILL.md
         └── references/
-            ├── answer-validation.md
-            ├── bdk-learning-coverage.md
-            ├── bitcoin-dojo-format.md
-            ├── context-discipline.md
-            ├── course-spine.md
-            ├── lesson-template.md
-            ├── progress-journal.md
-            ├── teach-mode.md
-            └── wallet-balance-utxo-model.md
 ```
 
 ## Roadmap

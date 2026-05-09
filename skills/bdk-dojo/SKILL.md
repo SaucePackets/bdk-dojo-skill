@@ -193,16 +193,9 @@ Important distinction:
 
 Authored scaffolds accumulate and should eventually cover the full planned curriculum, matching the Bitcoin Dojo model: numbered scaffold directories are the course surface.
 
-Authored so far:
+The scaffold set now covers the planned course spine from `1.1` through `5.7`.
 
-- `scaffold/1.1-amounts-and-utxos` -> `src/amount.rs`, `src/utxo.rs`.
-- `scaffold/1.2-total-balance` -> `src/balance.rs`, `calculate_balance`.
-- `scaffold/1.3-balance-buckets` -> `BalanceSummary`, `classify_balance`.
-- `scaffold/1.4-wallet-state` -> `src/wallet.rs`, `WalletState`, `WalletState::balance`.
-
-Next curriculum work: scaffold the remaining course spine as real exercises, not placeholders. A future scaffold is acceptable only when it includes concrete README instructions, starter stubs, expected behavior, required tests, reference implementation path, and BDK bridge notes where relevant.
-
-Default teaching path is the next incomplete authored scaffold. If a planned lesson is not scaffolded, either build its real scaffold first or pause teaching. Do not ask the agent to improvise a lesson from the spine alone.
+Default teaching path is the next incomplete authored scaffold. Do not ask the agent to improvise a lesson from the spine alone; use the scaffold README/stubs as the source of truth. Future curriculum changes must preserve the scaffold contract: concrete README instructions, starter stubs, expected behavior, required tests, reference implementation path, and BDK bridge notes where relevant.
 
 Scaffold authoring should use BDK docs/examples and real wallet patterns as source material while keeping exercises safe, toy-model-first, and free of real keys or funds. The long-term goal is a cumulative toy wallet engine plus enough BDK familiarity to read issues, improve tests/docs/examples, and eventually contribute maintainable code upstream.
 

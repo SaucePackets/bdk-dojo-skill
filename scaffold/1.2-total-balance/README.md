@@ -35,6 +35,10 @@ This lesson answers one question only: “how many sats total?”
 
 Only compare to the reference after the learner attempts the lesson.
 
+## BDK bridge
+
+- Toy total balance maps to summing wallet-owned outputs. Real BDK balance is richer and depends on indexed chain data and wallet policy.
+
 ## Done when
 
 - `calculate_balance(&utxos)` returns total sats.

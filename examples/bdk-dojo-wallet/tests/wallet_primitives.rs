@@ -2,16 +2,21 @@ use bdk_dojo_wallet::{
     Amount, BalanceSummary, OutPoint, Utxo, WalletState, calculate_balance, classify_balance,
 };
 
-fn utxo(value: u64, confirmed: bool, spendable: bool) -> Utxo {
-    Utxo {
-        outpoint: OutPoint {
-            txid: "00".repeat(32),
-            vout: 0,
-        },
-        value: Amount::from_sats(value),
-        confirmed,
-        spendable,
+fn outpoint(byte: &str, vout: u32) -> OutPoint {
+    OutPoint {
+        txid: byte.repeat(32),
+        vout,
     }
+}
+
+fn utxo(value: u64, confirmed: bool, spendable: bool) -> Utxo {
+    let mut utxo = Utxo::new(outpoint("00", 0), Amount::from_sats(value));
+    utxo.confirmed = confirmed;
+    utxo.spendable = spendable;
+    if confirmed {
+        utxo.seen_at_height = Some(800_000);
+    }
+    utxo
 }
 
 #[test]
@@ -23,19 +28,12 @@ fn amount_preserves_sats_exactly() {
 
 #[test]
 fn utxo_stores_outpoint_and_value() {
-    let utxo = Utxo {
-        outpoint: OutPoint {
-            txid: "ab".repeat(32),
-            vout: 7,
-        },
-        value: Amount::from_sats(12_345),
-        confirmed: true,
-        spendable: true,
-    };
+    let utxo = Utxo::new(outpoint("ab", 7), Amount::from_sats(12_345)).confirmed_at(800_000);
 
     assert_eq!(utxo.outpoint.txid, "ab".repeat(32));
     assert_eq!(utxo.outpoint.vout, 7);
     assert_eq!(utxo.value.to_sats(), 12_345);
+    assert!(utxo.confirmed);
 }
 
 #[test]

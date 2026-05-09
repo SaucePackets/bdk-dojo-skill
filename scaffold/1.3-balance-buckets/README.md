@@ -55,6 +55,10 @@ Confirmed but unspendable is ignored in this beginner model.
 
 Only compare to the reference after the learner attempts the lesson.
 
+## BDK bridge
+
+- Toy balance buckets introduce why wallets expose categories. Real BDK derives categories from confirmation, trust, transaction graph, and spendability policy.
+
 ## Done when
 
 - Confirmed spendable sats go into `confirmed`.

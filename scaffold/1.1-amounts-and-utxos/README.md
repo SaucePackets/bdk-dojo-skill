@@ -35,6 +35,10 @@ No floats. No real keys. Just the data shape wallet code needs before BDK enters
 
 Only compare to the reference after the learner attempts the lesson.
 
+## BDK bridge
+
+- Toy `Amount`, `OutPoint`, and `Utxo` map to real Bitcoin transaction outputs, but real BDK also tracks scripts, chain position, keychain, and transaction graph state.
+
 ## Done when
 
 - You have an `Amount` wrapper around sats.

@@ -109,7 +109,8 @@ Goal: understand wallet state before touching BDK APIs.
 - Adds: `seen_at_height: Option<u32>` to UTXOs.
 - Function: `confirmations(utxo, tip_height) -> u32`.
 - Teaches: block height, mempool vs confirmed.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/chain.rs`.
+- Scaffold: `scaffold/2.1-confirmation-depth/`.
 
 #### 2.2 — Spendability rules
 
@@ -117,7 +118,8 @@ Goal: understand wallet state before touching BDK APIs.
 - Adds: immature coinbase / locked / foreign toy states.
 - Function: `is_spendable(utxo, tip_height) -> bool`.
 - Teaches: spendable is policy, not just ownership.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/chain.rs`.
+- Scaffold: `scaffold/2.2-spendability-policy/`.
 
 ### Phase 2 — Sync mental model
 
@@ -128,21 +130,24 @@ Goal: model how wallet state changes.
 - Adds: `SyncEvent` enum: found, confirmed, spent, reorged.
 - Method: `wallet.apply(event)`.
 - Teaches: wallet data changes over time.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/wallet.rs`.
+- Scaffold: `scaffold/2.3-sync-events/`.
 
 #### 2.4 — Checkpoints and reorgs
 
 - Adds: toy checkpoint list.
 - Function: `rollback_to_height(height)`.
 - Teaches: why sync cannot be “just fetch once.”
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/wallet.rs`.
+- Scaffold: `scaffold/2.4-checkpoints-and-reorgs/`.
 
 #### 2.5 — Address index and gap limit
 
 - Adds: toy derived address records, no real keys.
 - Function: `next_unused_address()`.
 - Teaches: address tracking without deriving real secrets.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/wallet.rs`.
+- Scaffold: `scaffold/2.5-address-index-gap-limit/`.
 
 ### Phase 3 — Spending decisions
 
@@ -153,28 +158,32 @@ Goal: plan spends before building transactions.
 - Adds: `FeeRate`, `TxSizeEstimate`.
 - Function: `fee(vbytes, sat_per_vb)`.
 - Teaches: fees are size-priced, not amount-priced.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/fees.rs`.
+- Scaffold: `scaffold/3.1-fee-rates-and-vbytes/`.
 
 #### 3.2 — Coin selection: exact-ish target
 
 - Builds on: spendable UTXOs and fees.
-- Function: `select_coins(target, fee_rate, utxos)`.
+- Function: `select_coins(target, fee_rate, utxos, tip_height)`.
 - Teaches: inputs, change, insufficient funds.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/coin_selection.rs`.
+- Scaffold: `scaffold/3.2-coin-selection/`.
 
 #### 3.3 — Dust and change policy
 
 - Builds on: coin selection.
 - Adds: `DUST_LIMIT` and `ChangeDecision`.
 - Teaches: not every leftover should become change.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/change.rs`.
+- Scaffold: `scaffold/3.3-dust-and-change-policy/`.
 
 #### 3.4 — Transaction proposal
 
 - Adds: `TxPlan { selected, recipient, fee, change }`.
-- Function: `propose_transaction(...) -> Result<TxPlan, WalletError>`.
+- Function: `propose_transaction(..., tip_height) -> Result<TxPlan, WalletError>`.
 - Teaches: planning before signing.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/tx_plan.rs`.
+- Scaffold: `scaffold/3.4-transaction-proposal/`.
 
 ### Phase 4 — PSBT and review discipline
 
@@ -185,20 +194,23 @@ Goal: review what a wallet is about to sign.
 - Adds: `PsbtReview` struct.
 - Function: `review_plan(tx_plan, wallet_policy)`.
 - Teaches: outputs, fees, change, unknown recipients.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/psbt_review.rs`.
+- Scaffold: `scaffold/4.1-psbt-review/`.
 
 #### 4.2 — Error handling pass
 
 - Refactors prior `Option`/bool returns into `WalletError`.
 - Teaches: maintainer-friendly API surfaces.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/errors.rs`.
+- Scaffold: `scaffold/4.2-error-handling-pass/`.
 
 #### 4.3 — Integration test: full toy send flow
 
 - Adds: `tests/wallet_flow.rs`.
 - Flow: sync events -> balance -> select coins -> tx proposal -> review.
 - Teaches: features prove themselves together.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/tests/wallet_flow.rs`.
+- Scaffold: `scaffold/4.3-full-toy-send-flow/`.
 
 ### Phase 5 — BDK bridge
 
@@ -208,43 +220,50 @@ Goal: connect toy concepts to real BDK without pretending the toy is production.
 
 - Task: inspect BDK docs/examples/contribution guidance before API work.
 - Teaches: how to learn the real project without immediately claiming issues.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/bdk_bridge.rs`.
+- Scaffold: `scaffold/5.1-bdk-project-orientation/`.
 
 #### 5.2 — Read BDK balance examples
 
 - Task: compare toy `BalanceSummary` to BDK balance concepts.
 - Teaches: reading docs/examples before coding.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/bdk_bridge.rs`.
+- Scaffold: `scaffold/5.2-bdk-balance-examples/`.
 
 #### 5.3 — Descriptor mental model
 
 - Adds: toy descriptor parser/classifier, not real key parsing.
 - Teaches: descriptor as wallet policy.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/descriptors.rs`.
+- Scaffold: `scaffold/5.3-descriptor-mental-model/`.
 
 #### 5.4 — BDK wallet skeleton on regtest/signet
 
 - Adds: optional example using BDK crates.
 - Teaches: real library setup, safe network only.
-- Status: planned, not scaffolded yet.
+- Reference path: `scaffold/5.4-bdk-wallet-skeleton/stubs.rs`.
+- Scaffold: `scaffold/5.4-bdk-wallet-skeleton/`.
 
 #### 5.5 — BDK sync example
 
 - Connects: toy sync events to BDK sync/full-scan model.
 - Teaches: mapping mental models to APIs.
-- Status: planned, not scaffolded yet.
+- Reference path: `examples/bdk-dojo-wallet/src/bdk_bridge.rs`.
+- Scaffold: `scaffold/5.5-bdk-sync-example/`.
 
 #### 5.6 — Contribution drill
 
 - Task: docs/test/example improvement in the dojo or a tiny BDK-adjacent example.
 - Teaches: small, reviewable OSS work.
-- Status: planned, not scaffolded yet.
+- Reference path: `scaffold/5.6-contribution-drill/stubs.rs`.
+- Scaffold: `scaffold/5.6-contribution-drill/`.
 
 #### 5.7 — Capstone: explain the wallet flow
 
 - Task: learner explains UTXO -> sync -> balance -> coin selection -> tx plan -> PSBT review -> BDK mapping.
 - Teaches: readiness through explanation, not just passing tests.
-- Status: planned, not scaffolded yet.
+- Reference path: `scaffold/5.7-capstone-wallet-flow/stubs.rs`.
+- Scaffold: `scaffold/5.7-capstone-wallet-flow/`.
 
 ## Naming rules
 
