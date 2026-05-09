@@ -14,9 +14,8 @@ For any BDK Dojo lesson, load:
 4. `references/teacher-style.md`
 5. `references/answer-validation.md`
 6. `references/course-spine.md`
-7. `scaffold/README.md`
-8. the current `scaffold/<lesson>/README.md`
-9. the current `scaffold/<lesson>/stubs.rs`
+7. the current `scaffold/<lesson>/README.md`
+8. the current `scaffold/<lesson>/stubs.rs`
 
 Load other references only when needed:
 
@@ -32,9 +31,9 @@ The current lesson source of truth is the numbered `scaffold/<lesson>/README.md`
 
 Do not load every reference file by default.
 
-Use the course spine to pick the lesson. Then confirm the lesson is listed as ready in `scaffold/README.md`. Then read the specific scaffold files for that lesson.
+Use the course spine to pick the lesson. Then confirm `scaffold/<lesson>/README.md` and `scaffold/<lesson>/stubs.rs` exist. Those files are the readiness signal, matching `SaucePackets/bitcoin-dojo`.
 
-If the next course-spine lesson is planned but not ready, author its scaffold before teaching it.
+If the next course-spine lesson is planned but its scaffold directory is missing, author that single next scaffold before teaching it.
 
 ## Lesson handoff shape
 

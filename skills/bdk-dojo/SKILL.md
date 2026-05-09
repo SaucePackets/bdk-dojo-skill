@@ -187,10 +187,11 @@ Start with Rust comfort and wallet primitives. Work from the Bitcoin Dojo-style 
 Important distinction:
 
 - `references/course-spine.md` is the full planned curriculum.
-- `scaffold/README.md` lists which lessons are actually authored and ready.
+- `scaffold/<lesson>/README.md` plus `scaffold/<lesson>/stubs.rs` means that lesson is authored and teachable.
+- There is no central `scaffold/README.md`; the scaffold directories themselves are the index, matching `SaucePackets/bitcoin-dojo`.
 - Only teach lessons that have a scaffold README, stubs, expected behavior, required tests, and reference path.
 
-Ready now:
+Currently authored scaffolds:
 
 - `scaffold/1.1-amounts-and-utxos` -> `src/amount.rs`, `src/utxo.rs`.
 - `scaffold/1.2-total-balance` -> `src/balance.rs`, `calculate_balance`.
@@ -199,7 +200,7 @@ Ready now:
 
 Then continue authoring from `references/course-spine.md`: confirmations, spendability, sync, fees, coin selection, transaction proposals, PSBT review, and BDK bridge lessons.
 
-Default starting point is the next incomplete *ready scaffold*, not a planned-but-unauthored course-spine item.
+Default starting point is the next incomplete *authored scaffold*, not a planned-but-unauthored course-spine item.
 
 Scaffold authoring should follow the Bitcoin Dojo pattern: author the next lesson one at a time as it becomes current, with `README.md` explicitly describing any file, type, function, or test changes required by the evolving cumulative crate. Do not pre-scaffold distant lessons just for consistency, because future lessons may depend on design changes discovered during earlier practice. Do not leave the learner without a next step either: when the next course-spine lesson is not scaffolded yet, author that single next scaffold before teaching it.
 

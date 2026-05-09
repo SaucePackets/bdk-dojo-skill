@@ -33,7 +33,8 @@ bitcoin-dojo/
 Important pattern:
 
 - one cumulative Rust crate
-- scaffold directory per exercise
+- scaffold directory per authored exercise
+- no central scaffold index file; the directories are the index
 - each exercise has `README.md` instructions
 - each exercise has `stubs.rs` starter code
 - tests live in the crate and prove the implementation
@@ -82,30 +83,8 @@ bdk-dojo-skill/
     1.4-wallet-state/
       README.md
       stubs.rs
-    2.1-confirmation-depth/
-      README.md
-      stubs.rs
-    2.2-spendability-policy/
-      README.md
-      stubs.rs
-    2.3-sync-events/
-      README.md
-      stubs.rs
-    3.1-fee-rates/
-      README.md
-      stubs.rs
-    3.2-coin-selection/
-      README.md
-      stubs.rs
-    3.3-transaction-proposal/
-      README.md
-      stubs.rs
-    4.1-psbt-review/
-      README.md
-      stubs.rs
-    5.1-bdk-balance-bridge/
-      README.md
-      stubs.rs
+    # Future lessons are added one at a time when they become current.
+    # Do not create placeholder scaffold directories.
   skills/
     bdk-dojo/
       SKILL.md

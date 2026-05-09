@@ -16,8 +16,7 @@ It turns Bitcoin wallet concepts into small, testable Rust katas. The goal is pr
 - `skills/bdk-dojo/references/course-spine.md` — cumulative lesson plan that prevents repeated logic.
 - `skills/bdk-dojo/references/progress-journal.md` — private learner progress/pain-point journal format.
 - `skills/bdk-dojo/references/wallet-balance-utxo-model.md` — first beginner kata.
-- `scaffold/` — Bitcoin Dojo-style numbered exercise instructions and stubs.
-- `scaffold/README.md` — ready-vs-planned scaffold index.
+- `scaffold/` — Bitcoin Dojo-style numbered exercise directories; each ready lesson has its own `README.md` and `stubs.rs`.
 - `examples/bdk-dojo-wallet/` — cumulative working Rust wallet-training crate.
 - `examples/wallet-balance-kata/` — legacy runnable Rust starter kata.
 - `docs/install-hermes.md` and `docs/install-openclaw.md` — runtime install notes.
@@ -45,13 +44,16 @@ cargo test
 cargo run
 ```
 
-Then work through:
+Then work through the numbered scaffold directories:
 
 ```bash
 scaffold/1.1-amounts-and-utxos
 scaffold/1.2-total-balance
 scaffold/1.3-balance-buckets
+scaffold/1.4-wallet-state
 ```
+
+Like `SaucePackets/bitcoin-dojo`, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`.
 
 The older runnable starter remains available:
 
@@ -73,14 +75,16 @@ bdk-dojo-skill/
 │   ├── install-hermes.md
 │   └── install-openclaw.md
 ├── scaffold/
-│   ├── README.md
 │   ├── 1.1-amounts-and-utxos/
 │   │   ├── README.md
 │   │   └── stubs.rs
 │   ├── 1.2-total-balance/
 │   │   ├── README.md
 │   │   └── stubs.rs
-│   └── 1.3-balance-buckets/
+│   ├── 1.3-balance-buckets/
+│   │   ├── README.md
+│   │   └── stubs.rs
+│   └── 1.4-wallet-state/
 │       ├── README.md
 │       └── stubs.rs
 ├── examples/
@@ -91,7 +95,8 @@ bdk-dojo-skill/
 │   │   │   ├── balance.rs
 │   │   │   ├── lib.rs
 │   │   │   ├── main.rs
-│   │   │   └── utxo.rs
+│   │   │   ├── utxo.rs
+│   │   │   └── wallet.rs
 │   │   └── tests/
 │   │       └── wallet_primitives.rs
 │   └── wallet-balance-kata/
