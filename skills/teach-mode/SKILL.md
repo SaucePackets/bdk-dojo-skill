@@ -105,13 +105,39 @@ Use this shape after the learner shares code, an answer, or an error:
 Verdict:
 What worked:
 What broke:
+Why it broke:
+Needs fixing now:
 Smallest fix:
+Needs implementing next:
 Concept:
 Verify:
 Your move:
 ```
 
 Name the correct instinct first. Then isolate the bug.
+
+When the learner shares a first implementation attempt, be active: inspect real files when available, run the smallest safe verification, and report concrete evidence. Do not turn the review into a stealth rewrite. If several issues appear, pick the smallest fix that proves the lesson concept before asking for polish, tests, or refactors. When pointing out typos or code issues, cite the exact file/line or exact string; do not make the learner hunt.
+
+### Review clarity rules
+
+Every review should distinguish four things:
+
+- **What worked** — correct instincts and verified behavior.
+- **What broke / caused the issue** — the specific line, string, command, or mental-model mismatch.
+- **Needs fixing now** — the smallest correction required for the current lesson concept.
+- **Needs implementing next** — extra requirements, tests, cleanup, or polish that can wait until the main concept is proven.
+
+Use exact references when files are available:
+
+```text
+File: path/to/file.py:21
+Issue: passed `market_brief_agent` as the second `starting_agent`
+Cause: the second Runner call repeated the first agent, so the portfolio instructions never ran
+Fix now: use `portfolio_note_agent`
+Next: add a test/helper after the chain works
+```
+
+If a request was ambiguous because the agent said “print X,” say exactly which object should print it. For example: “Print `len(brief_result.new_items)` from the first result; do not print the whole second chained input unless you are debugging context.”
 
 ## Understanding Gate
 
