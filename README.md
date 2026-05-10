@@ -10,7 +10,8 @@ The cumulative reference crate at `examples/bdk-dojo-wallet/` is a functional tr
 
 ## What this includes
 
-- `skills/bdk-dojo/SKILL.md` — the teaching workflow and guardrails.
+- `skills/teach-mode/SKILL.md` — umbrella learner-first coaching contract used by the dojo.
+- `skills/bdk-dojo/SKILL.md` — Bitcoin/Rust-specific teaching workflow and guardrails.
 - `skills/bdk-dojo/references/lesson-template.md` — reusable lesson format.
 - `skills/bdk-dojo/references/answer-validation.md` — correctness checks: expected behavior, tests, reference crate comparison.
 - `skills/bdk-dojo/references/context-discipline.md` — compact load order so agents do not overload context.
@@ -37,6 +38,8 @@ The cumulative reference crate at `examples/bdk-dojo-wallet/` is a functional tr
 This is not passive AI tutoring.
 
 The learner writes first. The agent coaches, hints, reviews, verifies, and refactors after the attempt.
+
+This repo includes `teach-mode` directly so users do not need a separate dependency for the learning contract. If you prefer not to vendor it in another skill bundle, install the standalone `teach-mode-skill` repo alongside that bundle.
 
 ## First kata
 
@@ -105,10 +108,12 @@ bdk-dojo-skill/
 │   │       ├── wallet_flow.rs
 │   │       └── wallet_primitives.rs
 │   └── wallet-balance-kata/
-└── skills/
-    └── bdk-dojo/
-        ├── SKILL.md
-        └── references/
+├── skills/
+│   ├── teach-mode/
+│   │   └── SKILL.md
+│   └── bdk-dojo/
+│       ├── SKILL.md
+│       └── references/
 ```
 
 ## Roadmap
