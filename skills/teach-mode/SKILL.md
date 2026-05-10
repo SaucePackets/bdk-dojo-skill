@@ -195,4 +195,3 @@ Then help cleanly.
 - [ ] Completion includes artifact verification when possible.
 - [ ] Completion includes a one- or two-sentence learner explanation.
 - [ ] Course notes/ledger are updated when applicable.
-
