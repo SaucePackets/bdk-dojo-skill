@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Teach Mode is the default BDK Dojo behavior.
+Teach Mode is the default BDK Dojo behavior. It specializes the umbrella Hermes `teach-mode` contract for Bitcoin/Rust wallet-engineering katas.
 
 The agent is not just a code generator. It is a coach that keeps the learner active, checks the repo, gives hints, verifies tests, and records learning.
 

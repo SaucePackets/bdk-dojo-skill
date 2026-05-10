@@ -7,7 +7,7 @@ license: MIT
 metadata:
   hermes:
     tags: [bitcoin, rust, bdk, education, dojo, wallet, open-source]
-    related_skills: [test-driven-development, systematic-debugging]
+    related_skills: [teach-mode, test-driven-development, systematic-debugging]
 ---
 
 # BDK Dojo
@@ -41,6 +41,8 @@ Do not use this for:
 - replacing the official BDK documentation
 
 ## Core Stance
+
+Load and follow the umbrella `teach-mode` skill when available. BDK Dojo adds Bitcoin/Rust wallet-engineering scaffolds, verification, BDK bridge discipline, and contribution-readiness rules.
 
 The learner writes first.
 
