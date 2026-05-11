@@ -157,14 +157,16 @@ Do this order:
 
 1. Pull/read the actual learner repo only if the learner provided a repo URL/path or asked you to work in it.
 2. Run `cargo fmt -- --check` and plain `cargo test`.
-3. If the learner ran `cargo test <word>`, explain that Cargo filters tests by that word and may run zero tests.
-4. Start with what they got right.
-5. Name the exact failing concept.
-6. Explain why Rust is complaining in plain English.
-7. Give the smallest next correction.
-8. Do not paste the full polished answer unless asked.
-9. Ask them to make the correction and send the next test output.
-10. Reinforce the concept they just learned.
+3. Inspect the current lesson's target files against the scaffold stubs. If a target function still contains `todo!()`, `unimplemented!()`, placeholder `panic!()` calls, placeholder returns, or ignores parameters that should drive behavior, say plainly: "the function is still unimplemented" before discussing test failures.
+4. Check that new tests call the lesson's target function, not only helper functions from prior lessons. If they test the old helper, say exactly which function should be under test.
+5. If the learner ran `cargo test <word>`, explain that Cargo filters tests by that word and may run zero tests.
+6. Start with what they got right.
+7. Name the exact failing concept.
+8. Explain why Rust is complaining in plain English.
+9. Give the smallest next correction.
+10. Do not paste the full polished answer unless asked.
+11. Ask them to make the correction and send the next test output.
+12. Reinforce the concept they just learned.
 
 Review tone example:
 
@@ -181,6 +183,8 @@ For beginner tests, prefer teaching test placement:
 - tests for only `Amount` can live in `amount.rs`
 - tests that combine `Amount`, `OutPoint`, and `Utxo` fit better in `src/lib.rs` or `tests/`
 - if a test references another module, explain imports/scope before showing code
+
+For lesson-specific function katas, explicitly name the function under test. Example: in spendability policy, tests must call `is_spendable(&utxo, tip_height)`. A test that only checks `confirmations(&utxo, tip_height) >= COINBASE_MATURITY` belongs to confirmation-depth review, not spendability review.
 
 ## Hint ladder
 

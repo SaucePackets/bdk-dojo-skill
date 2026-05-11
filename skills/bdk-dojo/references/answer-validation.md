@@ -65,6 +65,16 @@ Then compare the learner implementation against:
 - safety boundaries
 - BDK bridge note
 
+Also inspect for incomplete implementation markers before giving conceptual feedback:
+
+- `todo!()`
+- `unimplemented!()`
+- placeholder `panic!()` calls
+- placeholder constant returns that ignore required inputs
+- unused target-function parameters that should drive behavior
+
+If any are present in the lesson target function, do not talk around it. Say the function is still unimplemented, name the exact function, and explain that downstream test failures are expected until that body exists.
+
 ## Answer key policy
 
 The public reference crate is the answer key, but it should not be dumped before the learner tries.
@@ -100,6 +110,8 @@ If a lesson lacks expected behavior or tests, do not teach it yet. Patch the les
 
 ```text
 API shape matches scaffold: yes/no
+Target function implemented, not placeholder: yes/no
+Tests call the lesson target function: yes/no
 Normal test passes: yes/no
 Edge test passes: yes/no
 Test location/scope is appropriate: yes/no
@@ -110,6 +122,8 @@ Reference crate comparison done after attempt: yes/no
 ```
 
 If tests fail, teach the reason before showing a fix. For Rust beginners, name the concept: module scope, imports, ownership, borrowing, visibility, derives, or crate naming.
+
+If tests pass with warnings, do not call the lesson clean. Name the warning and give the smallest cleanup. A green test suite with unused imports or unused variables is still not ready for completion.
 
 ## Important distinction
 

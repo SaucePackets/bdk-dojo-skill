@@ -59,6 +59,12 @@ If that line is unspent, now it is a UTXO.
 Your move: say that back in one sentence.
 ```
 
+If the exact issue is mechanical, say it mechanically. Do not soften or imply. Examples:
+
+- `The function is still a todo!(). It is not implemented yet.`
+- `This test never calls is_spendable(), so it is not testing this lesson.`
+- `Tests pass, but there is an unused import warning. Clean that before closeout.`
+
 ## Avoid script smell
 
 Do not always use the same headings.
@@ -169,6 +175,26 @@ Why it matters:
 ```
 
 Keep it short. Make it feel earned.
+
+## Review dimensions
+
+Use these as an internal checklist and surface the useful parts naturally:
+
+```text
+What worked:
+What broke:
+What is still unimplemented:
+Why Rust is mad:
+Smallest fix:
+Rust concept learned:
+Bitcoin model:
+Tests:
+BDK bridge:
+Pain point:
+Your move:
+```
+
+Prefer this over generic `Correctness:` / `Rust clarity:` rubrics when coaching Jerry through an attempt.
 
 ## When giving code
 
