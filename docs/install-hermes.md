@@ -7,7 +7,7 @@ BDK Dojo depends on the standalone `teach-mode` skill. Install both skills separ
 Stable `v0.0.2` install:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/SaucePackets/bdk-dojo-skill/v0.0.2/scripts/install-hermes.sh | bash
+curl -fsSL https://github.com/SaucePackets/bdk-dojo-skill/releases/download/v0.0.2/install-hermes.sh | bash
 ```
 
 The installer uses `--force` for these two SaucePackets skill URLs because Hermes' community-skill scanner currently flags a false-positive phrase in Teach Mode. It still installs only these explicit pinned skill files.

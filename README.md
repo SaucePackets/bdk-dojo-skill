@@ -31,7 +31,7 @@ The cumulative reference crate at `examples/bdk-dojo-wallet/` is a functional tr
 Stable Hermes install:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/SaucePackets/bdk-dojo-skill/v0.0.2/scripts/install-hermes.sh | bash
+curl -fsSL https://github.com/SaucePackets/bdk-dojo-skill/releases/download/v0.0.2/install-hermes.sh | bash
 ```
 
 This installs both the standalone `teach-mode` skill and `bdk-dojo`. See `docs/install-hermes.md` for manual and contributor installs.
