@@ -42,7 +42,7 @@ Do not use this for:
 
 ## Core Stance
 
-Load and follow the umbrella `teach-mode` skill when available. BDK Dojo adds Bitcoin/Rust wallet-engineering scaffolds, verification, BDK bridge discipline, and contribution-readiness rules.
+Load and follow the standalone umbrella `teach-mode` skill. BDK Dojo treats Teach Mode as an external dependency, not a vendored copy, so multiple dojo skills can share the same canonical learner-first contract. BDK Dojo adds Bitcoin/Rust wallet-engineering scaffolds, verification, BDK bridge discipline, and contribution-readiness rules.
 
 The learner writes first.
 

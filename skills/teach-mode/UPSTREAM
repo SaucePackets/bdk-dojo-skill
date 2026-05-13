@@ -1,5 +1,0 @@
-source: SaucePackets/teach-mode-skill
-path: skills/teach-mode/SKILL.md
-tracking: main
-version_policy: pre-1.0; do not tag v1.0.0 until the learning contract is stable
-drift_check: scripts/check_vendored_teach_mode.py
