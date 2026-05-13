@@ -13,6 +13,8 @@ jobs:
         run: python3 scripts/audit_scaffolds.py
       - name: Validate skill dependencies
         run: python3 scripts/check_skill_dependencies.py
+      - name: Check install script syntax
+        run: bash -n scripts/install-hermes.sh
 
   rust:
     runs-on: ubuntu-latest

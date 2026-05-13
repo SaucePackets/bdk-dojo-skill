@@ -26,6 +26,16 @@ The cumulative reference crate at `examples/bdk-dojo-wallet/` is a functional tr
 - `examples/wallet-balance-kata/` — legacy runnable Rust starter kata.
 - `docs/install-hermes.md` and `docs/install-openclaw.md` — runtime install notes.
 
+## Install
+
+Stable Hermes install:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/SaucePackets/bdk-dojo-skill/v0.0.2/scripts/install-hermes.sh | bash
+```
+
+This installs both the standalone `teach-mode` skill and `bdk-dojo`. See `docs/install-hermes.md` for manual and contributor installs.
+
 ## Who it is for
 
 - Rust beginners who want Bitcoin-shaped practice.

@@ -23,6 +23,22 @@ for rel in ["README.md", "docs/install-hermes.md"]:
     if "skills/teach-mode/SKILL.md" in body:
         errors.append(f"{rel} still documents a vendored teach-mode SKILL.md")
 
+installer = ROOT / "scripts" / "install-hermes.sh"
+if not installer.exists():
+    errors.append("missing scripts/install-hermes.sh")
+else:
+    script = installer.read_text(encoding="utf-8")
+    required = [
+        'TEACH_MODE_REF="${TEACH_MODE_REF:-v0.0.1}"',
+        'BDK_DOJO_REF="${BDK_DOJO_REF:-v0.0.2}"',
+        "SaucePackets/teach-mode-skill",
+        "SaucePackets/bdk-dojo-skill",
+        "skills install",
+    ]
+    for phrase in required:
+        if phrase not in script:
+            errors.append(f"scripts/install-hermes.sh missing {phrase}")
+
 if errors:
     print("Skill dependency validation failed:")
     for err in errors:

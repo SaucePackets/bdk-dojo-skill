@@ -2,7 +2,22 @@
 
 BDK Dojo depends on the standalone `teach-mode` skill. Install both skills separately so future dojo skills can share one canonical teaching contract instead of vendoring copied snapshots.
 
-## Hermes hub install
+## One-command install
+
+Stable `v0.0.2` install:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/SaucePackets/bdk-dojo-skill/v0.0.2/scripts/install-hermes.sh | bash
+```
+
+To install from current `main` instead:
+
+```bash
+BDK_DOJO_REF=main TEACH_MODE_REF=main \
+  bash <(curl -fsSL https://raw.githubusercontent.com/SaucePackets/bdk-dojo-skill/main/scripts/install-hermes.sh)
+```
+
+## Manual Hermes install
 
 ```bash
 hermes skills install SaucePackets/teach-mode-skill/skills/teach-mode --yes
