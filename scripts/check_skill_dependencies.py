@@ -70,7 +70,7 @@ if not installer.exists():
 else:
     script = installer.read_text(encoding="utf-8")
     required = [
-        'TEACH_MODE_REF="${TEACH_MODE_REF:-v0.0.1}"',
+        'TEACH_MODE_REF="${TEACH_MODE_REF:-v0.0.2}"',
         'BDK_DOJO_REF="${BDK_DOJO_REF:-v0.0.2}"',
         "SaucePackets/teach-mode-skill",
         "SaucePackets/bdk-dojo-skill",

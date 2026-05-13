@@ -3,7 +3,7 @@ set -euo pipefail
 
 HERMES_BIN="${HERMES_BIN:-hermes}"
 CATEGORY="${HERMES_SKILL_CATEGORY:-education}"
-TEACH_MODE_REF="${TEACH_MODE_REF:-v0.0.1}"
+TEACH_MODE_REF="${TEACH_MODE_REF:-v0.0.2}"
 BDK_DOJO_REF="${BDK_DOJO_REF:-v0.0.2}"
 
 TEACH_MODE_URL="https://raw.githubusercontent.com/SaucePackets/teach-mode-skill/${TEACH_MODE_REF}/skills/teach-mode/SKILL.md"
