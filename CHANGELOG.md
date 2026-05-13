@@ -2,16 +2,17 @@
 
 ## Unreleased
 
-- Prepare `bdk-dojo` package metadata for `0.0.3`.
-- Rename BDK's Teach Mode reference file to `bdk-teach-mode-supplement.md` so it is clearly not a vendored standalone Teach Mode copy.
-- Strengthen dependency validation, scaffold audit, and installer tests.
-- Add maintenance, contribution, security, and release checklist docs.
+- No unreleased changes yet.
 
 ## v0.0.2
 
 - Split Teach Mode into a standalone external dependency instead of vendoring it in BDK Dojo.
 - Added one-command Hermes installer release asset that installs Teach Mode plus BDK Dojo.
-- Added CI checks for scaffold audit, dependency rules, installer syntax, Rust format, and Rust tests.
+- Added `## Required Companion Skill` to BDK Dojo.
+- Renamed BDK's local Teach Mode reference to `bdk-teach-mode-supplement.md` so it is clearly not a vendored standalone Teach Mode copy.
+- Strengthened dependency validation, scaffold audit, and installer tests.
+- Added CI checks for scaffold audit, dependency rules, installer syntax, ShellCheck, fake-Hermes installer tests, Rust format, and Rust tests.
+- Added maintenance, contribution, security, and release checklist docs.
 
 ## v0.0.1
 

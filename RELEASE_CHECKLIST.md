@@ -5,6 +5,7 @@ Use this before publishing a BDK Dojo release.
 - [ ] Update `skills/bdk-dojo/SKILL.md` frontmatter `version`.
 - [ ] Update `CHANGELOG.md`.
 - [ ] Update installer default refs only when the target releases exist.
+- [ ] If refreshing an existing pre-1.0 tag, document that the tag/release was refreshed and verify no stale release asset remains.
 - [ ] Run `python3 scripts/audit_scaffolds.py`.
 - [ ] Run `python3 scripts/check_skill_dependencies.py`.
 - [ ] Run `bash -n scripts/install-hermes.sh`.

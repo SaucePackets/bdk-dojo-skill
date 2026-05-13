@@ -1,7 +1,7 @@
 ---
 name: bdk-dojo
 description: "Use when teaching or practicing Bitcoin wallet engineering through Rust/BDK-shaped mini-katas: UTXOs, descriptors, PSBTs, wallet sync, fee estimation, tests, and open-source contribution readiness."
-version: 0.0.3
+version: 0.0.2
 author: Hermes Agent
 license: MIT
 metadata:

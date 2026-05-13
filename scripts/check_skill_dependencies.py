@@ -4,7 +4,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_VERSION = "0.0.3"
+EXPECTED_VERSION = "0.0.2"
 errors: list[str] = []
 
 
