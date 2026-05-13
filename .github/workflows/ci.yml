@@ -9,12 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install ShellCheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
       - name: Validate scaffolds
         run: python3 scripts/audit_scaffolds.py
       - name: Validate skill dependencies
         run: python3 scripts/check_skill_dependencies.py
       - name: Check install script syntax
-        run: bash -n scripts/install-hermes.sh
+        run: bash -n scripts/install-hermes.sh scripts/test_install_hermes.sh
+      - name: ShellCheck installer scripts
+        run: shellcheck scripts/install-hermes.sh scripts/test_install_hermes.sh
+      - name: Test installer with fake Hermes
+        run: bash scripts/test_install_hermes.sh
 
   rust:
     runs-on: ubuntu-latest

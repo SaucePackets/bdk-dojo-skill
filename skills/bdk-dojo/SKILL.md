@@ -1,7 +1,7 @@
 ---
 name: bdk-dojo
 description: "Use when teaching or practicing Bitcoin wallet engineering through Rust/BDK-shaped mini-katas: UTXOs, descriptors, PSBTs, wallet sync, fee estimation, tests, and open-source contribution readiness."
-version: 1.0.0
+version: 0.0.3
 author: Hermes Agent
 license: MIT
 metadata:
@@ -19,6 +19,12 @@ BDK Dojo is a learning-first workflow for Bitcoin wallet engineering practice.
 It uses small Rust exercises to teach the concepts behind wallet libraries like BDK: UTXOs, descriptors, PSBTs, wallet sync, fee estimation, ownership, error handling, and test discipline.
 
 The goal is not to pretend the learner is ready to patch BDK on day one. The goal is to build the habits that make future contribution credible: small changes, readable code, tests, clear questions, and accurate mental models.
+
+## Required Companion Skill
+
+BDK Dojo requires the standalone `teach-mode` skill.
+
+It does not vendor Teach Mode. Install or load `SaucePackets/teach-mode-skill/skills/teach-mode` alongside BDK Dojo. BDK Dojo adds Bitcoin/Rust/BDK curriculum, scaffolds, validation, and contribution-readiness guardrails on top of the Teach Mode learner-first contract.
 
 ## When to Use
 
@@ -50,7 +56,7 @@ The agent explains scaffold/project shape, Rust file layout, gives hints, review
 
 Keep lessons small. One concept. One kata. One verification loop.
 
-Teach Mode is the default. Follow `references/teach-mode.md` and `references/teacher-style.md`: learner writes first, agent gives hints before rescue, verifies tests, explains fuzzy concepts before completion, asks for a short learner explanation, and records learning.
+Teach Mode is the default. Follow the standalone `teach-mode` skill, then load `references/bdk-teach-mode-supplement.md` and `references/teacher-style.md`: learner writes first, agent gives hints before rescue, verifies tests, explains fuzzy concepts before completion, asks for a short learner explanation, and records learning.
 
 BDK Dojo is learning-first, not issue-claim-first. Explore BDK, read examples, build small local features, and understand contribution guidelines before attempting real upstream work.
 
@@ -68,7 +74,7 @@ Before choosing a lesson, use the compact load order in `references/context-disc
 Default lesson references:
 
 - `references/context-discipline.md`
-- `references/teach-mode.md`
+- `references/bdk-teach-mode-supplement.md`
 - `references/teacher-style.md`
 - `references/answer-validation.md`
 - `references/course-spine.md`

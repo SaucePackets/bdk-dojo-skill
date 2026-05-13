@@ -10,7 +10,7 @@ For any BDK Dojo lesson, load:
 
 1. `SKILL.md`
 2. `references/context-discipline.md`
-3. `references/teach-mode.md`
+3. `references/bdk-teach-mode-supplement.md`
 4. `references/teacher-style.md`
 5. `references/answer-validation.md`
 6. `references/course-spine.md`
@@ -37,7 +37,7 @@ If the next course-spine lesson is planned but its scaffold directory is missing
 
 ## Lesson handoff shape
 
-For first lesson openings, use the fuller coach style from `teach-mode.md`: lane, pattern, language, difficulty, goal, concrete problem, file tree, starter shape, expected cursed behavior, one job, and exact send-back request.
+For first lesson openings, use the fuller coach style from `bdk-teach-mode-supplement.md`: lane, pattern, language, difficulty, goal, concrete problem, file tree, starter shape, expected cursed behavior, one job, and exact send-back request.
 
 For follow-ups and reviews, keep it compact:
 

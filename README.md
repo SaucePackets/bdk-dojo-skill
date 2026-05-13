@@ -15,7 +15,7 @@ The cumulative reference crate at `examples/bdk-dojo-wallet/` is a functional tr
 - `skills/bdk-dojo/references/lesson-template.md` — reusable lesson format.
 - `skills/bdk-dojo/references/answer-validation.md` — correctness checks: expected behavior, tests, reference crate comparison.
 - `skills/bdk-dojo/references/context-discipline.md` — compact load order so agents do not overload context.
-- `skills/bdk-dojo/references/teach-mode.md` — AI teacher behavior: hints, review, verification, progress notes.
+- `skills/bdk-dojo/references/bdk-teach-mode-supplement.md` — AI teacher behavior: hints, review, verification, progress notes.
 - `skills/bdk-dojo/references/bitcoin-dojo-format.md` — repo/scaffold format adapted from the Bitcoin Dojo scaffold pattern.
 - `skills/bdk-dojo/references/bdk-learning-coverage.md` — coverage checklist for Rust, wallet concepts, BDK bridge work, testing, and contribution readiness.
 - `skills/bdk-dojo/references/course-spine.md` — cumulative lesson plan that prevents repeated logic.
@@ -51,6 +51,15 @@ The learner writes first. The agent coaches, hints, reviews, verifies, and refac
 
 This repo does **not** vendor `teach-mode`. Install the standalone `teach-mode-skill` repo alongside BDK Dojo so every dojo can share one canonical teaching contract instead of carrying copied snapshots.
 
+## Manual agent loading
+
+Hermes gets a one-command installer, but BDK Dojo is not Hermes-only. Any AI agent that can load Markdown context can use the package.
+
+1. Load `teach-mode-skill/skills/teach-mode/SKILL.md`.
+2. Load `bdk-dojo-skill/skills/bdk-dojo/SKILL.md`.
+3. For a lesson, load the current `scaffold/<lesson>/README.md` and `stubs.rs`.
+4. Follow learner-first behavior: learner attempts first, agent coaches, verifies, and only rescues when appropriate.
+
 ## First kata
 
 The cumulative working crate starts here:
@@ -84,6 +93,12 @@ That kata models confirmed, trusted pending, untrusted pending, and total spenda
 ```text
 bdk-dojo-skill/
 ├── README.md
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── RELEASE_CHECKLIST.md
+├── SECURITY.md
+├── .github/
+├── scripts/
 ├── docs/
 │   ├── install-hermes.md
 │   ├── install-openclaw.md

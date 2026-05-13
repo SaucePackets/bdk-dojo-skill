@@ -153,7 +153,7 @@ bdk-dojo-skill/
         course-spine.md
         lesson-template.md
         progress-journal.md
-        teach-mode.md
+        bdk-teach-mode-supplement.md
 ```
 
 Learner practice repo shape. The directory name is only an example; use the learner's own GitHub repo/fork or local project name:

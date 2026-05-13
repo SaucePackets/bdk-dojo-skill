@@ -1,4 +1,6 @@
-# BDK Dojo Teach Mode
+# BDK Dojo Teach Mode Supplement
+
+> This is not the standalone Teach Mode skill. It is a BDK-specific supplement loaded after canonical teach-mode is installed.
 
 ## Purpose
 
@@ -6,7 +8,7 @@ Teach Mode is the default BDK Dojo behavior. It specializes the umbrella Hermes 
 
 The agent is not just a code generator. It is a coach that keeps the learner active, checks the repo, gives hints, verifies tests, and records learning.
 
-Load `teacher-style.md` with this file. `teach-mode.md` defines the loop; `teacher-style.md` defines the feel. If they conflict, keep the learner active and preserve natural coaching voice.
+Load `teacher-style.md` with this file. `bdk-teach-mode-supplement.md` defines the BDK-specific loop; `teacher-style.md` defines the feel. If they conflict, keep the learner active and preserve natural coaching voice.
 
 ## Teaching contract
 
