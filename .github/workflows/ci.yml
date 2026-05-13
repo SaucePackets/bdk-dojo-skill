@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate scaffolds
+        run: python3 scripts/audit_scaffolds.py
+      - name: Check vendored teach-mode drift
+        run: python3 scripts/check_vendored_teach_mode.py
+
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.85.0
+          components: rustfmt
+      - name: Check formatting
+        working-directory: examples/bdk-dojo-wallet
+        run: cargo fmt -- --check
+      - name: Run tests
+        working-directory: examples/bdk-dojo-wallet
+        run: cargo test

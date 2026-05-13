@@ -20,7 +20,7 @@ Explain the full wallet flow from UTXO discovery to BDK mapping.
 - explain UTXO -> sync -> balance -> selection -> plan -> review -> BDK mapping
 - name toy limitations honestly
 
-## Required tests
+## Required artifact
 
 - `write a capstone explanation and compare to BDK bridge notes`
 
@@ -34,6 +34,10 @@ Only compare to the reference after the learner attempts the lesson.
 
 - This toy exercise models one wallet-engineering concept. Real BDK includes descriptors, chain sources, persistence, transaction graph state, and stricter policy boundaries.
 - Use BDK docs/examples before claiming exact API details.
+
+## BDK source stamp
+
+Checked against public BDK repository layout and docs on 2026-05-12. Treat exact crate paths, example names, and APIs as version-sensitive; re-check upstream `bitcoindevkit/bdk` and `bitcoindevkit/bdk_wallet` before teaching exact API details.
 
 ## Done when
 

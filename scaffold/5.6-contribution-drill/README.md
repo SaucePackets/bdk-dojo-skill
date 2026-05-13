@@ -22,7 +22,7 @@ Practice a tiny BDK-adjacent contribution workflow: read, reproduce, test, ask, 
 - prefer docs/tests/examples
 - avoid drive-by rewrites
 
-## Required tests
+## Required artifact
 
 - `write a short contribution note before claiming an issue`
 
@@ -43,6 +43,10 @@ Only compare to the reference after the learner attempts the lesson.
 - Prefer meaningful docs/tests/examples or small bug fixes over drive-by typo PRs.
 - Keep commits atomic and reviewable.
 - BDK expects tests for new behavior and documentation for public items.
+
+## BDK source stamp
+
+Checked against public BDK repository layout and docs on 2026-05-12. Treat exact crate paths, example names, and APIs as version-sensitive; re-check upstream `bitcoindevkit/bdk` and `bitcoindevkit/bdk_wallet` before teaching exact API details.
 
 ## Done when
 

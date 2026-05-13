@@ -163,11 +163,7 @@ When the learning is part of an ongoing course, dojo, or reinforcement repo:
 - save only durable preferences or major curriculum decisions to memory
 - connect course work to useful projects when appropriate, but do not let the agent build the project slice before the learner attempts the lesson-mapped behavior
 
-Known ledger routes:
-
-- Coding fundamentals/app/SQL/Rust: `Learning/Coding Dojo/`
-- Prompt writing: `Learning/Prompt Dojo/`
-- Applied AI/MCP/RAG/agents/evals: `Learning/AI Engineer/`
+Public Teach Mode does not prescribe one ledger path. Domain skills may define their own routes, for example in `references/ledger-routes.example.md`, and private environments may override them locally.
 
 ## Domain Skills
 

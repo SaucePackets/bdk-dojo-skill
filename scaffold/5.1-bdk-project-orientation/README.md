@@ -45,6 +45,10 @@ Only compare to the reference after the learner attempts the lesson.
 - Start by reading README files, examples, and tests before proposing upstream changes.
 - Contribution workflow expects small atomic commits, tests, docs for public items, and reviewable PRs.
 
+## BDK source stamp
+
+Checked against public BDK repository layout and docs on 2026-05-12. Treat exact crate paths, example names, and APIs as version-sensitive; re-check upstream `bitcoindevkit/bdk` and `bitcoindevkit/bdk_wallet` before teaching exact API details.
+
 ## Done when
 
 - identify docs/examples before issues

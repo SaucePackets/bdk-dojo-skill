@@ -21,7 +21,7 @@ Sketch a safe regtest/signet-only BDK wallet skeleton without real funds.
 - names regtest/signet safety boundary
 - does not require real seed phrases or funds
 
-## Required tests
+## Required artifact
 
 - `read README and keep code as safe pseudocode`
 
@@ -42,6 +42,10 @@ Only compare to the reference after the learner attempts the lesson.
 - Current examples live in `bitcoindevkit/bdk_wallet/examples/`: `esplora_blocking.rs`, `esplora_async.rs`, `electrum.rs`, and `bitcoind_rpc.rs`.
 - Wallet state should be persisted with `ChangeSet` storage such as SQLite or `bdk_file_store`.
 - Keep this lesson on regtest/signet. No real keys. No mainnet funds.
+
+## BDK source stamp
+
+Checked against public BDK repository layout and docs on 2026-05-12. Treat exact crate paths, example names, and APIs as version-sensitive; re-check upstream `bitcoindevkit/bdk` and `bitcoindevkit/bdk_wallet` before teaching exact API details.
 
 ## Done when
 
