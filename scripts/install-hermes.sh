@@ -16,18 +16,27 @@ if ! command -v "$HERMES_BIN" >/dev/null 2>&1; then
 fi
 
 echo "Installing Teach Mode from ${TEACH_MODE_REF}..."
-"$HERMES_BIN" skills install "$TEACH_MODE_URL" --category "$CATEGORY" --yes
+"$HERMES_BIN" skills install "$TEACH_MODE_URL" --category "$CATEGORY" --yes --force
 
 echo "Installing BDK Dojo from ${BDK_DOJO_REF}..."
-"$HERMES_BIN" skills install "$BDK_DOJO_URL" --category "$CATEGORY" --yes
+"$HERMES_BIN" skills install "$BDK_DOJO_URL" --category "$CATEGORY" --yes --force
 
 echo
 echo "Installed skills:"
-"$HERMES_BIN" skills list | grep -E 'teach-mode|bdk-dojo' || {
-  echo "Install finished, but expected skills were not visible in hermes skills list." >&2
-  echo "Start a new Hermes session and check: hermes skills list" >&2
+SKILL_LIST=$("$HERMES_BIN" skills list)
+echo "$SKILL_LIST" | grep -E 'teach-mode|bdk-dojo' || true
+
+if ! echo "$SKILL_LIST" | grep -q 'teach-mode'; then
+  echo "Teach Mode was not visible after install." >&2
+  echo "Check: $HERMES_BIN skills list" >&2
   exit 1
-}
+fi
+
+if ! echo "$SKILL_LIST" | grep -q 'bdk-dojo'; then
+  echo "BDK Dojo was not visible after install." >&2
+  echo "Check: $HERMES_BIN skills list" >&2
+  exit 1
+fi
 
 echo
 echo "Done. Start a new Hermes session, then ask:"

@@ -34,6 +34,7 @@ else:
         "SaucePackets/teach-mode-skill",
         "SaucePackets/bdk-dojo-skill",
         "skills install",
+        "--force",
     ]
     for phrase in required:
         if phrase not in script:
