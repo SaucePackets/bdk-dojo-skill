@@ -99,6 +99,8 @@ Load larger references only when needed for layout audits, coverage audits, or p
 15. Have the learner explain the concept in one or two sentences.
 16. End by drafting or updating a short progress-journal entry: completed lesson, files changed, tests passed, concept learned, pain points overcome, active review targets, and next lesson.
 
+Progress-journal entries, attempts, critiques, solution bodies, and lesson notes are learning artifacts. Keep them in the learner repo / dev-notes ledger today or future learning-domain tables later. Agent Memory gets only stable preferences, reusable workflow rules, or major curriculum decisions.
+
 Do not mark a lesson complete just because tests pass. If the learner says a concept is fuzzy, explain it, connect it to their code, ask them to restate it, then journal the pain point and progress after understanding improves.
 
 ## Lesson Handoff Format
