@@ -20,3 +20,11 @@ pub fn sync_bridge_note() -> BdkBridgeNote {
         what_toy_hides: "Real chain source APIs, script scanning, transaction anchors, and reorg-safe persistence.",
     }
 }
+
+pub fn miniscript_bridge_note() -> BdkBridgeNote {
+    BdkBridgeNote {
+        toy_concept: "Policy enum with Key, Older, After, And, Or, Thresh, HashLock",
+        bdk_concept: "miniscript::Miniscript<Pk> with typed fragments, satisfaction costs, and malleability analysis",
+        what_toy_hides: "Script compilation, witness stack construction, type system constraints, resource limits, key hashing",
+    }
+}

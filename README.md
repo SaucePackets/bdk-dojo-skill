@@ -76,7 +76,7 @@ Work through the numbered scaffold directories:
 find scaffold -maxdepth 1 -mindepth 1 -type d | sort
 ```
 
-Like the Bitcoin Dojo scaffold pattern, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`. The scaffold set now covers the planned course spine as real exercises with tests and reference implementations, not placeholders.
+Like the Bitcoin Dojo scaffold pattern, there is no central scaffold index. A lesson is teachable when its directory exists and contains both `README.md` and `stubs.rs`. The scaffold set now covers the planned course spine as real exercises with tests and reference implementations, not placeholders. Scaffolds `1.1` through `5.7` cover the beginner-to-advanced BDK bridge track. Scaffolds `6.1` through `6.4` extend into Miniscript deep-dive content.
 
 The older runnable starter remains available:
 
@@ -109,6 +109,18 @@ bdk-dojo-skill/
 │   └── 5.7-capstone-wallet-flow/
 │       ├── README.md
 │       └── stubs.rs
+│   ├── 6.1-miniscript-policy-ast/
+│   │   ├── README.md
+│   │   └── stubs.rs
+│   ├── 6.2-policy-composition/
+│   │   ├── README.md
+│   │   └── stubs.rs
+│   ├── 6.3-spending-satisfaction/
+│   │   ├── README.md
+│   │   └── stubs.rs
+│   └── 6.4-real-miniscript-bridge/
+│       ├── README.md
+│       └── stubs.rs
 ├── examples/
 │   ├── bdk-dojo-wallet/
 │   │   ├── Cargo.toml
@@ -122,7 +134,10 @@ bdk-dojo-skill/
 │   │   │   ├── descriptors.rs
 │   │   │   ├── errors.rs
 │   │   │   ├── fees.rs
+│   │   │   ├── miniscript_ast.rs
+│   │   │   ├── policy_composition.rs
 │   │   │   ├── psbt_review.rs
+│   │   │   ├── spending_satisfaction.rs
 │   │   │   ├── tx_plan.rs
 │   │   │   ├── utxo.rs
 │   │   │   └── wallet.rs
@@ -150,6 +165,7 @@ Short shape:
 - Phase 3: spending decisions — fee rates, coin selection, dust, transaction proposals.
 - Phase 4: PSBT and review discipline — review checklist, errors, full toy send flow.
 - Phase 5: BDK bridge — compare to BDK examples, descriptors, safe regtest/signet skeleton, contribution drill.
+- Phase 6: Miniscript Deep — policy AST, policy composition, spending satisfaction, real miniscript bridge.
 
 ## Note
 

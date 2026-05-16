@@ -265,6 +265,43 @@ Goal: connect toy concepts to real BDK without pretending the toy is production.
 - Reference path: `scaffold/5.7-capstone-wallet-flow/stubs.rs`.
 - Scaffold: `scaffold/5.7-capstone-wallet-flow/`.
 
+### Phase 6 — Miniscript Deep
+
+Goal: model Bitcoin spending conditions as a policy AST and bridge to the real `miniscript` crate.
+
+#### 6.1 — Miniscript policy AST
+
+- Adds: `Policy` enum (`Key`, `Older`, `After`, `And`, `Or`, `Thresh`, `HashLock`).
+- Functions: `policy_kind`, `count_keys`, `is_timelocked`, `is_multisig`.
+- Teaches: spending conditions as composable tree nodes.
+- Reference path: `examples/bdk-dojo-wallet/src/miniscript_ast.rs`.
+- Scaffold: `scaffold/6.1-miniscript-policy-ast/`.
+
+#### 6.2 — Policy composition
+
+- Builds on: Policy AST.
+- Functions: `compose_policy`, `describe_policy`, `extract_timelocks`, `required_signatures`.
+- Patterns: multisig with timelock recovery, escrow with arbitrator.
+- Teaches: real-world spending policy design.
+- Reference path: `examples/bdk-dojo-wallet/src/policy_composition.rs`.
+- Scaffold: `scaffold/6.2-policy-composition/`.
+
+#### 6.3 — Spending satisfaction
+
+- Builds on: policy composition.
+- Adds: `SatisfactionSummary`, `analyze_satisfaction`, `can_satisfy_with`, `describe_satisfaction`.
+- Teaches: what's needed to spend from a given policy.
+- Reference path: `examples/bdk-dojo-wallet/src/spending_satisfaction.rs`.
+- Scaffold: `scaffold/6.3-spending-satisfaction/`.
+
+#### 6.4 — Real miniscript bridge
+
+- Builds on: all prior miniscript lessons.
+- Tasks: read real `miniscript` crate docs, map toy concepts to real types, write bridge note.
+- Teaches: connecting toy models to production library APIs.
+- Reference path: `examples/bdk-dojo-wallet/src/bdk_bridge.rs` (extended).
+- Scaffold: `scaffold/6.4-real-miniscript-bridge/`.
+
 ## Naming rules
 
 Use names that show new meaning:
