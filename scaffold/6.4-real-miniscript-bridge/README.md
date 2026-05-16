@@ -4,7 +4,7 @@
   - (No new module needed — this lesson inspects the real miniscript crate and updates bridge notes.)
 
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
-- This lesson does not add new code. It is a research, comparison, and writing lesson.
+- This lesson produces a markdown artifact and a code update, not a code kata. Follow the tasks below.
 
 ## Goal
 
@@ -17,9 +17,28 @@ Bridge the toy policy AST to the real `miniscript` crate — compare concepts, r
 - Spending satisfaction (6.3)
 - BDK bridge notes (5.x)
 
+## Expected behavior
+
+A correct submission produces:
+- A completed concept-mapping table (Task 2)
+- A `miniscript_bridge_note()` function added to `src/bdk_bridge.rs` that honestly describes what the toy model hides
+
+## Required artifact
+
+This lesson produces a markdown artifact: the concept-mapping table from Task 2 and the bridge note written in `src/bdk_bridge.rs`.
+
+Do not write tests for this lesson. Verification is manual: `cargo test` must pass after the bridge note is added, and the learner should explain the mapping verbally.
+
+## Reference implementation
+
+- `examples/bdk-dojo-wallet/src/bdk_bridge.rs` (extended with `miniscript_bridge_note`)
+- The real `miniscript` crate: <https://docs.rs/miniscript/latest/miniscript/>
+
+Only compare to the reference after the learner attempts the lesson.
+
 ## Tasks
 
-This lesson has three tasks. Complete them in order.
+Complete these three tasks in order.
 
 ### Task 1: Read the miniscript crate docs
 
@@ -45,7 +64,7 @@ Read the official `miniscript` crate documentation or source:
 
 ### Task 3: Write a bridge note
 
-Create or update `bdk_bridge.rs` with a miniscript bridge note:
+Add a miniscript bridge note to `src/bdk_bridge.rs`:
 
 ```rust
 pub fn miniscript_bridge_note() -> BdkBridgeNote {
@@ -57,10 +76,11 @@ pub fn miniscript_bridge_note() -> BdkBridgeNote {
 }
 ```
 
-## Reference implementation
+## BDK bridge
 
-- `examples/bdk-dojo-wallet/src/bdk_bridge.rs` (extended with `miniscript_bridge_note`)
-- The real `miniscript` crate: <https://docs.rs/miniscript/latest/miniscript/>
+This is a BDK bridge lesson. The toy policy AST is mapped to the real `miniscript` crate that BDK uses internally. The `Descriptor` type wraps miniscript policies, and BDK builds on both libraries. Understanding this chain — toy model → miniscript → BDK descriptor → BDK wallet — is the goal.
+
+The learner-first check: attempt to produce the mapping table and bridge note yourself before inspecting the reference implementation.
 
 ## Done when
 

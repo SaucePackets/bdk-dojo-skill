@@ -1,7 +1,6 @@
 /// src/spending_satisfaction.rs
 ///
 /// Analyze what it takes to satisfy a spending policy.
-
 use crate::miniscript_ast::Policy;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -51,13 +50,11 @@ fn max_timelock(policy: &Policy) -> Option<u32> {
         Policy::Older(n) | Policy::After(n) => Some(*n),
         Policy::Key(_) | Policy::HashLock(_) => None,
         Policy::And(children) => children.iter().filter_map(max_timelock).max(),
-        Policy::Or(children) => {
-            children
-                .iter()
-                .filter_map(max_timelock)
-                .min()
-                .or_else(|| children.iter().filter_map(max_timelock).max())
-        }
+        Policy::Or(children) => children
+            .iter()
+            .filter_map(max_timelock)
+            .min()
+            .or_else(|| children.iter().filter_map(max_timelock).max()),
         Policy::Thresh(_, children) => children.iter().filter_map(max_timelock).max(),
     }
 }

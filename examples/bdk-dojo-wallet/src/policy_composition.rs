@@ -1,7 +1,6 @@
 /// src/policy_composition.rs
 ///
 /// Compose and analyze real-world spending policies.
-
 use crate::miniscript_ast::Policy;
 
 /// Build a composed policy by name with the given parameters.
