@@ -1,0 +1,39 @@
+pub mod amount;
+pub mod balance;
+pub mod bdk_bridge;
+pub mod chain;
+pub mod change;
+pub mod coin_selection;
+pub mod descriptors;
+pub mod errors;
+pub mod fees;
+pub mod miniscript_ast;
+pub mod policy_composition;
+pub mod psbt_review;
+pub mod spending_satisfaction;
+pub mod tx_plan;
+pub mod utxo;
+pub mod wallet;
+
+pub use amount::Amount;
+pub use balance::{BalanceSummary, calculate_balance, classify_balance};
+pub use bdk_bridge::{
+    BdkBridgeNote, balance_bridge_note, miniscript_bridge_note, sync_bridge_note,
+};
+pub use chain::{COINBASE_MATURITY, confirmations, is_spendable};
+pub use change::{ChangeDecision, DUST_LIMIT, decide_change};
+pub use coin_selection::{CoinSelection, estimate_tx_size, select_coins};
+pub use descriptors::{DescriptorKind, classify_descriptor, validate_toy_descriptor};
+pub use errors::WalletError;
+pub use fees::{FeeRate, TxSizeEstimate, fee};
+pub use miniscript_ast::{Policy, count_keys, is_multisig, is_timelocked, policy_kind};
+pub use policy_composition::{
+    compose_policy, describe_policy, extract_timelocks, required_signatures,
+};
+pub use psbt_review::{PsbtReview, WalletPolicy, review_plan};
+pub use spending_satisfaction::{
+    SatisfactionSummary, analyze_satisfaction, can_satisfy_with, describe_satisfaction,
+};
+pub use tx_plan::{TxPlan, propose_transaction};
+pub use utxo::{OutPoint, Utxo};
+pub use wallet::{AddressRecord, SyncEvent, WalletState};
