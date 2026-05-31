@@ -1,16 +1,32 @@
 ---
 name: bdk-dojo
-description: "Use when teaching or practicing Bitcoin wallet engineering through Rust/BDK-shaped mini-katas: UTXOs, descriptors, PSBTs, wallet sync, fee estimation, tests, and open-source contribution readiness."
-version: 0.0.4
+description: "Use when teaching or practicing Bitcoin wallet engineering through Rust/BDK-shaped mini-katas: UTXOs, descriptors, PSBTs, wallet sync, fee estimation, tests, and open-source contribution readiness. ⚠️ REQUIRES teach-mode + coding-dojo-teach-mode — load both before any BDK Dojo turn."
+version: 0.0.5
 author: Hermes Agent
 license: MIT
 metadata:
   hermes:
     tags: [bitcoin, rust, bdk, education, dojo, wallet, open-source]
-    related_skills: [teach-mode, test-driven-development, systematic-debugging]
+    related_skills: [teach-mode, coding-dojo-teach-mode, test-driven-development, systematic-debugging]
 ---
 
 # BDK Dojo
+
+## ⚠️ LOAD FIRST — before any BDK Dojo turn
+
+BDK Dojo is a teaching skill. It depends on two other skills. **Load them before you do anything else:**
+
+```
+skill_view(name="teach-mode")
+skill_view(name="coding-dojo-teach-mode")
+```
+
+`teach-mode` gives you the hint ladder: orient → rails → hint → snippet → review → rescue.
+`coding-dojo-teach-mode` gives you the coding-specific guardrails, including the most important one:
+
+**Do not give the full function body as a hint. Do not dump the reference implementation.** Hints describe shape ("find first unused, or create next"). Full-function dumps belong only in rescue — when the learner explicitly asks or is blocked on syntax after real attempts.
+
+If you skip this load step, you will over-help. Jerry will call it out. Load both skills now.
 
 ## Overview
 
@@ -20,11 +36,14 @@ It uses small Rust exercises to teach the concepts behind wallet libraries like 
 
 The goal is not to pretend the learner is ready to patch BDK on day one. The goal is to build the habits that make future contribution credible: small changes, readable code, tests, clear questions, and accurate mental models.
 
-## Required Companion Skill
+## Required Companion Skills
 
-BDK Dojo requires the standalone `teach-mode` skill.
+BDK Dojo requires two standalone skills. They are not vendored here — load them separately every session:
 
-It does not vendor Teach Mode. Install or load `SaucePackets/teach-mode-skill/skills/teach-mode` alongside BDK Dojo. BDK Dojo adds Bitcoin/Rust/BDK curriculum, scaffolds, validation, and contribution-readiness guardrails on top of the Teach Mode learner-first contract.
+- **`teach-mode`** — the learner-first contract, hint ladder, understanding gates
+- **`coding-dojo-teach-mode`** — coding-specific guardrails: "no full function body as a hint," review format, Rust-to-Python bridges, concrete analogies
+
+If either is missing, BDK Dojo degrades into answer-dumping. Load both before the first lesson handoff.
 
 ## When to Use
 
@@ -355,6 +374,7 @@ Use this as the training yard. A real BDK fork comes later for upstream contribu
 
 ## Common Pitfalls
 
+- **Do not give the full function body as a hint.** Hints describe shape ("find first unused, or create next"). Full code dumps belong only in rescue — when the learner explicitly asks or is blocked on syntax after real attempts. The reference implementation at `examples/bdk-dojo-wallet/` is for verification after the attempt, never for the first handoff.
 - Do not turn the lesson into passive reading.
 - Do not write the learner's first full solution.
 - Do not touch real keys, seeds, wallets, or funds.
@@ -363,6 +383,7 @@ Use this as the training yard. A real BDK fork comes later for upstream contribu
 - Do not make every lesson huge. Small katas compound.
 - Do not promise grant-readiness from a few exercises. Build proof over time.
 - Do not present toy models as production wallet logic.
+- Do not skip loading `teach-mode` and `coding-dojo-teach-mode` — they are not optional.
 
 ## Verification Checklist
 
