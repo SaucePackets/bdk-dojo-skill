@@ -9,6 +9,8 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/policy_composition.rs`.
 - Copy the stubs from `scaffold/6.2-policy-composition/stubs.rs` into your codebase when you reach this lesson.
+- Copy the tests from `scaffold/6.2-policy-composition/tests.rs` into your project's `tests/` directory.
+- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -30,10 +32,14 @@ Compose and analyze real-world spending policies from AST building blocks — mu
 
 ## Required tests
 
+Defined in `scaffold/6.2-policy-composition/tests.rs`:
+
 - `compose_multisig_with_recovery_produces_correct_tree`
 - `describe_policy_returns_human_readable_summary_for_known_patterns`
 - `extract_timelocks_finds_all_distinct_values`
 - `multisig_2_of_3_requires_2_signatures`
+
+Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

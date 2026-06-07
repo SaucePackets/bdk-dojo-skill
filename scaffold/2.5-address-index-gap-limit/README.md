@@ -13,6 +13,8 @@ pub addresses: Vec<AddressRecord>,
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/wallet.rs`.
 - Copy the stubs from `scaffold/2.5-address-index-gap-limit/stubs.rs` into your codebase when you reach this lesson.
+- Copy the tests from `scaffold/2.5-address-index-gap-limit/tests.rs` into your project's `tests/` directory.
+- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -32,7 +34,11 @@ Track toy derived addresses and return the next unused address.
 
 ## Required tests
 
+Defined in `scaffold/2.5-address-index-gap-limit/tests.rs`:
+
 - `next_unused_address_reuses_until_marked_used_then_derives_next`
+
+Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

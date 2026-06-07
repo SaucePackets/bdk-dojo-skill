@@ -18,6 +18,8 @@ pub owned: bool,
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/chain.rs`.
 - Copy the stubs from `scaffold/2.2-spendability-policy/stubs.rs` into your codebase when you reach this lesson.
+- Copy the tests from `scaffold/2.2-spendability-policy/tests.rs` into your project's `tests/` directory.
+- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -38,7 +40,11 @@ Decide whether a toy UTXO is actually spendable policy-wise.
 
 ## Required tests
 
+Defined in `scaffold/2.2-spendability-policy/tests.rs`:
+
 - `spendability_rejects_immature_coinbase_locked_and_foreign_utxos`
+
+Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

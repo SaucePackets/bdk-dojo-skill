@@ -6,6 +6,8 @@
 - Create: `src/wallet.rs`.
 - Update: `src/lib.rs` to expose `wallet` and `WalletState`.
 - Copy the stubs from `scaffold/1.4-wallet-state/stubs.rs` into your codebase.
+- Copy the tests from `scaffold/1.4-wallet-state/tests.rs` into your project's `tests/` directory.
+- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -50,8 +52,12 @@ wallet.balance() returns all zero buckets
 
 ## Required tests
 
+Defined in `scaffold/1.4-wallet-state/tests.rs`:
+
 - `wallet_balance_delegates_to_classify_balance`
 - `empty_wallet_balance_is_zeroed`
+
+Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

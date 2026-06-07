@@ -9,6 +9,8 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/miniscript_ast.rs`.
 - Copy the stubs from `scaffold/6.1-miniscript-policy-ast/stubs.rs` into your codebase when you reach this lesson.
+- Copy the tests from `scaffold/6.1-miniscript-policy-ast/tests.rs` into your project's `tests/` directory.
+- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -30,11 +32,15 @@ Model Bitcoin spending conditions as a toy policy AST (Abstract Syntax Tree) —
 
 ## Required tests
 
+Defined in `scaffold/6.1-miniscript-policy-ast/tests.rs`:
+
 - `policy_kind_classifies_single_key_as_single_key`
 - `policy_kind_identifies_threshold_as_multisig`
 - `count_keys_counts_all_keys_in_nested_policy`
 - `timelock_detection_works_on_nested_policy`
 - `is_multisig_treats_multi_key_threshold_as_multisig`
+
+Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

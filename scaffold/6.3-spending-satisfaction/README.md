@@ -9,6 +9,8 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/spending_satisfaction.rs`.
 - Copy the stubs from `scaffold/6.3-spending-satisfaction/stubs.rs` into your codebase when you reach this lesson.
+- Copy the tests from `scaffold/6.3-spending-satisfaction/tests.rs` into your project's `tests/` directory.
+- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -33,11 +35,15 @@ Analyze what's needed to *spend* from a policy — what signatures, timelocks, a
 
 ## Required tests
 
+Defined in `scaffold/6.3-spending-satisfaction/tests.rs`:
+
 - `single_key_requires_one_signature_no_timelock`
 - `timelocked_policy_requires_height_and_signature`
 - `multisig_2_of_3_requires_two_signatures`
 - `or_policy_can_be_satisfied_via_either_branch`
 - `can_satisfy_with_checks_all_conditions`
+
+Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

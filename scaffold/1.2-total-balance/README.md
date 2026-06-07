@@ -6,6 +6,8 @@
 - Create or update: `src/balance.rs`.
 - Update `src/lib.rs` to expose `amount`, `utxo`, and `balance`.
 - Copy the stubs from `scaffold/1.2-total-balance/stubs.rs` into your codebase.
+- Copy the tests from `scaffold/1.2-total-balance/tests.rs` into your project's `tests/` directory.
+- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -28,8 +30,12 @@ This lesson answers one question only: “how many sats total?”
 
 ## Required tests
 
+Defined in `scaffold/1.2-total-balance/tests.rs`:
+
 - `calculate_balance_empty_wallet_is_zero`
 - `calculate_balance_sums_all_utxos`
+
+Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

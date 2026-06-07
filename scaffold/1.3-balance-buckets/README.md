@@ -13,6 +13,8 @@ pub spendable: bool,
 - Update: `src/utxo.rs` so UTXOs carry confirmation and spendability state.
 - Update: `src/balance.rs`.
 - Copy the stubs from `scaffold/1.3-balance-buckets/stubs.rs` into your codebase.
+- Copy the tests from `scaffold/1.3-balance-buckets/tests.rs` into your project's `tests/` directory.
+- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -55,8 +57,12 @@ Confirmed but unspendable is ignored in this beginner model.
 
 ## Required tests
 
+Defined in `scaffold/1.3-balance-buckets/tests.rs`:
+
 - `classify_balance_separates_trust_and_spendability`
 - `classify_balance_empty_wallet_is_zeroed`
+
+Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

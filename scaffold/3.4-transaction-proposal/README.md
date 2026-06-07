@@ -9,6 +9,8 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/tx_plan.rs`.
 - Copy the stubs from `scaffold/3.4-transaction-proposal/stubs.rs` into your codebase when you reach this lesson.
+- Copy the tests from `scaffold/3.4-transaction-proposal/tests.rs` into your project's `tests/` directory.
+- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -29,7 +31,11 @@ Create an unsigned transaction plan before any signing happens.
 
 ## Required tests
 
+Defined in `scaffold/3.4-transaction-proposal/tests.rs`:
+
 - `transaction_proposal_contains_selected_inputs_fee_and_change`
+
+Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

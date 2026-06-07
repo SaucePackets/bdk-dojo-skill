@@ -17,6 +17,8 @@ pub seen_at_height: Option<u32>,
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/chain.rs`.
 - Copy the stubs from `scaffold/2.1-confirmation-depth/stubs.rs` into your codebase when you reach this lesson.
+- Copy the tests from `scaffold/2.1-confirmation-depth/tests.rs` into your project's `tests/` directory.
+- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -37,8 +39,12 @@ Calculate confirmation depth from a UTXO seen height and the current chain tip.
 
 ## Required tests
 
+Defined in `scaffold/2.1-confirmation-depth/tests.rs`:
+
 - `confirmations_count_from_seen_height_to_tip`
 - `mempool_utxo_has_zero_confirmations`
+
+Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 
