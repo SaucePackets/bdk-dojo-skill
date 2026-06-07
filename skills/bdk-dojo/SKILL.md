@@ -1,32 +1,29 @@
 ---
 name: bdk-dojo
-description: "Use when teaching or practicing Bitcoin wallet engineering through Rust/BDK-shaped mini-katas: UTXOs, descriptors, PSBTs, wallet sync, fee estimation, tests, and open-source contribution readiness. ⚠️ REQUIRES teach-mode + coding-dojo-teach-mode — load both before any BDK Dojo turn."
+description: "Use when teaching or practicing Bitcoin wallet engineering through Rust/BDK-shaped mini-katas: UTXOs, descriptors, PSBTs, wallet sync, fee estimation, tests, and open-source contribution readiness. ⚠️ REQUIRES teach-mode — load it before any BDK Dojo turn."
 version: 0.0.5
 author: Hermes Agent
 license: MIT
 metadata:
   hermes:
     tags: [bitcoin, rust, bdk, education, dojo, wallet, open-source]
-    related_skills: [teach-mode, coding-dojo-teach-mode, test-driven-development, systematic-debugging]
+    related_skills: [teach-mode, test-driven-development, systematic-debugging]
 ---
 
 # BDK Dojo
 
 ## ⚠️ LOAD FIRST — before any BDK Dojo turn
 
-BDK Dojo is a teaching skill. It depends on two other skills. **Load them before you do anything else:**
+BDK Dojo is a teaching skill. It depends on **teach-mode**. Load it before you do anything else:
 
 ```
 skill_view(name="teach-mode")
-skill_view(name="coding-dojo-teach-mode")
 ```
 
 `teach-mode` gives you the hint ladder: orient → rails → hint → snippet → review → rescue.
-`coding-dojo-teach-mode` gives you the coding-specific guardrails, including the most important one:
+It also now includes the language-bridge technique, concrete analogies, coding review formats, and language policy that were previously in `coding-dojo-teach-mode`.
 
-**Do not give the full function body as a hint. Do not dump the reference implementation.** Hints describe shape ("find first unused, or create next"). Full-function dumps belong only in rescue — when the learner explicitly asks or is blocked on syntax after real attempts.
-
-If you skip this load step, you will over-help. Jerry will call it out. Load both skills now.
+If you skip this load step, you will over-help. Jerry will call it out. Load teach-mode now.
 
 ## Overview
 
@@ -38,12 +35,11 @@ The goal is not to pretend the learner is ready to patch BDK on day one. The goa
 
 ## Required Companion Skills
 
-BDK Dojo requires two standalone skills. They are not vendored here — load them separately every session:
+BDK Dojo requires one standalone skill. Load it before every session:
 
-- **`teach-mode`** — the learner-first contract, hint ladder, understanding gates
-- **`coding-dojo-teach-mode`** — coding-specific guardrails: "no full function body as a hint," review format, Rust-to-Python bridges, concrete analogies
+- **`teach-mode`** — the learner-first contract, hint ladder, understanding gates, language-bridge techniques, coding review formats, and language policy.
 
-If either is missing, BDK Dojo degrades into answer-dumping. Load both before the first lesson handoff.
+If teach-mode is missing, BDK Dojo degrades into answer-dumping. Load it before the first lesson handoff.
 
 ## When to Use
 
@@ -383,7 +379,7 @@ Use this as the training yard. A real BDK fork comes later for upstream contribu
 - Do not make every lesson huge. Small katas compound.
 - Do not promise grant-readiness from a few exercises. Build proof over time.
 - Do not present toy models as production wallet logic.
-- Do not skip loading `teach-mode` and `coding-dojo-teach-mode` — they are not optional.
+- Do not skip loading `teach-mode` — it is not optional.
 
 ## Verification Checklist
 
