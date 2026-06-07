@@ -194,7 +194,7 @@ Pain point:
 Your move:
 ```
 
-Prefer this over generic `Correctness:` / `Rust clarity:` rubrics when coaching Jerry through an attempt.
+Prefer this over generic `Correctness:` / `Rust clarity:` rubrics when coaching a learner through an attempt.
 
 ## When giving code
 

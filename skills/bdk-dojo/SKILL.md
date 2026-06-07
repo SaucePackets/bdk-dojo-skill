@@ -23,7 +23,7 @@ skill_view(name="teach-mode")
 `teach-mode` gives you the hint ladder: orient → rails → hint → snippet → review → rescue.
 It also now includes the language-bridge technique, concrete analogies, coding review formats, and language policy that were previously in `coding-dojo-teach-mode`.
 
-If you skip this load step, you will over-help. Jerry will call it out. Load teach-mode now.
+If you skip this load step, you will over-help. Load teach-mode now.
 
 ## Overview
 
