@@ -1,0 +1,39 @@
+#!/bin/bash
+# bdk-dojo-skill pre-commit hook
+# Checks: trailing whitespace, merge conflict markers, cargo fmt, cargo clippy
+
+set -e
+
+echo "🔍 Running pre-commit checks..."
+
+# Check for merge conflict markers
+if grep -r "^<<<<<<< \|^=======$\|^>>>>>>> " --include="*.md" --include="*.json" --include="*.toml" --include="*.yaml" --include="*.yml" --include="*.rs" . 2>/dev/null; then
+    echo "❌ Merge conflict markers found. Resolve them before committing."
+    exit 1
+fi
+
+# Check for trailing whitespace in text files
+if grep -rn "[[:space:]]$" --include="*.md" --include="*.json" --include="*.toml" --include="*.yaml" --include="*.yml" --include="*.sh" --include="*.rs" . 2>/dev/null; then
+    echo "❌ Trailing whitespace found above. Remove it before committing."
+    exit 1
+fi
+
+# Only run Rust checks if there are staged .rs files
+staged_rs=$(git diff --cached --name-only --diff-filter=ACMR | grep '\.rs$' || true)
+if [ -n "$staged_rs" ]; then
+    echo "🔧 Rust files changed — running fmt and clippy..."
+
+    # cargo fmt --check on the whole workspace
+    if ! cargo fmt --check 2>/dev/null; then
+        echo "❌ cargo fmt — formatting issues found. Run 'cargo fmt' to fix."
+        exit 1
+    fi
+
+    # cargo clippy on the whole workspace
+    if ! cargo clippy -- -D warnings 2>/dev/null; then
+        echo "❌ cargo clippy — warnings found. Fix them before committing."
+        exit 1
+    fi
+fi
+
+echo "✅ Pre-commit checks passed."
