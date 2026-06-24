@@ -29,8 +29,9 @@ Replace vague booleans and options with maintainer-friendly wallet errors.
 
 Defined in `scaffold/4.2-error-handling-pass/tests.rs`:
 
-- `coin_selection_reports_insufficient_funds`
-- `psbt_review_rejects_unknown_recipient_and_high_fee`
+- `insufficient_funds_error_carries_amounts`
+- `dust_change_error_carries_amounts`
+- `all_wallet_error_variants_are_constructable`
 
 Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 

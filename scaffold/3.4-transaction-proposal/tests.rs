@@ -5,119 +5,72 @@
 //
 //   cargo test
 //
-// All tests should FAIL until you implement `propose_transaction` in `src/lib.rs`.
+// All tests should FAIL until you implement `propose_transaction` in `src/tx_plan.rs`.
 // Once your implementation is correct every test in this file will pass.
 
 // Update this import to match your Cargo.toml package name.
-use your_crate_name::{propose_transaction, FeeRate, TxPlan, Utxo, WalletError};
+use your_crate_name::{
+    propose_transaction, Amount, ChangeDecision, FeeRate, OutPoint, TxPlan, Utxo, WalletError,
+};
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    // ---------------------------------------------------------------------------
-    // Helper: build a simple confirmed Utxo with the given value.
-    // Adjust field names to match your actual Utxo struct definition.
-    // ---------------------------------------------------------------------------
-    fn make_utxo(value: u64, block_height: u32) -> Utxo {
+    fn make_utxo(value: u64, vout: u32, seen_at_height: Option<u32>) -> Utxo {
         Utxo {
-            value,
-            block_height: Some(block_height),
-            // Add any additional required fields with sensible dummy values.
+            outpoint: OutPoint {
+                txid: format!("{:064x}", vout),
+                vout,
+            },
+            value: Amount::from_sats(value),
+            confirmed: seen_at_height.is_some(),
+            spendable: true,
+            seen_at_height,
+            coinbase: false,
+            locked_until: None,
+            owned: true,
         }
     }
 
-    /// propose_transaction must return a TxPlan with:
-    ///   - recipient_amount equal to the requested target
-    ///   - a positive fee (the network is never free)
-    ///   - a non-empty selection whose total is >= target + fee
-    ///   - optional change that is above the dust limit (or None)
-    ///
-    /// Setup:
-    ///   One UTXO worth 100_000 sat, target 50_000 sat at 2 sat/vB.
     #[test]
     fn transaction_proposal_produces_valid_plan() {
-        let utxos = vec![make_utxo(100_000, 750_000)];
-        let target = 50_000_u64;
+        let utxos = vec![make_utxo(100_000, 0, Some(750_000))];
+        let recipient = "bcrt1recipient".to_string();
+        let amount = 50_000_u64;
         let fee_rate = FeeRate { sat_per_vb: 2 };
         let tip_height = 800_000_u32;
 
-        let result = propose_transaction(&utxos, target, fee_rate, tip_height);
+        let result = propose_transaction(recipient.clone(), amount, fee_rate, &utxos, tip_height);
 
-        assert!(
-            result.is_ok(),
-            "expected Ok(TxPlan) but got: {:?}",
-            result
-        );
+        assert!(result.is_ok(), "expected Ok(TxPlan)");
 
         let plan: TxPlan = result.unwrap();
+        assert_eq!(plan.recipient, recipient);
+        assert_eq!(plan.amount, amount);
+        assert!(plan.fee > 0, "fee must be positive");
+        assert!(!plan.selected.is_empty(), "selected must be non-empty");
 
-        // The plan must send exactly what was requested.
-        assert_eq!(
-            plan.recipient_amount, target,
-            "recipient_amount must equal the requested target"
-        );
+        let selected_total: u64 = plan.selected.iter().map(|u| u.value.to_sats()).sum();
+        let change_amount = match plan.change {
+            ChangeDecision::Change(amount) => amount,
+            ChangeDecision::NoChange | ChangeDecision::AddToFee(_) => 0,
+        };
 
-        // A valid transaction always pays a non-zero fee.
-        assert!(
-            plan.fee > 0,
-            "fee must be positive, got {} sat",
-            plan.fee
-        );
-
-        // At least one UTXO must have been selected.
-        assert!(
-            !plan.selected.is_empty(),
-            "selected must be non-empty"
-        );
-
-        // The total of selected coins must cover both recipient and fee.
-        let selected_total: u64 = plan.selected.iter().map(|u| u.value).sum();
-        assert!(
-            selected_total >= target + plan.fee,
-            "selected total ({selected_total}) must be >= target ({target}) + fee ({})",
-            plan.fee
-        );
-
-        // If change is present it must be a positive amount
-        // (dust filtering should prevent zero-value change outputs).
-        if let Some(change) = plan.change {
-            assert!(change > 0, "change output must be positive, got {change}");
-        }
-
-        // Conservation: selected = recipient + fee + change (or no change).
-        let expected_total = target + plan.fee + plan.change.unwrap_or(0);
-        assert_eq!(
-            selected_total, expected_total,
-            "funds must be fully accounted for: selected={selected_total}, \
-             recipient={target}+fee={}+change={}",
-            plan.fee,
-            plan.change.unwrap_or(0)
-        );
+        assert_eq!(selected_total, plan.amount + plan.fee + change_amount);
     }
 
-    /// When no UTXOs are provided the proposal must fail with an appropriate error.
     #[test]
     fn transaction_proposal_fails_with_insufficient_funds() {
         let utxos: Vec<Utxo> = vec![];
-        let target = 50_000_u64;
-        let fee_rate = FeeRate { sat_per_vb: 2 };
-        let tip_height = 800_000_u32;
-
-        let result = propose_transaction(&utxos, target, fee_rate, tip_height);
-
-        assert!(
-            result.is_err(),
-            "expected Err for empty UTXO pool but got Ok"
+        let result = propose_transaction(
+            "bcrt1recipient".to_string(),
+            50_000,
+            FeeRate { sat_per_vb: 2 },
+            &utxos,
+            800_000,
         );
 
-        // Accept either NoSpendableUtxos or InsufficientFunds — both are valid
-        // responses when there is literally nothing to spend.
-        match result.unwrap_err() {
-            WalletError::InsufficientFunds { .. } | WalletError::NoSpendableUtxos => {}
-            other => panic!(
-                "expected InsufficientFunds or NoSpendableUtxos, got: {other:?}"
-            ),
-        }
+        assert!(matches!(result, Err(WalletError::InsufficientFunds { .. })));
     }
 }

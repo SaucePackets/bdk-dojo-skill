@@ -33,6 +33,7 @@ Decide whether leftover sats should become change or be added to fee as dust.
 Defined in `scaffold/3.3-dust-and-change-policy/tests.rs`:
 
 - `dust_change_is_added_to_fee_instead_of_output`
+- `change_at_or_above_dust_limit_is_kept`
 
 Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
