@@ -16,8 +16,8 @@ UnknownRecipient(String),
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/psbt_review.rs`.
 - Copy the stubs from `scaffold/4.1-psbt-review/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/4.1-psbt-review/tests.rs` into your project's `tests/` directory.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Copy the tests from `scaffold/4.1-psbt-review/tests.rs` into `tests/lesson_4_1_psbt_review.rs`.
+- Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 

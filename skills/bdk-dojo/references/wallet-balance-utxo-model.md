@@ -21,14 +21,15 @@ cargo new bdk-dojo
 cd bdk-dojo
 ```
 
-For later lessons, add the kata to the existing `src/lib.rs` unless the lesson explicitly says otherwise.
+For later lessons, add implementation to the relevant `src/<module>.rs` file and expose it through `src/lib.rs`.
 Do not delete prior working katas; keep them named and tested.
 
 Explain:
 
 - `Cargo.toml`: package config and dependencies.
 - `src/main.rs`: binary entry point.
-- `src/lib.rs`: reusable logic and unit tests.
+- `src/lib.rs`: module exports and public API surface.
+- `tests/<lesson_name>.rs`: lesson acceptance tests.
 - Crate import trap: package `bdk-dojo` imports as `bdk_dojo`.
 
 ## Starter structs
@@ -76,7 +77,7 @@ let total_spendable = confirmed + trusted_pending;
 
 ## Required test
 
-Use `#[cfg(test)] mod tests` at the bottom of `src/lib.rs`, `use super::*;`, and an `assert_eq!` against `BalanceSummary`.
+Put the lesson acceptance test in `tests/<lesson_name>.rs`, import through the public crate API, and assert against `BalanceSummary`.
 
 Expected sample:
 

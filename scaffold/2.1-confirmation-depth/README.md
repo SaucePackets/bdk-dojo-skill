@@ -17,8 +17,8 @@ pub seen_at_height: Option<u32>,
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/chain.rs`.
 - Copy the stubs from `scaffold/2.1-confirmation-depth/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/2.1-confirmation-depth/tests.rs` into your project's `tests/` directory.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Copy the tests from `scaffold/2.1-confirmation-depth/tests.rs` into `tests/lesson_2_1_confirmation_depth.rs`.
+- Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 

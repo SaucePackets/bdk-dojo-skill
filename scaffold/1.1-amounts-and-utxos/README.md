@@ -7,7 +7,7 @@
 - Update `src/lib.rs` to expose both modules.
 - Copy the stubs from `scaffold/1.1-amounts-and-utxos/stubs.rs` into your codebase.
 - Copy the tests from `scaffold/1.1-amounts-and-utxos/tests.rs` into `tests/lesson_1_1_amounts_and_utxos.rs`.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 

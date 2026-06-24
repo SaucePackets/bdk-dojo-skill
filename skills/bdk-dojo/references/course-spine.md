@@ -52,7 +52,8 @@ bdk-dojo-learner/
     psbt_review.rs
     descriptors.rs
   tests/
-    tests.rs
+    lesson_1_1_amounts_and_utxos.rs
+    lesson_1_2_total_balance.rs
     wallet_flow.rs
     balance/
     sync/
@@ -60,7 +61,7 @@ bdk-dojo-learner/
     bdk_bridge/
 ```
 
-Start simple in `src/lib.rs` only for the first warm-up. Split into modules as soon as lesson 1.1 introduces `amount.rs` and `utxo.rs`.
+Start simple, but keep the rule consistent: implementation goes in `src/*.rs`, `src/lib.rs` exposes modules/re-exports, and lesson acceptance tests live under `tests/<lesson_name>.rs` from the first lesson.
 
 ## Lesson map
 

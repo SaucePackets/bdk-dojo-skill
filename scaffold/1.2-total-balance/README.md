@@ -6,8 +6,8 @@
 - Create or update: `src/balance.rs`.
 - Update `src/lib.rs` to expose `amount`, `utxo`, and `balance`.
 - Copy the stubs from `scaffold/1.2-total-balance/stubs.rs` into your codebase.
-- Copy the tests from `scaffold/1.2-total-balance/tests.rs` into your project's `tests/` directory.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Copy the tests from `scaffold/1.2-total-balance/tests.rs` into `tests/lesson_1_2_total_balance.rs`.
+- Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 

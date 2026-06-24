@@ -13,8 +13,8 @@ pub spendable: bool,
 - Update: `src/utxo.rs` so UTXOs carry confirmation and spendability state.
 - Update: `src/balance.rs`.
 - Copy the stubs from `scaffold/1.3-balance-buckets/stubs.rs` into your codebase.
-- Copy the tests from `scaffold/1.3-balance-buckets/tests.rs` into your project's `tests/` directory.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Copy the tests from `scaffold/1.3-balance-buckets/tests.rs` into `tests/lesson_1_3_balance_buckets.rs`.
+- Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
