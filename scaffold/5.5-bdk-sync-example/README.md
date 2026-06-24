@@ -5,6 +5,8 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/bdk_bridge.rs`.
 - Copy the stubs from `scaffold/5.5-bdk-sync-example/stubs.rs` into your codebase when you reach this lesson.
+- Copy the tests from `scaffold/5.5-bdk-sync-example/lesson_5_5_bdk_sync_example.rs` into `tests/lesson_5_5_bdk_sync_example.rs`.
+- Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -24,7 +26,11 @@ Map toy SyncEvent flow to BDK sync/full-scan concepts.
 
 ## Required tests
 
-- `bdk_bridge_notes_name_what_the_toy_model_hides`
+Defined in `scaffold/5.5-bdk-sync-example/lesson_5_5_bdk_sync_example.rs`:
+
+- `sync_bridge_note_names_real_bdk_sync_concepts`
+
+Copy the test file into `tests/lesson_5_5_bdk_sync_example.rs`. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

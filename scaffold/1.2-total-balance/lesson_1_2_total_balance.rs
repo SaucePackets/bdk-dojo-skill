@@ -9,7 +9,7 @@
 // `calculate_balance` in src/balance.rs.
 
 // Update this import to match your Cargo.toml package name.
-use your_crate_name::{Amount, OutPoint, Utxo, calculate_balance};
+use your_crate_name::{calculate_balance, Amount, OutPoint, Utxo};
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -44,10 +44,7 @@ fn calculate_balance_empty_wallet_is_zero() {
 /// Two UTXOs worth 50 000 and 20 000 sats must produce a total of 70 000.
 #[test]
 fn calculate_balance_sums_all_utxos() {
-    let utxos = vec![
-        make_utxo("aaaa", 0, 50_000),
-        make_utxo("bbbb", 1, 20_000),
-    ];
+    let utxos = vec![make_utxo("aaaa", 0, 50_000), make_utxo("bbbb", 1, 20_000)];
 
     let balance = calculate_balance(&utxos);
 

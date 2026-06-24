@@ -65,15 +65,19 @@ fn rollback_unconfirms_utxos_above_new_tip() {
     wallet.tip_height = 800_500;
 
     // Four UTXOs at different heights spanning the rollback boundary.
-    let op_below = outpoint("below");        // 799_500 — safely below
-    let op_at = outpoint("at");              // 800_000 — exactly at the rollback target
+    let op_below = outpoint("below"); // 799_500 — safely below
+    let op_at = outpoint("at"); // 800_000 — exactly at the rollback target
     let op_above_1 = outpoint("above_one"); // 800_001 — just above: must be unconfirmed
     let op_above_2 = outpoint("above_two"); // 800_500 — well above: must be unconfirmed
 
     wallet.utxos.push(confirmed_utxo("below", 10_000, 799_500));
     wallet.utxos.push(confirmed_utxo("at", 20_000, 800_000));
-    wallet.utxos.push(confirmed_utxo("above_one", 30_000, 800_001));
-    wallet.utxos.push(confirmed_utxo("above_two", 40_000, 800_500));
+    wallet
+        .utxos
+        .push(confirmed_utxo("above_one", 30_000, 800_001));
+    wallet
+        .utxos
+        .push(confirmed_utxo("above_two", 40_000, 800_500));
 
     // Trigger the rollback.
     wallet.rollback_to_height(800_000);
@@ -103,7 +107,11 @@ fn rollback_unconfirms_utxos_above_new_tip() {
     );
 
     // --- UTXO at 799_500: untouched ---
-    let u_below = wallet.utxos.iter().find(|u| u.outpoint == op_below).unwrap();
+    let u_below = wallet
+        .utxos
+        .iter()
+        .find(|u| u.outpoint == op_below)
+        .unwrap();
     assert!(
         u_below.confirmed,
         "UTXO confirmed at 799_500 must stay confirmed after rollback to 800_000"
@@ -127,7 +135,11 @@ fn rollback_unconfirms_utxos_above_new_tip() {
     );
 
     // --- UTXO at 800_001: must be unconfirmed ---
-    let u_above_1 = wallet.utxos.iter().find(|u| u.outpoint == op_above_1).unwrap();
+    let u_above_1 = wallet
+        .utxos
+        .iter()
+        .find(|u| u.outpoint == op_above_1)
+        .unwrap();
     assert!(
         !u_above_1.confirmed,
         "UTXO confirmed at 800_001 must be unconfirmed after rollback to 800_000"
@@ -138,7 +150,11 @@ fn rollback_unconfirms_utxos_above_new_tip() {
     );
 
     // --- UTXO at 800_500: must be unconfirmed ---
-    let u_above_2 = wallet.utxos.iter().find(|u| u.outpoint == op_above_2).unwrap();
+    let u_above_2 = wallet
+        .utxos
+        .iter()
+        .find(|u| u.outpoint == op_above_2)
+        .unwrap();
     assert!(
         !u_above_2.confirmed,
         "UTXO confirmed at 800_500 must be unconfirmed after rollback to 800_000"

@@ -1,4 +1,4 @@
-// tests.rs — Lesson 4.2: Error Handling Pass
+// lesson_4_2_error_handling_pass.rs — Lesson 4.2: Error Handling Pass
 //
 // This file contains pre-written tests for the `WalletError` enum stub.
 // Run them with:

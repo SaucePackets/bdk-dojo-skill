@@ -1,5 +1,5 @@
 // =============================================================================
-// tests.rs — Lesson 6.1: Miniscript Policy AST
+// lesson_6_1_miniscript_policy_ast.rs — Lesson 6.1: Miniscript Policy AST
 // =============================================================================
 //
 // This file contains pre-written tests for the Miniscript Policy AST kata.
@@ -88,11 +88,7 @@ mod tests {
     fn count_keys_counts_all_keys_in_nested_policy() {
         // Flat And: 2 keys
         let flat = Policy::And(vec![Policy::Key("a".into()), Policy::Key("b".into())]);
-        assert_eq!(
-            count_keys(&flat),
-            2,
-            "And(Key, Key) should have 2 keys"
-        );
+        assert_eq!(count_keys(&flat), 2, "And(Key, Key) should have 2 keys");
 
         // Nested: And(Key(a), Or(Key(b), Key(c))) → 3 keys total
         let nested = Policy::And(vec![
@@ -124,20 +120,14 @@ mod tests {
     #[test]
     fn timelock_detection_works_on_nested_policy() {
         // And(Key, Older) — has a timelock
-        let locked = Policy::And(vec![
-            Policy::Key("a".into()),
-            Policy::Older(1000),
-        ]);
+        let locked = Policy::And(vec![Policy::Key("a".into()), Policy::Older(1000)]);
         assert!(
             is_timelocked(&locked),
             "And(Key, Older(1000)) should be considered timelocked"
         );
 
         // And(Key, After) — absolute timelock also counts
-        let abs_locked = Policy::And(vec![
-            Policy::Key("a".into()),
-            Policy::After(700_000),
-        ]);
+        let abs_locked = Policy::And(vec![Policy::Key("a".into()), Policy::After(700_000)]);
         assert!(
             is_timelocked(&abs_locked),
             "And(Key, After(700_000)) should be considered timelocked"
@@ -181,10 +171,7 @@ mod tests {
         );
 
         // And(Key, Older) is NOT a multisig
-        let not_multisig = Policy::And(vec![
-            Policy::Key("a".into()),
-            Policy::Older(100),
-        ]);
+        let not_multisig = Policy::And(vec![Policy::Key("a".into()), Policy::Older(100)]);
         assert!(
             !is_multisig(&not_multisig),
             "And(Key, Older) should not be classified as multisig"

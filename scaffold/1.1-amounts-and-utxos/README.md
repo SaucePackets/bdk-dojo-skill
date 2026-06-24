@@ -6,7 +6,7 @@
 - Create or update: `src/amount.rs` and `src/utxo.rs`.
 - Update `src/lib.rs` to expose both modules.
 - Copy the stubs from `scaffold/1.1-amounts-and-utxos/stubs.rs` into your codebase.
-- Copy the tests from `scaffold/1.1-amounts-and-utxos/tests.rs` into `tests/lesson_1_1_amounts_and_utxos.rs`.
+- Copy the tests from `scaffold/1.1-amounts-and-utxos/lesson_1_1_amounts_and_utxos.rs` into `tests/lesson_1_1_amounts_and_utxos.rs`.
 - Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
@@ -29,7 +29,7 @@ No floats. No real keys. Just the data shape wallet code needs before BDK enters
 
 ## Required tests
 
-Defined in `scaffold/1.1-amounts-and-utxos/tests.rs`:
+Defined in `scaffold/1.1-amounts-and-utxos/lesson_1_1_amounts_and_utxos.rs`:
 
 - `amount_preserves_sats_exactly`
 - `utxo_stores_outpoint_and_value`

@@ -9,7 +9,7 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/change.rs`.
 - Copy the stubs from `scaffold/3.3-dust-and-change-policy/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/3.3-dust-and-change-policy/tests.rs` into `tests/lesson_3_3_dust_and_change_policy.rs`.
+- Copy the tests from `scaffold/3.3-dust-and-change-policy/lesson_3_3_dust_and_change_policy.rs` into `tests/lesson_3_3_dust_and_change_policy.rs`.
 - Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
@@ -30,7 +30,7 @@ Decide whether leftover sats should become change or be added to fee as dust.
 
 ## Required tests
 
-Defined in `scaffold/3.3-dust-and-change-policy/tests.rs`:
+Defined in `scaffold/3.3-dust-and-change-policy/lesson_3_3_dust_and_change_policy.rs`:
 
 - `dust_change_is_added_to_fee_instead_of_output`
 - `change_at_or_above_dust_limit_is_kept`

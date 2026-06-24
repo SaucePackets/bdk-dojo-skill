@@ -51,7 +51,9 @@ fn wallet_balance_delegates_to_classify_balance() {
     // Populate with three UTXOs covering each active bucket.
     wallet.utxos.push(make_utxo("aaaa", 0, 50_000, true, true));
     wallet.utxos.push(make_utxo("bbbb", 0, 20_000, false, true));
-    wallet.utxos.push(make_utxo("cccc", 0, 10_000, false, false));
+    wallet
+        .utxos
+        .push(make_utxo("cccc", 0, 10_000, false, false));
 
     let summary = wallet.balance();
 

@@ -9,6 +9,8 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/bdk_bridge.rs`.
 - Copy the stubs from `scaffold/5.1-bdk-project-orientation/stubs.rs` into your codebase when you reach this lesson.
+- Copy the tests from `scaffold/5.1-bdk-project-orientation/lesson_5_1_bdk_project_orientation.rs` into `tests/lesson_5_1_bdk_project_orientation.rs`.
+- Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
 
@@ -27,7 +29,11 @@ Learn how to approach BDK before touching upstream code.
 
 ## Required tests
 
+Defined in `scaffold/5.1-bdk-project-orientation/lesson_5_1_bdk_project_orientation.rs`:
+
 - `bdk_bridge_notes_name_what_the_toy_model_hides`
+
+Copy the test file into `tests/lesson_5_1_bdk_project_orientation.rs`. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
 ## Reference implementation
 

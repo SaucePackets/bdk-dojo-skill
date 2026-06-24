@@ -1,5 +1,5 @@
 // =============================================================================
-// tests.rs — Lesson 5.3: Descriptor Mental Model
+// lesson_5_3_descriptor_mental_model.rs — Lesson 5.3: Descriptor Mental Model
 // =============================================================================
 //
 // This file contains pre-written tests for the descriptor classifier kata.

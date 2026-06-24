@@ -9,7 +9,7 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/descriptors.rs`.
 - Copy the stubs from `scaffold/5.3-descriptor-mental-model/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/5.3-descriptor-mental-model/tests.rs` into `tests/lesson_5_3_descriptor_mental_model.rs`.
+- Copy the tests from `scaffold/5.3-descriptor-mental-model/lesson_5_3_descriptor_mental_model.rs` into `tests/lesson_5_3_descriptor_mental_model.rs`.
 - Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
@@ -31,7 +31,7 @@ Treat descriptors as wallet policy descriptions without parsing real secrets.
 
 ## Required tests
 
-Defined in `scaffold/5.3-descriptor-mental-model/tests.rs`:
+Defined in `scaffold/5.3-descriptor-mental-model/lesson_5_3_descriptor_mental_model.rs`:
 
 - `descriptor_classifier_recognizes_common_policy_shapes`
 

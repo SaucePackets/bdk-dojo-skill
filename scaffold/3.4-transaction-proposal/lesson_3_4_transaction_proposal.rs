@@ -1,4 +1,4 @@
-// tests.rs — Lesson 3.4: Transaction Proposal
+// lesson_3_4_transaction_proposal.rs — Lesson 3.4: Transaction Proposal
 //
 // This file contains pre-written tests for the `propose_transaction` stub.
 // Run them with:

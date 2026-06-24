@@ -9,7 +9,7 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/miniscript_ast.rs`.
 - Copy the stubs from `scaffold/6.1-miniscript-policy-ast/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/6.1-miniscript-policy-ast/tests.rs` into `tests/lesson_6_1_miniscript_policy_ast.rs`.
+- Copy the tests from `scaffold/6.1-miniscript-policy-ast/lesson_6_1_miniscript_policy_ast.rs` into `tests/lesson_6_1_miniscript_policy_ast.rs`.
 - Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
@@ -32,7 +32,7 @@ Model Bitcoin spending conditions as a toy policy AST (Abstract Syntax Tree) —
 
 ## Required tests
 
-Defined in `scaffold/6.1-miniscript-policy-ast/tests.rs`:
+Defined in `scaffold/6.1-miniscript-policy-ast/lesson_6_1_miniscript_policy_ast.rs`:
 
 - `policy_kind_classifies_single_key_as_single_key`
 - `policy_kind_identifies_threshold_as_multisig`

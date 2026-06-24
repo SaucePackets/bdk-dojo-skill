@@ -13,7 +13,7 @@ pub checkpoints: Vec<u32>,
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/wallet.rs`.
 - Copy the stubs from `scaffold/2.4-checkpoints-and-reorgs/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/2.4-checkpoints-and-reorgs/tests.rs` into `tests/lesson_2_4_checkpoints_and_reorgs.rs`.
+- Copy the tests from `scaffold/2.4-checkpoints-and-reorgs/lesson_2_4_checkpoints_and_reorgs.rs` into `tests/lesson_2_4_checkpoints_and_reorgs.rs`.
 - Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
@@ -35,7 +35,7 @@ Roll wallet chain state back to a prior height after a toy reorg.
 
 ## Required tests
 
-Defined in `scaffold/2.4-checkpoints-and-reorgs/tests.rs`:
+Defined in `scaffold/2.4-checkpoints-and-reorgs/lesson_2_4_checkpoints_and_reorgs.rs`:
 
 - `rollback_unconfirms_utxos_above_new_tip`
 

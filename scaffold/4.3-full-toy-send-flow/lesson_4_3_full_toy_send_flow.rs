@@ -1,4 +1,4 @@
-// tests.rs — Lesson 4.3: Full Toy Send Flow (integration test)
+// lesson_4_3_full_toy_send_flow.rs — Lesson 4.3: Full Toy Send Flow (integration test)
 //
 // This file contains a single end-to-end integration test that wires together
 // lessons 3.1 → 4.2:

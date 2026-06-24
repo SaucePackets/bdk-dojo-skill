@@ -5,7 +5,7 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/errors.rs`.
 - Copy the stubs from `scaffold/4.2-error-handling-pass/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/4.2-error-handling-pass/tests.rs` into `tests/lesson_4_2_error_handling_pass.rs`.
+- Copy the tests from `scaffold/4.2-error-handling-pass/lesson_4_2_error_handling_pass.rs` into `tests/lesson_4_2_error_handling_pass.rs`.
 - Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
@@ -27,7 +27,7 @@ Replace vague booleans and options with maintainer-friendly wallet errors.
 
 ## Required tests
 
-Defined in `scaffold/4.2-error-handling-pass/tests.rs`:
+Defined in `scaffold/4.2-error-handling-pass/lesson_4_2_error_handling_pass.rs`:
 
 - `insufficient_funds_error_carries_amounts`
 - `dust_change_error_carries_amounts`

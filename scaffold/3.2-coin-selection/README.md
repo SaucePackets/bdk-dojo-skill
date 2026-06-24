@@ -22,7 +22,7 @@ Later lessons extend this enum.
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/coin_selection.rs`.
 - Copy the stubs from `scaffold/3.2-coin-selection/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/3.2-coin-selection/tests.rs` into `tests/lesson_3_2_coin_selection.rs`.
+- Copy the tests from `scaffold/3.2-coin-selection/lesson_3_2_coin_selection.rs` into `tests/lesson_3_2_coin_selection.rs`.
 - Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
@@ -43,7 +43,7 @@ Select enough spendable UTXOs to cover a target amount plus estimated fee.
 
 ## Required tests
 
-Defined in `scaffold/3.2-coin-selection/tests.rs`:
+Defined in `scaffold/3.2-coin-selection/lesson_3_2_coin_selection.rs`:
 
 - `coin_selection_respects_chain_spendability_policy`
 - `coin_selection_picks_enough_spendable_utxos`

@@ -1,5 +1,5 @@
 // =============================================================================
-// tests.rs — Lesson 5.2: BDK Balance Examples
+// lesson_5_2_bdk_balance_examples.rs — Lesson 5.2: BDK Balance Examples
 // =============================================================================
 //
 // This file contains pre-written tests for the BDK balance bridge-note kata.

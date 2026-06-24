@@ -19,7 +19,7 @@
 //   3. if coinbase: confirmations >= COINBASE_MATURITY   (maturity rule)
 
 // Update this import to match your Cargo.toml package name.
-use your_crate_name::{Amount, COINBASE_MATURITY, OutPoint, Utxo, is_spendable};
+use your_crate_name::{is_spendable, Amount, OutPoint, Utxo, COINBASE_MATURITY};
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -90,7 +90,10 @@ fn spendability_rejects_immature_coinbase_locked_and_foreign_utxos() {
         seen_at_height: Some(800_000),
         ..normal_utxo("coinbase_immature")
     };
-    assert_eq!(COINBASE_MATURITY, 100, "sanity-check: COINBASE_MATURITY must be 100");
+    assert_eq!(
+        COINBASE_MATURITY, 100,
+        "sanity-check: COINBASE_MATURITY must be 100"
+    );
     assert!(
         !is_spendable(&immature_coinbase, 800_050),
         "coinbase UTXO with only 51 confirmations must not be spendable (need 100)"

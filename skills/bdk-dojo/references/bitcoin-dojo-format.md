@@ -193,7 +193,7 @@ Each scaffold README should be short and mechanical:
 - Create or update: `src/<module>.rs`.
 - Update `src/lib.rs` to expose the module.
 - Copy the stubs from `scaffold/<exercise>/stubs.rs`.
-- Copy the acceptance tests from `scaffold/<exercise>/tests.rs` into `tests/<lesson_name>.rs`.
+- Copy the acceptance test file from `scaffold/<exercise>/lesson_<id>_<slug>.rs` into `tests/lesson_<id>_<slug>.rs`.
 - Write your solution.
 - Run: `cargo test`.
 

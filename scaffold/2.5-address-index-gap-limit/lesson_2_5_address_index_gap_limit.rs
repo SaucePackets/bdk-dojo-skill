@@ -20,7 +20,7 @@
 //   - Consecutive calls return the SAME address until it is marked used
 
 // Update this import to match your Cargo.toml package name.
-use your_crate_name::{WalletState};
+use your_crate_name::WalletState;
 
 // ---------------------------------------------------------------------------
 // Tests

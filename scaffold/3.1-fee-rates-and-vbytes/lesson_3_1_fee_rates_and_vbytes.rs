@@ -1,4 +1,4 @@
-// tests.rs — Lesson 3.1: Fee Rates and Vbytes
+// lesson_3_1_fee_rates_and_vbytes.rs — Lesson 3.1: Fee Rates and Vbytes
 //
 // This file contains pre-written tests for the fee calculation stub.
 // Run them with:

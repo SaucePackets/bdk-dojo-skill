@@ -5,7 +5,7 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `tests/wallet_flow.rs`.
 - Copy the stubs from `scaffold/4.3-full-toy-send-flow/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/4.3-full-toy-send-flow/tests.rs` into `tests/lesson_4_3_full_toy_send_flow.rs`.
+- Copy the tests from `scaffold/4.3-full-toy-send-flow/lesson_4_3_full_toy_send_flow.rs` into `tests/lesson_4_3_full_toy_send_flow.rs`.
 - Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
@@ -31,7 +31,7 @@ Prove the full toy send flow works across sync, balance, coin selection, tx plan
 
 ## Required tests
 
-Defined in `scaffold/4.3-full-toy-send-flow/tests.rs`:
+Defined in `scaffold/4.3-full-toy-send-flow/lesson_4_3_full_toy_send_flow.rs`:
 
 - `full_toy_send_flow_sync_balance_select_propose_review`
 

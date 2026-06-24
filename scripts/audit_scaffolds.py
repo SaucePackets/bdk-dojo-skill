@@ -50,6 +50,8 @@ for lesson in scaffold_dirs:
 
     readme = lesson / "README.md"
     stubs = lesson / "stubs.rs"
+    lesson_test = lesson / f"lesson_{lesson.name.replace('-', '_').replace('.', '_')}.rs"
+    legacy_test = lesson / "tests.rs"
     if not readme.exists():
         errors.append(f"{rel}: missing README.md")
         continue
@@ -57,6 +59,8 @@ for lesson in scaffold_dirs:
         errors.append(f"{rel}: missing stubs.rs")
     elif not stubs.read_text(encoding="utf-8").strip():
         errors.append(f"{rel}: stubs.rs is empty")
+    if legacy_test.exists():
+        errors.append(f"{rel}: legacy tests.rs found; use {lesson_test.name}")
 
     text = readme.read_text(encoding="utf-8")
     checks = {
@@ -91,6 +95,11 @@ for lesson in scaffold_dirs:
     )
     if is_reflection and "## Required tests" in text:
         errors.append(f"{rel}: reflection/Markdown lesson must use ## Required artifact or ## Required proof, not ## Required tests")
+    if "## Required tests" in text:
+        if not lesson_test.exists():
+            errors.append(f"{rel}: missing lesson acceptance test file {lesson_test.name}")
+        if lesson_test.name not in text:
+            errors.append(f"{rel}: README must name lesson acceptance test file {lesson_test.name}")
 
     mentions_real_bdk = any(
         phrase in text

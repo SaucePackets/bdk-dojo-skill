@@ -1,4 +1,4 @@
-// tests.rs — Lesson 3.3: Dust and Change Policy
+// lesson_3_3_dust_and_change_policy.rs — Lesson 3.3: Dust and Change Policy
 //
 // This file contains pre-written tests for the `decide_change` stub.
 // Run them with:

@@ -1,4 +1,4 @@
-// tests.rs — Lesson 3.2: Coin Selection
+// lesson_3_2_coin_selection.rs — Lesson 3.2: Coin Selection
 //
 // This file contains pre-written tests for the `select_coins` stub.
 // Run them with:

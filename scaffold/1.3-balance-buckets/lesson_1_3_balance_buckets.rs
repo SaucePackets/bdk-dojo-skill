@@ -15,7 +15,7 @@
 //   spendable: bool
 
 // Update this import to match your Cargo.toml package name.
-use your_crate_name::{Amount, BalanceSummary, OutPoint, Utxo, classify_balance};
+use your_crate_name::{classify_balance, Amount, BalanceSummary, OutPoint, Utxo};
 
 // ---------------------------------------------------------------------------
 // Helpers

@@ -1,5 +1,5 @@
 // =============================================================================
-// tests.rs — Lesson 6.2: Policy Composition
+// lesson_6_2_policy_composition.rs — Lesson 6.2: Policy Composition
 // =============================================================================
 //
 // This file contains pre-written tests for the policy composition kata.
@@ -54,10 +54,7 @@ mod tests {
     #[test]
     fn compose_multisig_with_recovery_produces_correct_tree() {
         // params: primary signers + recovery signer + timelock height
-        let policy = compose_policy(
-            "multisig_with_recovery",
-            &["alice", "bob", "carol", "1000"],
-        );
+        let policy = compose_policy("multisig_with_recovery", &["alice", "bob", "carol", "1000"]);
 
         // The composed policy must be timelocked (recovery path uses Older/After).
         assert!(
@@ -140,7 +137,10 @@ mod tests {
             "Duplicate timelock values should be deduplicated; expected 1, got {}",
             deduped.len()
         );
-        assert!(deduped.contains(&1000), "Deduplicated result should contain 1000");
+        assert!(
+            deduped.contains(&1000),
+            "Deduplicated result should contain 1000"
+        );
 
         // No timelocks in a key-only policy
         let no_locks = Policy::Key("alice".into());
@@ -155,7 +155,11 @@ mod tests {
             Policy::And(vec![Policy::Key("b".into()), Policy::Older(750)]),
         ]);
         let nested_locks = extract_timelocks(&nested);
-        assert_eq!(nested_locks.len(), 1, "Should find 1 timelock in the nested Or");
+        assert_eq!(
+            nested_locks.len(),
+            1,
+            "Should find 1 timelock in the nested Or"
+        );
         assert!(nested_locks.contains(&750), "Should find Older(750)");
     }
 

@@ -1,5 +1,5 @@
 // =============================================================================
-// tests.rs — Lesson 6.3: Spending Satisfaction
+// lesson_6_3_spending_satisfaction.rs — Lesson 6.3: Spending Satisfaction
 // =============================================================================
 //
 // This file contains pre-written tests for the spending satisfaction kata.

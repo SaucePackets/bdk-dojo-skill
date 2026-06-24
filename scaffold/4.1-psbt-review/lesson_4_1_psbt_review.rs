@@ -1,4 +1,4 @@
-// tests.rs — Lesson 4.1: PSBT Review
+// lesson_4_1_psbt_review.rs — Lesson 4.1: PSBT Review
 //
 // This file contains pre-written tests for the `review_plan` stub.
 // Run them with:

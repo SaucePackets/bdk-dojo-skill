@@ -65,11 +65,18 @@ fn wallet_apply_tracks_found_confirmed_spent_and_reorged_utxos() {
     wallet.apply(SyncEvent::Found(mempool_utxo("aaaa", 0, 50_000)));
     wallet.apply(SyncEvent::Found(mempool_utxo("bbbb", 0, 20_000)));
 
-    assert_eq!(wallet.utxos.len(), 2, "both UTXOs should be present after Found");
+    assert_eq!(
+        wallet.utxos.len(),
+        2,
+        "both UTXOs should be present after Found"
+    );
 
     let a = wallet.utxos.iter().find(|u| u.outpoint == op_a).unwrap();
     assert!(!a.confirmed, "newly Found UTXO should not be confirmed yet");
-    assert_eq!(a.seen_at_height, None, "newly Found UTXO should have no seen_at_height");
+    assert_eq!(
+        a.seen_at_height, None,
+        "newly Found UTXO should have no seen_at_height"
+    );
 
     // ------------------------------------------------------------------
     // 2. Confirmed: UTXO A gets mined in block 800_001.
@@ -80,7 +87,10 @@ fn wallet_apply_tracks_found_confirmed_spent_and_reorged_utxos() {
     });
 
     let a = wallet.utxos.iter().find(|u| u.outpoint == op_a).unwrap();
-    assert!(a.confirmed, "UTXO A should be confirmed after Confirmed event");
+    assert!(
+        a.confirmed,
+        "UTXO A should be confirmed after Confirmed event"
+    );
     assert_eq!(
         a.seen_at_height,
         Some(800_001),
@@ -115,14 +125,22 @@ fn wallet_apply_tracks_found_confirmed_spent_and_reorged_utxos() {
     );
 
     // Both UTXOs should still be present in the wallet.
-    assert_eq!(wallet.utxos.len(), 2, "both UTXOs should still exist after Reorged");
+    assert_eq!(
+        wallet.utxos.len(),
+        2,
+        "both UTXOs should still exist after Reorged"
+    );
 
     // ------------------------------------------------------------------
     // 5. Spent: UTXO B is consumed by a transaction.
     // ------------------------------------------------------------------
     wallet.apply(SyncEvent::Spent(op_b.clone()));
 
-    assert_eq!(wallet.utxos.len(), 1, "only one UTXO should remain after Spent");
+    assert_eq!(
+        wallet.utxos.len(),
+        1,
+        "only one UTXO should remain after Spent"
+    );
     assert!(
         wallet.utxos.iter().all(|u| u.outpoint != op_b),
         "spent UTXO B must be removed from wallet.utxos"

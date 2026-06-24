@@ -5,7 +5,7 @@
 - Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
 - Create or update: `src/bdk_bridge.rs`.
 - Copy the stubs from `scaffold/5.2-bdk-balance-examples/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/5.2-bdk-balance-examples/tests.rs` into `tests/lesson_5_2_bdk_balance_examples.rs`.
+- Copy the tests from `scaffold/5.2-bdk-balance-examples/lesson_5_2_bdk_balance_examples.rs` into `tests/lesson_5_2_bdk_balance_examples.rs`.
 - Update the `use` import in the copied test file to match your Cargo.toml package name.
 - Write your solution.
 - Run: `cargo test`.
@@ -25,7 +25,7 @@ Compare toy BalanceSummary to real BDK wallet balance ideas.
 
 ## Required tests
 
-Defined in `scaffold/5.2-bdk-balance-examples/tests.rs`:
+Defined in `scaffold/5.2-bdk-balance-examples/lesson_5_2_bdk_balance_examples.rs`:
 
 - `bdk_bridge_notes_name_what_the_toy_model_hides`
 

@@ -17,7 +17,7 @@
 //   None    -> 0                     (mempool / not yet seen in a block)
 
 // Update this import to match your Cargo.toml package name.
-use your_crate_name::{Amount, OutPoint, Utxo, confirmations};
+use your_crate_name::{confirmations, Amount, OutPoint, Utxo};
 
 // ---------------------------------------------------------------------------
 // Helpers
