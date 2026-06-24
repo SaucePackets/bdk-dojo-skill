@@ -2,12 +2,13 @@
 
 ## Setup
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `src/amount.rs` and `src/utxo.rs`.
 - Update `src/lib.rs` to expose both modules.
 - Copy the stubs from `scaffold/1.1-amounts-and-utxos/stubs.rs` into your codebase.
-- Copy the tests from `scaffold/1.1-amounts-and-utxos/tests.rs` into `tests/lesson_1_1_amounts_and_utxos.rs`.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Copy the tests from `scaffold/1.1-amounts-and-utxos/lesson_1_1_amounts_and_utxos.rs` into `tests/lesson_1_1_amounts_and_utxos.rs`.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 
@@ -29,7 +30,7 @@ No floats. No real keys. Just the data shape wallet code needs before BDK enters
 
 ## Required tests
 
-Defined in `scaffold/1.1-amounts-and-utxos/tests.rs`:
+Defined in `scaffold/1.1-amounts-and-utxos/lesson_1_1_amounts_and_utxos.rs`:
 
 - `amount_preserves_sats_exactly`
 - `utxo_stores_outpoint_and_value`

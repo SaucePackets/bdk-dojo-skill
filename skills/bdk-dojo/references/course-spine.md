@@ -34,7 +34,7 @@ Follow the Bitcoin Dojo-style structure described in `bitcoin-dojo-format.md`:
 - tests live in the crate and prove each exercise
 - modules grow by wallet domain
 
-Example learner repo shape. Use the learner's own GitHub repo/fork or local project name; do not assume the repo is named `bdk-dojo`:
+Example learner repo shape. Use the learner's own GitHub repo/fork if already created, but standardize the Cargo package name as `bdk-dojo` so lesson tests import `bdk_dojo`:
 
 ```text
 bdk-dojo-learner/
@@ -52,7 +52,8 @@ bdk-dojo-learner/
     psbt_review.rs
     descriptors.rs
   tests/
-    tests.rs
+    lesson_1_1_amounts_and_utxos.rs
+    lesson_1_2_total_balance.rs
     wallet_flow.rs
     balance/
     sync/
@@ -60,7 +61,7 @@ bdk-dojo-learner/
     bdk_bridge/
 ```
 
-Start simple in `src/lib.rs` only for the first warm-up. Split into modules as soon as lesson 1.1 introduces `amount.rs` and `utxo.rs`.
+Start simple, but keep the rule consistent: implementation goes in `src/*.rs`, `src/lib.rs` exposes modules/re-exports, and lesson acceptance tests live under `tests/<lesson_name>.rs` from the first lesson.
 
 ## Lesson map
 

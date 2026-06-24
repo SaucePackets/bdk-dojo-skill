@@ -5,7 +5,8 @@
 - Update `src/lib.rs` to ensure the BDK bridge notes module is already imported:
   - (No new module needed — this lesson inspects the real miniscript crate and updates bridge notes.)
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - This lesson produces a markdown artifact and a code update, not a code kata. Follow the tasks below.
 
 ## Goal

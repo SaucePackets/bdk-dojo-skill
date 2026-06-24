@@ -1,4 +1,4 @@
-// tests.rs — Lesson 3.3: Dust and Change Policy
+// lesson_3_3_dust_and_change_policy.rs — Lesson 3.3: Dust and Change Policy
 //
 // This file contains pre-written tests for the `decide_change` stub.
 // Run them with:
@@ -8,8 +8,8 @@
 // All tests should FAIL until you implement `decide_change` in `src/change.rs`.
 // Once your implementation is correct every test in this file will pass.
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{decide_change, ChangeDecision, DUST_LIMIT};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{decide_change, ChangeDecision, DUST_LIMIT};
 
 #[cfg(test)]
 mod tests {

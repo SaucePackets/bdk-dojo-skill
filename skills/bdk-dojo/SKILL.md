@@ -105,6 +105,7 @@ Load larger references only when needed for layout audits, coverage audits, or p
 7. Give a tiny Rust exercise with clear directions but not the core answer.
 8. Make the learner implement the core logic first.
 9. Require at least one normal test and one edge-case test.
+   Course convention: lesson acceptance tests live in `tests/<lesson_name>.rs`; keep `src/lib.rs` focused on module exports and public re-exports. Inline `#[cfg(test)]` tests are allowed only for tiny module-local checks.
 10. Verify with plain `cargo test` and, when relevant, `cargo run`.
 11. Compare against the expected behavior and, after the learner attempts, the reference crate when useful.
 12. Review compiler success, warnings, correctness, and code clarity separately.
@@ -183,7 +184,7 @@ Hint:
 Stop after:
 ```
 
-Beginner lessons should explain scaffold project shape before asking for implementation. Do not create files in the learner repo during handoff unless explicitly asked; provide the file tree, copy/paste stubs, exact commands, and expected failure/output so the learner creates the files locally. Explain `Cargo.toml`, `src/lib.rs`, `src/main.rs`, module exports, and crate-name underscore traps when relevant. No tutorial coma, but enough orientation that a beginner knows the next keystroke.
+Beginner lessons should explain scaffold project shape before asking for implementation. Do not create files in the learner repo during handoff unless explicitly asked; provide the file tree, copy/paste stubs, exact commands, and expected failure/output so the learner creates the files locally. Standardize the learner crate as package `bdk-dojo`, imported in Rust as `bdk_dojo`; do not make learners invent crate names. Explain `Cargo.toml`, `src/lib.rs`, `src/main.rs`, module exports, `tests/<lesson_name>.rs` integration tests, and the hyphen-to-underscore crate import trap when relevant. No tutorial coma, but enough orientation that a beginner knows the next keystroke.
 
 ## Review Format
 
@@ -322,7 +323,7 @@ bdk-dojo-skill/
         wallet_primitives.rs
 ```
 
-For learner practice repos, use the learner's own GitHub repo/fork or local project name. `bdk-dojo-learner/` below is only an example shape:
+For learner practice repos, use the learner's own GitHub repo/fork if already created, but standardize the Cargo package name as `bdk-dojo` so tests import `bdk_dojo`. `bdk-dojo-learner/` below is only an example directory shape:
 
 ```text
 bdk-dojo-learner/
@@ -341,7 +342,8 @@ bdk-dojo-learner/
     psbt_review.rs
     descriptors.rs
   tests/
-    tests.rs
+    lesson_1_1_amounts_and_utxos.rs
+    lesson_1_2_total_balance.rs
     wallet_flow.rs
     balance/
     sync/
@@ -358,10 +360,11 @@ bdk-dojo-learner/
 
 Default assumption:
 
-- keep using the learner's existing repo once it exists; do not assume its GitHub URL, owner, or directory name
+- keep using the learner's existing repo once it exists; do not assume its GitHub URL or owner, but keep the Cargo package name `bdk-dojo`
 - use `examples/bdk-dojo-wallet/` as the public working reference crate
 - add each kata as a clearly named module/function in the relevant domain file, not as a pile in `src/lib.rs`
-- add or extend tests for that kata instead of deleting prior verified lessons
+- add or extend lesson acceptance tests under `tests/<lesson_name>.rs` instead of deleting prior verified lessons
+- keep `src/lib.rs` as module/export surface; do not pile lesson acceptance tests into it
 - only start a fresh repo when the user explicitly asks for a reset
 - keep toy lessons separated with clear names so the repo stays readable
 

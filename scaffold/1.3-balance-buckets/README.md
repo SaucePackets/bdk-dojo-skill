@@ -9,12 +9,13 @@ pub confirmed: bool,
 pub spendable: bool,
 ```
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Update: `src/utxo.rs` so UTXOs carry confirmation and spendability state.
 - Update: `src/balance.rs`.
 - Copy the stubs from `scaffold/1.3-balance-buckets/stubs.rs` into your codebase.
-- Copy the tests from `scaffold/1.3-balance-buckets/tests.rs` into your project's `tests/` directory.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Copy the tests from `scaffold/1.3-balance-buckets/lesson_1_3_balance_buckets.rs` into `tests/lesson_1_3_balance_buckets.rs`.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 
@@ -57,7 +58,7 @@ Confirmed but unspendable is ignored in this beginner model.
 
 ## Required tests
 
-Defined in `scaffold/1.3-balance-buckets/tests.rs`:
+Defined in `scaffold/1.3-balance-buckets/lesson_1_3_balance_buckets.rs`:
 
 - `classify_balance_separates_trust_and_spendability`
 - `classify_balance_empty_wallet_is_zeroed`

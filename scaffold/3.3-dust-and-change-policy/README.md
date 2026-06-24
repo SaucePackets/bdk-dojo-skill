@@ -6,11 +6,12 @@
   - `pub mod change;`
   - `pub use change::{ChangeDecision, DUST_LIMIT, decide_change};`
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `src/change.rs`.
 - Copy the stubs from `scaffold/3.3-dust-and-change-policy/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/3.3-dust-and-change-policy/tests.rs` into your project's `tests/` directory.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Copy the tests from `scaffold/3.3-dust-and-change-policy/lesson_3_3_dust_and_change_policy.rs` into `tests/lesson_3_3_dust_and_change_policy.rs`.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 
@@ -30,7 +31,7 @@ Decide whether leftover sats should become change or be added to fee as dust.
 
 ## Required tests
 
-Defined in `scaffold/3.3-dust-and-change-policy/tests.rs`:
+Defined in `scaffold/3.3-dust-and-change-policy/lesson_3_3_dust_and_change_policy.rs`:
 
 - `dust_change_is_added_to_fee_instead_of_output`
 - `change_at_or_above_dust_limit_is_kept`

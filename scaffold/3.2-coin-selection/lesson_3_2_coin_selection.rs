@@ -1,4 +1,4 @@
-// tests.rs — Lesson 3.2: Coin Selection
+// lesson_3_2_coin_selection.rs — Lesson 3.2: Coin Selection
 //
 // This file contains pre-written tests for the `select_coins` stub.
 // Run them with:
@@ -8,8 +8,8 @@
 // All tests should FAIL until you implement `select_coins` in `src/coin_selection.rs`.
 // Once your implementation is correct every test in this file will pass.
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{select_coins, Amount, FeeRate, OutPoint, Utxo, WalletError};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{select_coins, Amount, FeeRate, OutPoint, Utxo, WalletError};
 
 #[cfg(test)]
 mod tests {

@@ -2,12 +2,13 @@
 
 ## Setup
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create: `src/wallet.rs`.
 - Update: `src/lib.rs` to expose `wallet` and `WalletState`.
 - Copy the stubs from `scaffold/1.4-wallet-state/stubs.rs` into your codebase.
-- Copy the tests from `scaffold/1.4-wallet-state/tests.rs` into your project's `tests/` directory.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Copy the tests from `scaffold/1.4-wallet-state/lesson_1_4_wallet_state.rs` into `tests/lesson_1_4_wallet_state.rs`.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 
@@ -52,7 +53,7 @@ wallet.balance() returns all zero buckets
 
 ## Required tests
 
-Defined in `scaffold/1.4-wallet-state/tests.rs`:
+Defined in `scaffold/1.4-wallet-state/lesson_1_4_wallet_state.rs`:
 
 - `wallet_balance_delegates_to_classify_balance`
 - `empty_wallet_balance_is_zeroed`

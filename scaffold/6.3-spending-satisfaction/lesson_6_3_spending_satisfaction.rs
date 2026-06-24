@@ -1,5 +1,5 @@
 // =============================================================================
-// tests.rs — Lesson 6.3: Spending Satisfaction
+// lesson_6_3_spending_satisfaction.rs — Lesson 6.3: Spending Satisfaction
 // =============================================================================
 //
 // This file contains pre-written tests for the spending satisfaction kata.
@@ -45,8 +45,8 @@
 //   describe_satisfaction returns a non-empty string for any Policy.
 // =============================================================================
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{analyze_satisfaction, can_satisfy_with, describe_satisfaction, Policy};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{analyze_satisfaction, can_satisfy_with, describe_satisfaction, Policy};
 
 #[cfg(test)]
 mod tests {

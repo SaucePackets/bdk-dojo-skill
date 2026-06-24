@@ -1,5 +1,5 @@
 // =============================================================================
-// tests.rs — Lesson 5.2: BDK Balance Examples
+// lesson_5_2_bdk_balance_examples.rs — Lesson 5.2: BDK Balance Examples
 // =============================================================================
 //
 // This file contains pre-written tests for the BDK balance bridge-note kata.
@@ -17,8 +17,8 @@
 // vs. mempool split, indexed vs. trusted state, etc.).
 // =============================================================================
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{balance_bridge_note, BdkBridgeNote};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{balance_bridge_note, BdkBridgeNote};
 
 #[cfg(test)]
 mod tests {

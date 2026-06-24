@@ -1,4 +1,4 @@
-// tests.rs — Lesson 4.3: Full Toy Send Flow (integration test)
+// lesson_4_3_full_toy_send_flow.rs — Lesson 4.3: Full Toy Send Flow (integration test)
 //
 // This file contains a single end-to-end integration test that wires together
 // lessons 3.1 → 4.2:
@@ -9,8 +9,8 @@
 //
 //   cargo test
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{
     propose_transaction, review_plan, Amount, FeeRate, OutPoint, SyncEvent, Utxo, WalletPolicy,
     WalletState,
 };

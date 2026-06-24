@@ -16,8 +16,8 @@
 //   Some(h) -> tip_height - h + 1   (inclusive: mined *at* tip counts as 1)
 //   None    -> 0                     (mempool / not yet seen in a block)
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{Amount, OutPoint, Utxo, confirmations};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{confirmations, Amount, OutPoint, Utxo};
 
 // ---------------------------------------------------------------------------
 // Helpers

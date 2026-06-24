@@ -1,4 +1,4 @@
-// tests.rs — Lesson 4.2: Error Handling Pass
+// lesson_4_2_error_handling_pass.rs — Lesson 4.2: Error Handling Pass
 //
 // This file contains pre-written tests for the `WalletError` enum stub.
 // Run them with:
@@ -8,8 +8,8 @@
 // All tests should FAIL until you implement/extend `WalletError` in `src/errors.rs`.
 // Once your implementation is correct every test in this file will pass.
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::WalletError;
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::WalletError;
 
 #[cfg(test)]
 mod tests {

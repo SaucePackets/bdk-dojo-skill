@@ -19,8 +19,8 @@
 //   - If none exists, derive a new one at the next index and append it
 //   - Consecutive calls return the SAME address until it is marked used
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{WalletState};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::WalletState;
 
 // ---------------------------------------------------------------------------
 // Tests

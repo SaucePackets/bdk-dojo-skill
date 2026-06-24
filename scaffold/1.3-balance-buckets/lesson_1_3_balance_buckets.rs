@@ -14,8 +14,8 @@
 //   confirmed: bool
 //   spendable: bool
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{Amount, BalanceSummary, OutPoint, Utxo, classify_balance};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{classify_balance, Amount, BalanceSummary, OutPoint, Utxo};
 
 // ---------------------------------------------------------------------------
 // Helpers

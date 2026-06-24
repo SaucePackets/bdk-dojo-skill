@@ -5,11 +5,12 @@
 - Update `src/lib.rs` with the needed module exports:
   - `pub use wallet::SyncEvent;`
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `src/wallet.rs`.
 - Copy the stubs from `scaffold/2.3-sync-events/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/2.3-sync-events/tests.rs` into your project's `tests/` directory.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Copy the tests from `scaffold/2.3-sync-events/lesson_2_3_sync_events.rs` into `tests/lesson_2_3_sync_events.rs`.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 
@@ -31,7 +32,7 @@ Apply wallet sync events to mutate wallet state over time.
 
 ## Required tests
 
-Defined in `scaffold/2.3-sync-events/tests.rs`:
+Defined in `scaffold/2.3-sync-events/lesson_2_3_sync_events.rs`:
 
 - `wallet_apply_tracks_found_confirmed_spent_and_reorged_utxos`
 

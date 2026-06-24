@@ -1,4 +1,4 @@
-// tests.rs — Lesson 3.4: Transaction Proposal
+// lesson_3_4_transaction_proposal.rs — Lesson 3.4: Transaction Proposal
 //
 // This file contains pre-written tests for the `propose_transaction` stub.
 // Run them with:
@@ -8,8 +8,8 @@
 // All tests should FAIL until you implement `propose_transaction` in `src/tx_plan.rs`.
 // Once your implementation is correct every test in this file will pass.
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{
     propose_transaction, Amount, ChangeDecision, FeeRate, OutPoint, TxPlan, Utxo, WalletError,
 };
 

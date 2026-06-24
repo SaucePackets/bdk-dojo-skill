@@ -6,11 +6,12 @@
   - `pub mod tx_plan;`
   - `pub use tx_plan::{TxPlan, propose_transaction};`
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `src/tx_plan.rs`.
 - Copy the stubs from `scaffold/3.4-transaction-proposal/stubs.rs` into your codebase when you reach this lesson.
-- Copy the tests from `scaffold/3.4-transaction-proposal/tests.rs` into your project's `tests/` directory.
-- Update the `use` import in `tests.rs` to match your Cargo.toml package name.
+- Copy the tests from `scaffold/3.4-transaction-proposal/lesson_3_4_transaction_proposal.rs` into `tests/lesson_3_4_transaction_proposal.rs`.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 
@@ -31,7 +32,7 @@ Create an unsigned transaction plan before any signing happens.
 
 ## Required tests
 
-Defined in `scaffold/3.4-transaction-proposal/tests.rs`:
+Defined in `scaffold/3.4-transaction-proposal/lesson_3_4_transaction_proposal.rs`:
 
 - `transaction_proposal_produces_valid_plan`
 - `transaction_proposal_fails_with_insufficient_funds`

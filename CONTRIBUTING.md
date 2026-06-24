@@ -24,6 +24,12 @@ Use lesson IDs like `5.7` or future IDs like `5.10`; avoid assuming single-digit
 
 Use `## Required tests` for code katas that should be proven with Rust tests.
 
+Course convention:
+
+- Put lesson acceptance tests in `tests/lesson_<id>_<slug>.rs`.
+- Keep `src/lib.rs` focused on modules and public re-exports.
+- Use inline `#[cfg(test)]` only for tiny module-local unit tests, not lesson acceptance tests.
+
 Use `## Required artifact` or `## Required proof` for Markdown/reflection lessons where the learner writes an explanation, contribution note, skeleton plan, or other review artifact.
 
 ## BDK source stamps

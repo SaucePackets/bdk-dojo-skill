@@ -90,8 +90,10 @@ Your first move:
 
 What that means:
 - Cargo.toml = project config
-- src/lib.rs = reusable wallet logic
+- package name = `bdk-dojo`; test import = `bdk_dojo`
+- src/lib.rs = module exports and public API surface
 - src/main.rs = tiny demo runner
+- tests/<lesson_name>.rs = lesson acceptance tests
 - cargo test = proof loop
 
 Put this starter shape in:
@@ -176,14 +178,15 @@ Review tone example:
 Good: your data shapes are right.
 Bug: the test lives in `amount.rs`, but it constructs `Utxo` and `OutPoint`.
 Why Rust is mad: sibling modules do not magically see each other's names.
-Smallest fix: either import them with `use crate::{OutPoint, Utxo};` or move the cross-module test into `src/lib.rs`.
+Smallest fix: put the lesson acceptance test in `tests/<lesson_name>.rs` and import through the public crate API, e.g. `use bdk_dojo::{OutPoint, Utxo};`.
 Your move: choose one and rerun `cargo test`.
 ```
 
 For beginner tests, prefer teaching test placement:
 
-- tests for only `Amount` can live in `amount.rs`
-- tests that combine `Amount`, `OutPoint`, and `Utxo` fit better in `src/lib.rs` or `tests/`
+- lesson acceptance tests live in `tests/<lesson_name>.rs`
+- tests for only `Amount` can optionally live in `amount.rs` as tiny module-local unit tests
+- tests that combine `Amount`, `OutPoint`, and `Utxo` should import them through the public crate API from `tests/`
 - if a test references another module, explain imports/scope before showing code
 
 For lesson-specific function katas, explicitly name the function under test. Example: in spendability policy, tests must call `is_spendable(&utxo, tip_height)`. A test that only checks `confirmations(&utxo, tip_height) >= COINBASE_MATURITY` belongs to confirmation-depth review, not spendability review.

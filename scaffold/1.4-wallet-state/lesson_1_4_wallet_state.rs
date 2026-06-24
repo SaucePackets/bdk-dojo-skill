@@ -11,8 +11,8 @@
 // Utxo fields available from lesson 1.3 onward:
 //   outpoint: OutPoint, value: Amount, confirmed: bool, spendable: bool
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{Amount, BalanceSummary, OutPoint, Utxo, WalletState};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{Amount, BalanceSummary, OutPoint, Utxo, WalletState};
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -51,7 +51,9 @@ fn wallet_balance_delegates_to_classify_balance() {
     // Populate with three UTXOs covering each active bucket.
     wallet.utxos.push(make_utxo("aaaa", 0, 50_000, true, true));
     wallet.utxos.push(make_utxo("bbbb", 0, 20_000, false, true));
-    wallet.utxos.push(make_utxo("cccc", 0, 10_000, false, false));
+    wallet
+        .utxos
+        .push(make_utxo("cccc", 0, 10_000, false, false));
 
     let summary = wallet.balance();
 

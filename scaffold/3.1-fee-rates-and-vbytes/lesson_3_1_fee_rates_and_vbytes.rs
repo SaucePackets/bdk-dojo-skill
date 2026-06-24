@@ -1,4 +1,4 @@
-// tests.rs — Lesson 3.1: Fee Rates and Vbytes
+// lesson_3_1_fee_rates_and_vbytes.rs — Lesson 3.1: Fee Rates and Vbytes
 //
 // This file contains pre-written tests for the fee calculation stub.
 // Run them with:
@@ -8,8 +8,8 @@
 // All tests should FAIL until you implement the `fee` function in `src/fees.rs`.
 // Once your implementation is correct every test in this file will pass.
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{fee, FeeRate, TxSizeEstimate};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{fee, FeeRate, TxSizeEstimate};
 
 #[cfg(test)]
 mod tests {

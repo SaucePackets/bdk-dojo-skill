@@ -1,4 +1,4 @@
-// tests.rs — Lesson 4.1: PSBT Review
+// lesson_4_1_psbt_review.rs — Lesson 4.1: PSBT Review
 //
 // This file contains pre-written tests for the `review_plan` stub.
 // Run them with:
@@ -8,8 +8,8 @@
 // All tests should FAIL until you implement `review_plan` in `src/psbt_review.rs`.
 // Once your implementation is correct every test in this file will pass.
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{
     review_plan, Amount, ChangeDecision, OutPoint, TxPlan, Utxo, WalletError, WalletPolicy,
 };
 

@@ -14,7 +14,7 @@ bitcoin-dojo/
       utils/
       transaction/
     tests/
-      tests.rs
+      lesson_<id>_<slug>.rs
       ecc/
       utils/
       transaction/
@@ -67,7 +67,7 @@ bdk-dojo-skill/
         psbt_review.rs
         descriptors.rs
       tests/
-        tests.rs
+        lesson_<id>_<slug>.rs
         wallet_flow.rs
         balance/
         sync/
@@ -174,7 +174,7 @@ bdk-dojo-learner/
     psbt_review.rs
     descriptors.rs
   tests/
-    tests.rs
+    lesson_<id>_<slug>.rs
     wallet_flow.rs
     balance/
     sync/
@@ -193,6 +193,7 @@ Each scaffold README should be short and mechanical:
 - Create or update: `src/<module>.rs`.
 - Update `src/lib.rs` to expose the module.
 - Copy the stubs from `scaffold/<exercise>/stubs.rs`.
+- Copy the acceptance test file from `scaffold/<exercise>/lesson_<id>_<slug>.rs` into `tests/lesson_<id>_<slug>.rs`.
 - Write your solution.
 - Run: `cargo test`.
 
