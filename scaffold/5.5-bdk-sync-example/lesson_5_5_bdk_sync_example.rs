@@ -5,8 +5,8 @@
 //
 //   cargo test
 //
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{sync_bridge_note, BdkBridgeNote};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{sync_bridge_note, BdkBridgeNote};
 
 #[cfg(test)]
 mod tests {

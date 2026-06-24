@@ -6,11 +6,12 @@
   - `pub mod spending_satisfaction;`
   - `pub use spending_satisfaction::{SatisfactionSummary, analyze_satisfaction, can_satisfy_with, describe_satisfaction};`
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `src/spending_satisfaction.rs`.
 - Copy the stubs from `scaffold/6.3-spending-satisfaction/stubs.rs` into your codebase when you reach this lesson.
 - Copy the tests from `scaffold/6.3-spending-satisfaction/lesson_6_3_spending_satisfaction.rs` into `tests/lesson_6_3_spending_satisfaction.rs`.
-- Update the `use` import in the copied test file to match your Cargo.toml package name.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 

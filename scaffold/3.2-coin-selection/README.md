@@ -19,11 +19,12 @@ Later lessons extend this enum.
   - `pub use errors::WalletError;`
   - `pub use coin_selection::{CoinSelection, select_coins};`
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `src/coin_selection.rs`.
 - Copy the stubs from `scaffold/3.2-coin-selection/stubs.rs` into your codebase when you reach this lesson.
 - Copy the tests from `scaffold/3.2-coin-selection/lesson_3_2_coin_selection.rs` into `tests/lesson_3_2_coin_selection.rs`.
-- Update the `use` import in the copied test file to match your Cargo.toml package name.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 

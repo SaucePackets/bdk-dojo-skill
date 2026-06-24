@@ -43,8 +43,8 @@
 //     are all Key leaves (classic k-of-n).
 // =============================================================================
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{count_keys, is_multisig, is_timelocked, policy_kind, Policy};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{count_keys, is_multisig, is_timelocked, policy_kind, Policy};
 
 #[cfg(test)]
 mod tests {

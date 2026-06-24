@@ -39,8 +39,8 @@
 //     - Older/After/HashLock → 0 (not signature requirements)
 // =============================================================================
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{
     compose_policy, count_keys, describe_policy, extract_timelocks, is_timelocked,
     required_signatures, Policy,
 };

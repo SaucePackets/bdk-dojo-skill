@@ -61,6 +61,10 @@ for lesson in scaffold_dirs:
         errors.append(f"{rel}: stubs.rs is empty")
     if legacy_test.exists():
         errors.append(f"{rel}: legacy tests.rs found; use {lesson_test.name}")
+    if lesson_test.exists():
+        lesson_test_text = lesson_test.read_text(encoding="utf-8")
+        if "your_crate_name" in lesson_test_text:
+            errors.append(f"{rel}: lesson test must use fixed crate import `bdk_dojo`, not your_crate_name")
 
     text = readme.read_text(encoding="utf-8")
     checks = {
@@ -100,6 +104,8 @@ for lesson in scaffold_dirs:
             errors.append(f"{rel}: missing lesson acceptance test file {lesson_test.name}")
         if lesson_test.name not in text:
             errors.append(f"{rel}: README must name lesson acceptance test file {lesson_test.name}")
+        if "match your Cargo.toml package name" in text:
+            errors.append(f"{rel}: README should not make learners choose a crate name; use package `bdk-dojo` / import `bdk_dojo`")
 
     mentions_real_bdk = any(
         phrase in text

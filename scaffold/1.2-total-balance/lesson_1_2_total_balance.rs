@@ -8,8 +8,8 @@
 // The tests will fail with a `todo!` panic until you implement
 // `calculate_balance` in src/balance.rs.
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{calculate_balance, Amount, OutPoint, Utxo};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{calculate_balance, Amount, OutPoint, Utxo};
 
 // ---------------------------------------------------------------------------
 // Helpers

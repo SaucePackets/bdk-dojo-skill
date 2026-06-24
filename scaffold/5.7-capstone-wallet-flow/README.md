@@ -2,7 +2,8 @@
 
 ## Setup
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `notes/capstone-wallet-flow.md`.
 - Use the stubs from `scaffold/5.7-capstone-wallet-flow/stubs.rs` into your codebase when you reach this lesson.
 - Write the Markdown artifact in `notes/capstone-wallet-flow.md`.

@@ -18,8 +18,8 @@
 //   2. locked_until.map_or(true, |l| tip_height >= l)   (timelock expired)
 //   3. if coinbase: confirmations >= COINBASE_MATURITY   (maturity rule)
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{is_spendable, Amount, OutPoint, Utxo, COINBASE_MATURITY};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{is_spendable, Amount, OutPoint, Utxo, COINBASE_MATURITY};
 
 // ---------------------------------------------------------------------------
 // Helpers

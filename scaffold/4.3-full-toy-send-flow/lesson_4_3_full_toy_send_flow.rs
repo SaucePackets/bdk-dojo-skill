@@ -9,8 +9,8 @@
 //
 //   cargo test
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{
     propose_transaction, review_plan, Amount, FeeRate, OutPoint, SyncEvent, Utxo, WalletPolicy,
     WalletState,
 };

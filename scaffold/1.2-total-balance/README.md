@@ -2,12 +2,13 @@
 
 ## Setup
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `src/balance.rs`.
 - Update `src/lib.rs` to expose `amount`, `utxo`, and `balance`.
 - Copy the stubs from `scaffold/1.2-total-balance/stubs.rs` into your codebase.
 - Copy the tests from `scaffold/1.2-total-balance/lesson_1_2_total_balance.rs` into `tests/lesson_1_2_total_balance.rs`.
-- Update the `use` import in the copied test file to match your Cargo.toml package name.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 

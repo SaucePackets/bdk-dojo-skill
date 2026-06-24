@@ -2,9 +2,9 @@
 //
 // Expected behavior verification for lesson 1.1.
 // Copy this file into your project's tests/ directory.
-// Update `use bdk_dojo_wallet::` to match your Cargo.toml package name.
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
 
-use bdk_dojo_wallet::{Amount, OutPoint, Utxo};
+use bdk_dojo::{Amount, OutPoint, Utxo};
 
 /// The Amount wrapper must preserve sats exactly.
 ///

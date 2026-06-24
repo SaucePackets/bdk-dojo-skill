@@ -17,8 +17,8 @@
 //   - for each UTXO where seen_at_height > h: set confirmed=false, seen_at_height=None
 //   - leave UTXOs confirmed at or below h untouched
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{Amount, OutPoint, Utxo, WalletState};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{Amount, OutPoint, Utxo, WalletState};
 
 // ---------------------------------------------------------------------------
 // Helpers

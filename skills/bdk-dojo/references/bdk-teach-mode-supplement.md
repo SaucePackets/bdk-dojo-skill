@@ -90,6 +90,7 @@ Your first move:
 
 What that means:
 - Cargo.toml = project config
+- package name = `bdk-dojo`; test import = `bdk_dojo`
 - src/lib.rs = module exports and public API surface
 - src/main.rs = tiny demo runner
 - tests/<lesson_name>.rs = lesson acceptance tests

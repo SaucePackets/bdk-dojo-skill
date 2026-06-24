@@ -14,11 +14,12 @@ pub seen_at_height: Option<u32>,
 
 - Update existing UTXO test fixtures to set `seen_at_height`. Confirmed UTXOs should usually use `Some(height)`; mempool UTXOs should use `None`.
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `src/chain.rs`.
 - Copy the stubs from `scaffold/2.1-confirmation-depth/stubs.rs` into your codebase when you reach this lesson.
 - Copy the tests from `scaffold/2.1-confirmation-depth/lesson_2_1_confirmation_depth.rs` into `tests/lesson_2_1_confirmation_depth.rs`.
-- Update the `use` import in the copied test file to match your Cargo.toml package name.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 

@@ -12,7 +12,7 @@ Teach Rust project shape while introducing the balance buckets wallet libraries 
 
 ## Setup
 
-Default: continue in the existing `bdk-dojo` repo.
+Default: continue in the existing learner repo with Cargo package name `bdk-dojo`.
 
 Only create it if it does not exist yet:
 
@@ -30,7 +30,7 @@ Explain:
 - `src/main.rs`: binary entry point.
 - `src/lib.rs`: module exports and public API surface.
 - `tests/<lesson_name>.rs`: lesson acceptance tests.
-- Crate import trap: package `bdk-dojo` imports as `bdk_dojo`.
+- Crate import trap: package `bdk-dojo` imports as `bdk_dojo`. The course tests already use `bdk_dojo`.
 
 ## Starter structs
 

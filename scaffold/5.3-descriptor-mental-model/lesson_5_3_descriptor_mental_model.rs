@@ -25,8 +25,8 @@
 // toy level — no need to parse the full BIP-380 grammar.
 // =============================================================================
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{classify_descriptor, validate_toy_descriptor, DescriptorKind};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{classify_descriptor, validate_toy_descriptor, DescriptorKind};
 
 #[cfg(test)]
 mod tests {

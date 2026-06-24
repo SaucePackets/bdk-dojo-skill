@@ -15,8 +15,8 @@
 //   Reorged { outpoint }                — unconfirm UTXO (seen_at_height -> None)
 //   TipAdvanced(u32)                    — advance wallet tip_height
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{Amount, OutPoint, SyncEvent, Utxo, WalletState};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{Amount, OutPoint, SyncEvent, Utxo, WalletState};
 
 // ---------------------------------------------------------------------------
 // Helpers

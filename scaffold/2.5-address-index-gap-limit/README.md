@@ -10,11 +10,12 @@ pub addresses: Vec<AddressRecord>,
 
 - Update `WalletState::new` so `addresses` starts empty.
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `src/wallet.rs`.
 - Copy the stubs from `scaffold/2.5-address-index-gap-limit/stubs.rs` into your codebase when you reach this lesson.
 - Copy the tests from `scaffold/2.5-address-index-gap-limit/lesson_2_5_address_index_gap_limit.rs` into `tests/lesson_2_5_address_index_gap_limit.rs`.
-- Update the `use` import in the copied test file to match your Cargo.toml package name.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 

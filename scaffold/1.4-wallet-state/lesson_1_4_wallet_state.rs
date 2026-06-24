@@ -11,8 +11,8 @@
 // Utxo fields available from lesson 1.3 onward:
 //   outpoint: OutPoint, value: Amount, confirmed: bool, spendable: bool
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{Amount, BalanceSummary, OutPoint, Utxo, WalletState};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{Amount, BalanceSummary, OutPoint, Utxo, WalletState};
 
 // ---------------------------------------------------------------------------
 // Helpers

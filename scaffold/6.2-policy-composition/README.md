@@ -6,11 +6,12 @@
   - `pub mod policy_composition;`
   - `pub use policy_composition::{compose_policy, describe_policy, extract_timelocks, required_signatures};`
 
-- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork. Do not assume the repo is named `bdk-dojo`.
+- Work in the cumulative reference crate: `examples/bdk-dojo-wallet/`, or in your own learner repo/fork.
+- Learner crate convention: package name `bdk-dojo`, Rust import name `bdk_dojo`.
 - Create or update: `src/policy_composition.rs`.
 - Copy the stubs from `scaffold/6.2-policy-composition/stubs.rs` into your codebase when you reach this lesson.
 - Copy the tests from `scaffold/6.2-policy-composition/lesson_6_2_policy_composition.rs` into `tests/lesson_6_2_policy_composition.rs`.
-- Update the `use` import in the copied test file to match your Cargo.toml package name.
+- Keep the test import as `bdk_dojo`; the Cargo package should be named `bdk-dojo` (hyphen in package, underscore in Rust import).
 - Write your solution.
 - Run: `cargo test`.
 

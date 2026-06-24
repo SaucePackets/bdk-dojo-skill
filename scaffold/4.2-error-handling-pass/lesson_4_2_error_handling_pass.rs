@@ -8,8 +8,8 @@
 // All tests should FAIL until you implement/extend `WalletError` in `src/errors.rs`.
 // Once your implementation is correct every test in this file will pass.
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::WalletError;
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::WalletError;
 
 #[cfg(test)]
 mod tests {

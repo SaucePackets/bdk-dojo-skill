@@ -8,8 +8,8 @@
 // All tests should FAIL until you implement `decide_change` in `src/change.rs`.
 // Once your implementation is correct every test in this file will pass.
 
-// Update this import to match your Cargo.toml package name.
-use your_crate_name::{decide_change, ChangeDecision, DUST_LIMIT};
+// This course standardizes on package `bdk-dojo`, imported as `bdk_dojo`.
+use bdk_dojo::{decide_change, ChangeDecision, DUST_LIMIT};
 
 #[cfg(test)]
 mod tests {
