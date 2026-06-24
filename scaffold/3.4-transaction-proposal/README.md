@@ -33,7 +33,8 @@ Create an unsigned transaction plan before any signing happens.
 
 Defined in `scaffold/3.4-transaction-proposal/tests.rs`:
 
-- `transaction_proposal_contains_selected_inputs_fee_and_change`
+- `transaction_proposal_produces_valid_plan`
+- `transaction_proposal_fails_with_insufficient_funds`
 
 Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
