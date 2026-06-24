@@ -46,7 +46,7 @@
 // =============================================================================
 
 // Update this import to match your Cargo.toml package name.
-use your_crate_name::{analyze_satisfaction, can_satisfy_with, describe_satisfaction, Policy, SatisfactionSummary};
+use your_crate_name::{analyze_satisfaction, can_satisfy_with, describe_satisfaction, Policy};
 
 #[cfg(test)]
 mod tests {

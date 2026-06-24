@@ -33,7 +33,7 @@ Prove the full toy send flow works across sync, balance, coin selection, tx plan
 
 Defined in `scaffold/4.3-full-toy-send-flow/tests.rs`:
 
-- `full_toy_send_flow_can_be_reviewed_before_signing`
+- `full_toy_send_flow_sync_balance_select_propose_review`
 
 Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 

@@ -5,100 +5,78 @@
 //
 //   cargo test
 //
-// All tests should FAIL until you implement `review_plan` in `src/lib.rs`.
+// All tests should FAIL until you implement `review_plan` in `src/psbt_review.rs`.
 // Once your implementation is correct every test in this file will pass.
 
 // Update this import to match your Cargo.toml package name.
-use your_crate_name::{review_plan, FeeRate, PsbtReview, TxPlan, Utxo};
+use your_crate_name::{
+    review_plan, Amount, ChangeDecision, OutPoint, TxPlan, Utxo, WalletError, WalletPolicy,
+};
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    // ---------------------------------------------------------------------------
-    // Helpers: build minimal TxPlan values for testing.
-    // Adjust Utxo / TxPlan field names to match your struct definitions.
-    // ---------------------------------------------------------------------------
-
     fn make_utxo(value: u64) -> Utxo {
         Utxo {
-            value,
-            block_height: Some(750_000),
-            // Add any additional required fields with sensible dummy values.
+            outpoint: OutPoint {
+                txid: "aa".repeat(32),
+                vout: 0,
+            },
+            value: Amount::from_sats(value),
+            confirmed: true,
+            spendable: true,
+            seen_at_height: Some(750_000),
+            coinbase: false,
+            locked_until: None,
+            owned: true,
         }
     }
 
-    /// Build a "healthy" TxPlan: positive fee, explicit change, no surprises.
     fn valid_plan() -> TxPlan {
         TxPlan {
             selected: vec![make_utxo(100_000)],
-            recipient_amount: 50_000,
-            fee: 282,           // 141 vB × 2 sat/vB
-            change: Some(49_718), // 100_000 - 50_000 - 282
+            recipient: "bcrt1recipient".to_string(),
+            amount: 50_000,
+            fee: 282,
+            change: ChangeDecision::Change(49_718),
         }
     }
 
-    /// Build a degenerate TxPlan with zero fee (miner would never confirm this).
-    fn zero_fee_plan() -> TxPlan {
-        TxPlan {
-            selected: vec![make_utxo(100_000)],
-            recipient_amount: 50_000,
-            fee: 0,
-            change: Some(50_000),
+    fn policy() -> WalletPolicy {
+        WalletPolicy {
+            allowed_recipients: vec!["bcrt1recipient".to_string()],
+            max_fee: 10_000,
         }
     }
 
-    // -------------------------------------------------------------------------
-
-    /// A well-formed plan must pass every review gate.
-    ///
-    /// Expected:
-    ///   outputs_match:      true  — amounts are self-consistent
-    ///   fee_reasonable:     true  — fee is positive
-    ///   change_is_ours:     true  — change output belongs to our wallet
-    ///   unknown_recipients: false — no surprises in the output set
     #[test]
     fn valid_plan_passes_psbt_review() {
-        let plan = valid_plan();
-        // The wallet_policy string identifies our descriptor / output policy.
-        // Pass a simple sentinel; your implementation may use it to verify
-        // the change output derivation path.
-        let review: PsbtReview = review_plan(&plan, "wpkh([fingerprint/84'/0'/0']xpub…/0/*)");
+        let review = review_plan(&valid_plan(), &policy()).unwrap();
 
-        assert!(
-            review.outputs_match,
-            "outputs_match should be true for a self-consistent plan"
-        );
-        assert!(
-            review.fee_reasonable,
-            "fee_reasonable should be true when fee > 0"
-        );
-        assert!(
-            review.change_is_ours,
-            "change_is_ours should be true when change is present and belongs to wallet"
-        );
-        assert!(
-            !review.unknown_recipients,
-            "unknown_recipients should be false for a known-good plan"
+        assert!(review.approved);
+        assert!(review.warnings.is_empty());
+    }
+
+    #[test]
+    fn unknown_recipient_fails_review() {
+        let mut plan = valid_plan();
+        plan.recipient = "bcrt1attacker".to_string();
+
+        assert_eq!(
+            review_plan(&plan, &policy()),
+            Err(WalletError::UnknownRecipient("bcrt1attacker".to_string()))
         );
     }
 
-    /// A plan whose fee is zero should fail the fee_reasonable check while
-    /// still being self-consistent on amounts.
     #[test]
-    fn plan_with_zero_fee_fails_review() {
-        let plan = zero_fee_plan();
-        let review: PsbtReview = review_plan(&plan, "wpkh([fingerprint/84'/0'/0']xpub…/0/*)");
+    fn excessive_fee_fails_review() {
+        let mut plan = valid_plan();
+        plan.fee = 50_000;
 
-        assert!(
-            !review.fee_reasonable,
-            "fee_reasonable should be false when fee == 0"
-        );
-
-        // The amounts still add up correctly even with zero fee.
-        assert!(
-            review.outputs_match,
-            "outputs_match should still be true even with a zero fee"
-        );
+        assert!(matches!(
+            review_plan(&plan, &policy()),
+            Err(WalletError::UnsafePsbt(_))
+        ));
     }
 }

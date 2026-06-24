@@ -39,7 +39,9 @@ Review a transaction plan before signing like a PSBT review checklist.
 
 Defined in `scaffold/4.1-psbt-review/tests.rs`:
 
-- `psbt_review_rejects_unknown_recipient_and_high_fee`
+- `valid_plan_passes_psbt_review`
+- `unknown_recipient_fails_review`
+- `excessive_fee_fails_review`
 
 Copy the test file into your project's `tests/` directory. The tests encode the expected behavior — `cargo test` is the pass/fail gate.
 
